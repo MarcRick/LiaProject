@@ -1,0 +1,215 @@
+/* @theme nodehill */
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono&display=swap');
+
+@import 'default';
+
+section {
+  justify-content: start;
+  font-family: 'Sofia Sans Semi Condensed';
+  /*bread-text-color*/
+  color: #000;
+  font-size: 20px;
+  width: 260mm;
+  height: 146mm;
+  line-height: 125%;
+  hyphens: manual;
+  position: relative;
+}
+
+section::after {
+  position: absolute;
+  padding: 0 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  color: #000;
+  bottom: 10px;
+  right: 10px;
+  background-color: #eee;
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  display: block;
+}
+
+section.big-margins {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+p,
+li {
+  line-height: 120%;
+}
+
+header {
+  background-image: url(images/nodehill-logo.jpg);
+  background-size: 25%;
+  background-position: 5% 100%;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #899b49;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50px;
+  text-align: right;
+  font-size: 82%;
+  top: 0px;
+  color: #000;
+  padding: 4px 25px 3px;
+}
+
+section.first-page header {
+  background-position: 95% 100%;
+}
+
+section.first-page header p {
+  display: none;
+}
+
+section header p {
+  font-size: 14px !important;
+  font-style: italic;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+p+h2 {
+  margin-top: 20px;
+}
+
+h1+h2,
+h1+h3 {
+  margin-top: 5px;
+}
+
+h2+ol,
+h2+ul,
+h3+ol,
+h3+ul {
+  margin-top: 5px;
+}
+
+h1 {
+  margin-top: -30px;
+  font-size: 34px;
+  margin-bottom: 0;
+}
+
+section.first-page h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 38px;
+  margin-bottom: -20px;
+}
+
+section.first-page h2 {
+  margin-top: 0;
+  font-size: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+section.fit-whole-image {
+  border-right: 1px solid #999;
+}
+
+section.fit-whole-image figure {
+  background-size: contain !important;
+}
+
+section.fit-whole-image p,
+section.fit-whole-image li {
+  text-align: left !important;
+  hyphens: none;
+}
+
+section.tight-list li {
+  margin: 10px;
+}
+
+table {
+  font-size: 80%;
+}
+
+p {
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+p:not(section.first-page p),
+li {
+  font-size: 16px;
+  text-align: justify;
+}
+
+table {
+  margin-top: 15px;
+  display: table;
+  width: 100%;
+}
+
+table tr td,
+table tr,
+table th,
+table {
+  border-width: 0 !important;
+}
+
+table th {
+  font-size: 16px;
+  color: rgb(34, 68, 102);
+}
+
+table th,
+table {
+  border-bottom: 1px solid rgb(34, 68, 102) !important;
+}
+
+code {
+  font-family: 'Ubuntu Mono';
+  font-size: 13px !important;
+  line-height: 0;
+}
+
+marp-pre {
+  line-height: 70% !important;
+}
+
+/* Only in HTML-version */
+@media only screen {
+  section {
+    color: #222;
+  }
+}
+
+/* Only in PDF version */
+@media only print {}
+
+
+section.nodehill-faces figure {
+  margin-top: 50px !important;
+}
+
+section.nodehill-faces a {
+  display: block;
+  text-align: right;
+}
+
+section.first-page figure {
+  background-position-y: 0% !important;
+}
+
+section.info-the-blog figure {
+  border-left: 1px solid #999 !important;
+}
