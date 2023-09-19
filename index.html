@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Save Text As File JavaScript</title>
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Converter</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Markdown Converter</h1>
-        <div >
-            <textarea id="markdownInput">Hello Test</textarea>
-            <button id="saveButton">Save</button>
-
+    <div class="wrapper">
+        <textarea spellcheck="false" placeholder="Enter something to save"
+            required>Write Something</textarea>
+        <div class="file-options">
+            <div class="option file-name">
+                <label>File name</label>
+                <input type="text" spellcheck="false" placeholder="Enter file name">
+            </div>
+            <div class="option save-as">
+                <label>Save as</label>
+                <div class="select-menu">
+                    <select>
+                        <option value="text/plain">Text File (.txt)</option>
+                    </select>
+                </div>
+            </div>
         </div>
+        <button class="save-btn" type="button">Save As Text File</button>
     </div>
-
-    <script>
-        document.getElementById("saveButton").addEventListener("click", function () {
-            const markdownText = document.getElementById("markdownInput").value;
-            console.log(markdownText);
-        });
-    </script>
-
 </body>
+
 </html>
