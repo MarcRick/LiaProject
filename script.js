@@ -16,3 +16,20 @@ saveBtn.addEventListener("click", () => {
     link.href = fileUrl;
     link.click();
 });
+
+const realFileBtn = document.getElementById("real-file")
+const customBtn = document.getElementById("custom-button")
+const customTxt = document.getElementById("custom-text")
+
+customBtn.addEventListener("click", function () {
+    realFileBtn.click(); 
+});
+
+realFileBtn.addEventListener("change", function () {
+    if (realFileBtn.value) {
+        customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/);
+    }
+    else {
+        customTxt.innerHTML = "No File Chosen"
+    }
+});
