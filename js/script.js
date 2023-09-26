@@ -24,6 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
             Convert_HTML_To_PDF(fileNameInput.value);
             // Convert HTML content to PDF         
         }
+        if (selectedFormat === "Word (.docx)"){
+            console.log(selectedFormat);
+            const blob = new Blob([textarea.value], { type: selectMenu.value });
+            const fileUrl = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.download = fileNameInput.value;
+            link.href = fileUrl;
+            link.click();
+        }
     });
 
     const realFileBtn = document.getElementById("real-file")
@@ -59,7 +68,7 @@ textarea.style.height = (textarea.scrollHeight) + 'px'; // Sätt höjden till sc
 }
 
 function Convert_HTML_To_PDF(fileName) {
-    const doc = new window.jsPDF('p', 'pt', 'a4');
+    const doc = new window.jsPDF('p', 'pt', 'a3');
     
     // Source HTMLElement or a string containing HTML.
     const elementHTML = document.querySelector("#content");
