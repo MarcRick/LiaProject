@@ -7,7 +7,8 @@
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
     <link rel="stylesheet" href="style.css">
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 <body>
     <div class="container">
@@ -21,6 +22,7 @@
                 <div class="select-menu">
                     <select class="input">
                         <option value="text/plain">Text File (.txt)</option>
+                        <option value="application/pdf">PDF (.pdf)</option>
                     </select>
                 </div>
             </div>
@@ -37,11 +39,10 @@
             <div class="input-area">
                 <textarea oninput="autoResize(this)" class="text-input" id="editor" onkeyup="updatePreview()"></textarea>
             </div>
-            <div class="output-area">
+            <div class="output-area" id="content">
                 <div id="preview" class="text-output"></div>
             </div>
         </div>
-
     </div>
 </body>
 </html>
