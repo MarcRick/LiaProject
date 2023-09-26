@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 function updatePreview() {
     let previewElement = document.getElementById("preview");
     let editorValue = document.getElementById("editor").value;
