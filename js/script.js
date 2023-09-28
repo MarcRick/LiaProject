@@ -35,22 +35,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const realFileBtn = document.getElementById("real-file")
-    const customBtn = document.getElementById("custom-button")
-    const customTxt = document.getElementById("custom-text")
+    function saveImg() {
+        const reader = new FileReader();
+        const editText = document.querySelector('#editor');
+    
+        reader.addEventListener('load', () => {
+            const fileName = inputImg.files[0].name; 
+            localStorage.setItem(fileName, reader.result);
+            const allText = editText.value;
+            const newText = `![](${fileName})`;
+            const updatedText = allText + newText;
+            editText.value = updatedText;
+            updatePreview();
+        });
+    
+        reader.readAsDataURL(this.files[0]);
+    }
+    
+    const inputImg = document.querySelector('.img-input');
 
-    customBtn.addEventListener("click", function () {
-        realFileBtn.click(); 
-    });
-
-    realFileBtn.addEventListener("change", function () {
-        if (realFileBtn.value) {
-            customTxt.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/);
-        }
-        else {
-            customTxt.innerHTML = "No File Chosen"
-        }
-    });
+    inputImg.addEventListener('change', saveImg);
 
 
 });
@@ -58,9 +62,30 @@ document.addEventListener("DOMContentLoaded", function () {
 function updatePreview() {
     let previewElement = document.getElementById("preview");
     let editorValue = document.getElementById("editor").value;
+
+       // Hitta alla matchningar av ![](...) i texten
+       let matches = editorValue.match(/!\[([^\]]*)\]\((.*?)\)/g);
+
+       // Replace matches with imgDataUrl from localStorage
+       if (matches) {
+   
+           editorValue = editorValue.replace(/!\[([^\]]*)\]\((.*?)\)/g
+           , (match, altText, key) => {
+               const imgDataUrl = localStorage.getItem(key);
+               if (imgDataUrl) {
+               return `![${altText}](${imgDataUrl})`;
+               } else {
+               // If imgDataUrl not found in localStorage, you can handle it here.
+               return match; // Keep the original text if no replacement is available.
+               }
+           });
+   
+       }
+
     let markedUpHTML = marked(editorValue);
     previewElement.innerHTML = markedUpHTML;
 }
+
 // Funktion för att ändra höjden på textarea baserat på innehållet
 function autoResize(textarea) {
 textarea.style.height = 'auto'; // Återställ höjden till auto för att mäta rätt höjd
@@ -86,3 +111,5 @@ function Convert_HTML_To_PDF(fileName) {
         windowWidth: 805 //window width in CSS pixels
     });
 }
+
+
