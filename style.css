@@ -28,14 +28,12 @@
   .text-input,
   .text-output{
       width: 100%;
-      border: 1px solid #17313a;
-      background: #102531;
-      color: hsla(0,0%,100%,.9);
+      background: white;
+      color: black(0,0%,100%,.9);
       font-size: 21px;
       padding: 20px;
       padding-top: 10px;
       min-height: 500px;
-      border-radius: 10px;
       font-family: "sofia-pro",sans-serif;
   }
   .text-output img{
@@ -87,4 +85,19 @@
       padding-inline: 5px;
       cursor: pointer;
       font-weight: 700;
+  }
+  
+  #extraText{
+    width: 25%;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+      border: 1px solid #17313a;
+      background: white;
+      color: black(0,0%,100%,.9);
+      font-size: 21px;
+      padding: 20px;
+      padding-top: 10px;
+      border-radius: 10px;
+      font-family: "sofia-pro",sans-serif;
   }
