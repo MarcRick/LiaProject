@@ -38,6 +38,10 @@
       border-radius: 10px;
       font-family: "sofia-pro",sans-serif;
   }
+  .text-output img{
+    max-width: 500px;
+    max-height: 500px;
+  }
   
   .text-input {
       resize: none;
