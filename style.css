@@ -10,7 +10,7 @@
 .container {
     width: 100%;
     min-height: 100vh;
-    background-color: #0d202b;
+    background-color: #ced4da;
     display: flex;
     flex-direction: column;
 }
@@ -28,15 +28,19 @@
 .text-input,
 .text-output {
     width: 100%;
-    border: 1px solid #17313a;
-    background: #102531;
-    color: hsla(0, 0%, 100%, .9);
+    border: 2px solid #17313a;
+    background: white;
+    color: black(0, 0%, 100%, .9);
     font-size: 21px;
     padding: 20px;
     padding-top: 10px;
     min-height: 500px;
-    border-radius: 10px;
     font-family: "sofia-pro", sans-serif;
+}
+
+.text-output img {
+    max-width: 500px;
+    max-height: 500px;
 }
 
 .text-input {
@@ -47,7 +51,7 @@
 .btn-section {
     align-self: flex-end;
     display: flex;
-    color: #88a0a7;
+    color: black;
     gap: 10px;
     align-items: flex-end;
     padding-top: 7px;
@@ -66,16 +70,16 @@
 .input {
     color: hsla(0, 0%, 100%, .9);
     font-size: 14px;
-    background: #102531;
+    background: #284b63;
     padding-inline: 5px;
-    border: 1px solid #17313a;
+    border: 1.5px solid black;
     height: 35px;
     font-weight: 700;
 }
 
 .save-btn {
     border-radius: 3px;
-    background: #123040;
+    background: #17313a;
     border: none;
     color: hsla(0, 0%, 100%, .9);
     font-size: 15px;
@@ -85,9 +89,29 @@
     font-weight: 700;
 }
 
-.chooseFile-btn {
+
+#extraText {
+    width: 25%;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #17313a;
+    background: white;
+    color: black(0, 0%, 100%, .9);
+    font-size: 21px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-family: "sofia-pro", sans-serif;
+}
+
+.openClose-btn {
     border-radius: 3px;
-    background: #123040;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: 200px;
+    background: #17313a;
     border: none;
     color: hsla(0, 0%, 100%, .9);
     font-size: 15px;
@@ -95,9 +119,8 @@
     padding-inline: 5px;
     cursor: pointer;
     font-weight: 700;
-
 }
 
-.uploadButton {
-    display: none;
+.syntaxInfo {
+    padding-bottom: 20px;
 }
