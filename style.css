@@ -5,99 +5,105 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
+  
+  .container {
+      width: 100%;
+      min-height: 100vh;
+      background-color: #ced4da;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .mark-section {
+      display: flex;
+  }
+  
+  .input-area,
+  .output-area {
+      width: 50%;
+      padding: 20px;
+  }
+  
+  .text-input,
+  .text-output{
+      width: 100%;
+      border: 2px solid #17313a;
+      background: white;
+      color: black(0,0%,100%,.9);
+      font-size: 21px;
+      padding: 20px;
+      padding-top: 10px;
+      min-height: 500px;
+      font-family: "sofia-pro",sans-serif;
+  }
+  .text-output img{
+    max-width: 500px;
+    max-height: 500px;
+  }
+  
+  .text-input {
+      resize: none;
+      overflow: hidden;
+  }
+  
+  .btn-section {
+      align-self: flex-end;
+      display: flex;
+      color: black;
+      gap: 10px;
+      align-items: flex-end;
+      padding-top: 7px;
+      padding-right: 20px;
+      font-size: 15px;
+      font-family: "sofia-pro",sans-serif;
+  }
+  
+  .option {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      align-items: flex-start;
+  }
+  
+  .input {
+      color: hsla(0,0%,100%,.9);
+      font-size: 14px;
+      background: #284b63;
+      padding-inline: 5px;
+      border: 1.5px solid black;
+      height: 35px;
+      font-weight: 700;
+  }
+  
+  .save-btn {
+      border-radius: 3px;
+      background: #17313a;
+      border: none;
+      color: hsla(0,0%,100%,.9);
+      font-size: 15px;
+      height: 35px;
+      padding-inline: 5px;
+      cursor: pointer;
+      font-weight: 700;
+  }
+  
+  #extraText{
+    width: 25%;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+      border: 2px solid #17313a;
+      background: white;
+      color: black(0,0%,100%,.9);
+      font-size: 21px;
+      padding: 20px;
+      padding-top: 10px;
+      border-radius: 10px;
+      font-family: "sofia-pro",sans-serif;
+  }
 
-.container {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #0d202b;
-    display: flex;
-    flex-direction: column;
-}
-
-.mark-section {
-    display: flex;
-}
-
-.input-area,
-.output-area {
-    width: 50%;
-    padding: 20px;
-}
-
-.text-input,
-.text-output {
-    width: 100%;
-    border: 1px solid #17313a;
-    background: #102531;
-    color: hsla(0, 0%, 100%, .9);
-    font-size: 21px;
-    padding: 20px;
-    padding-top: 10px;
-    min-height: 500px;
-    border-radius: 10px;
-    font-family: "sofia-pro", sans-serif;
-}
-
-.text-input {
-    resize: none;
-    overflow: hidden;
-}
-
-.btn-section {
-    align-self: flex-end;
-    display: flex;
-    color: #88a0a7;
-    gap: 10px;
-    align-items: flex-end;
-    padding-top: 7px;
-    padding-right: 20px;
-    font-size: 15px;
-    font-family: "sofia-pro", sans-serif;
-}
-
-.option {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    align-items: flex-start;
-}
-
-.input {
-    color: hsla(0, 0%, 100%, .9);
-    font-size: 14px;
-    background: #102531;
-    padding-inline: 5px;
-    border: 1px solid #17313a;
-    height: 35px;
-    font-weight: 700;
-}
-
-.save-btn {
-    border-radius: 3px;
-    background: #123040;
-    border: none;
-    color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
-    height: 35px;
-    padding-inline: 5px;
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.chooseFile-btn {
-    border-radius: 3px;
-    background: #123040;
-    border: none;
-    color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
-    height: 35px;
-    padding-inline: 5px;
-    cursor: pointer;
-    font-weight: 700;
-
-}
-
-.uploadButton {
-    display: none;
-}
+  .syntaxInfo
+  {
+    padding-bottom: 20px;
+  }
