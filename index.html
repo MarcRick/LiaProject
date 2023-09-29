@@ -16,11 +16,11 @@
     <div class="container">
         <div class="btn-section">
             <div class="option file-name">
-                <label>File name</label>
-                <input class="input" type="text" spellcheck="false">
+                <label>File name:</label>
+                <input class="input" type="text" spellcheck="false" value="[Insert text]">
             </div>
             <div class="option save-as">
-                <label>Save as</label>
+                <label>Save as:</label>
                 <div class="select-menu">
                     <select class="input">
                         <option value="text/plain">Text File (.txt)</option>
@@ -51,26 +51,40 @@
         </div>
             <div>
                 <div class="goodToKnow" id="extraText">
-                <h1>Usefull Syntax</h1>
-                <h4>Header</h4>
-                <p># Header1</p>
-                <p>## Header2</p>
-                <p>### Header3</p>
-                <br>
-                <h4>Bit of code</h4>
-                <p>
-                    ```
-                <br>
-                    let message = 'Hello world';
-                    alert(message);<br>
-                    ```
-                </p>
-                <br>
-                <h4>Other good to know</h4>
-                <p>- List</p>
-                <p>*Italic*</p>
-                <p>**Bold Text**</p>
-                <p>--- Line</p>
+                <section class="syntaxInfo">
+                    <h1>Usefull Syntax</h1>
+                    <h4>Header</h4>
+                    <p># Header1</p>
+                    <p>## Header2</p>
+                    <p>### Header3</p>
+                    <hr>
+                </section>
+                <section class="syntaxInfo">
+                    <h4>Bit of code</h4>
+                    <p>
+                        ```(code-language)
+                    <br>
+                        let message = 'Hello world';
+                        alert(message);<br>
+                        ```
+                    </p>
+                    <hr>
+                </section>
+                <section class="syntaxInfo">
+                    <h4>Table</h4>
+                    <p>| T-Header | T-Header 2 | <br>
+                        | ---- | ---- | <br>
+                        | T-Body | T-Body 2|</p>
+                    </p>
+                    <hr>
+                </section>
+                <section class="syntaxInfo">
+                    <h4>Other good to know</h4>
+                    <p>- List</p>
+                    <p>*Italic*</p>
+                    <p>**Bold Text**</p>
+                    <p>--- Line</p>
+                </section>
             </div>
         </div>
     </div>
