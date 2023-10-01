@@ -8,8 +8,7 @@
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -31,9 +30,9 @@
                 </div>
             </div>
             <div>
-                <button class="save-btn" type="button">Save As Text File</button>
+                <button class="save-btn btnShadow" type="button">Save As Text File</button>
 
-                <button class="save-btn" type="button"
+                <button class="save-btn btnShadow" type="button"
                     onclick="document.getElementById('uploadButton').click();">Choose File</button>
             </div>
             <div class="option">
@@ -43,7 +42,12 @@
         <div class="mark-section">
             <div class="input-area">
                 <textarea oninput="autoResize(this)" class="text-input" id="editor"
-                    onkeyup="updatePreview()"></textarea>
+                    onkeyup="updatePreview()">
+                </textarea>
+                <div>
+                        <button class="preBtn btnShadow">pre</button>
+                        <button class="nextBtn btnShadow">next</button>
+                </div>
             </div>
             <div class="output-area" id="content">
                 <div id="preview" class="text-output"></div>

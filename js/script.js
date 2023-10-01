@@ -93,23 +93,35 @@ textarea.style.height = (textarea.scrollHeight) + 'px'; // Sätt höjden till sc
 }
 
 function Convert_HTML_To_PDF(fileName) {
-    const doc = new window.jsPDF('p', 'pt', 'a3');
-    
-    // Source HTMLElement or a string containing HTML.
-    const elementHTML = document.querySelector("#content");
+    const element = document.getElementById("content");
+    const opt= {
+        margin: [10,5,10,5],
+        filename: fileName,
+        pagebreak: { mode: 'avoid-all', before: '#page2el' }
+    };
 
-    doc.html(elementHTML, {
-        callback: function(doc) {
-            // Save the PDF
-            doc.save(fileName);
-        },
-        margin: [10, 10, 10, 10],
-        autoPaging: 'text',
-        x: 0,
-        y: 0,
-        width: 190, //target width in the PDF document
-        windowWidth: 805 //window width in CSS pixels
-    });
+    html2pdf(element, opt);
 }
+
+
+// function Convert_HTML_To_PDF(fileName) {
+//     const doc = new window.jsPDF('p', 'pt', 'a3');
+    
+//     // Source HTMLElement or a string containing HTML.
+//     const elementHTML = document.querySelector("#content");
+
+//     doc.html(elementHTML, {
+//         callback: function(doc) {
+//             // Save the PDF
+//             doc.save(fileName);
+//         },
+//         margin: [10, 10, 10, 10],
+//         autoPaging: 'text',
+//         x: 0,
+//         y: 0,
+//         width: 190, //target width in the PDF document
+//         windowWidth: 805 //window width in CSS pixels
+//     });
+// }
 
 
