@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -17,7 +19,7 @@
         <div class="btn-section">
             <div class="option file-name">
                 <label>File name:</label>
-                <input class="input" type="text" spellcheck="false" value="[Insert text]">
+                <input class="input" type="text" spellcheck="false" placeholder="Insert text">
             </div>
             <div class="option save-as">
                 <label>Save as:</label>
@@ -31,10 +33,10 @@
                 </div>
             </div>
             <div>
-                <button class="save-btn" type="button">Save As Text File</button>
+                <button class="save-btn" type="button">Save File</button>
 
                 <button class="save-btn" type="button"
-                    onclick="document.getElementById('uploadButton').click();">Choose File</button>
+                    onclick="document.getElementById('uploadButton').click();">Choose Image</button>
             </div>
             <div class="option">
                 <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
@@ -49,46 +51,52 @@
                 <div id="preview" class="text-output"></div>
             </div>
         </div>
-            <div>
-                <div class="goodToKnow" id="extraText">
-                <section class="syntaxInfo">
-                    <h1>Usefull Syntax</h1>
-                    <h4>Header</h4>
-                    <p># Header1</p>
-                    <p>## Header2</p>
-                    <p>### Header3</p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Bit of code</h4>
-                    <p>
-                        ```(code-language)
-                    <br>
-                        let message = 'Hello world';
-                        alert(message);<br>
-                        ```
-                    </p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Table</h4>
-                    <p>| T-Header | T-Header 2 | <br>
-                        | ---- | ---- | <br>
-                        | T-Body | T-Body 2|</p>
-                    </p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Other good to know</h4>
-                    <p>- List</p>
-                    <p>*Italic*</p>
-                    <p>**Bold Text**</p>
-                    <p>--- Line</p>
-                </section>
+        <div class="container mt-4">
+            <div class="row">
+                <h3>Useful Syntax</h3>
+                <div class="col-md-6">
+                    <div class="goodToKnow">
+                        <section class="syntaxInfo">                            
+                            <h4>Header</h4>
+                            <p># Header1</p>
+                            <p>## Header2</p>
+                            <p>### Header3</p>
+                            <hr>
+                        </section>
+                        <section class="syntaxInfo">
+                            <h4>Bit of code</h4>
+                            <pre><code>(code-language)
+        let message = 'Hello world';
+        alert(message);
+                            </code></pre>
+                            <hr>
+                        </section>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="goodToKnow">
+                        <section class="syntaxInfo">
+                            <h4>Table</h4>
+                            <p>| T-Header | T-Header 2 | <br>
+                                | ---- | ---- | <br>
+                                | T-Body | T-Body 2|</p>
+                            <hr>
+                        </section>
+                        <section class="syntaxInfo">
+                            <h4>Other good to know</h4>
+                            <p>- List</p>
+                            <p>*Italic*</p>
+                            <p>**Bold Text**</p>
+                            <p>--- Line</p>
+                        </section>
+                    </div>
+                </div>
             </div>
-        </div>
+        </div> 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
