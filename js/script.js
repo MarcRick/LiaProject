@@ -111,5 +111,17 @@ function Convert_HTML_To_PDF(fileName) {
         windowWidth: 805 //window width in CSS pixels
     });
 }
+var isToggled = false;
+function toggleInfo() {
+    var showDiv = document.getElementById('extraText');
 
+    if (isToggled) {
+        showDiv.style.display = 'none';
+        console.log(isToggled)
+    } else {
+        showDiv.style.display = 'block';
+        console.log(isToggled)
+    }
+    isToggled = !isToggled;
+}
 
