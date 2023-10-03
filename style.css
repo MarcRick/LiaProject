@@ -89,6 +89,17 @@
     font-weight: 700;
 }
 
+.click-btn {
+    border-radius: 3px;
+    background: #17313a;
+    border: none;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 50px;
+    cursor: pointer;
+    font-weight: 700;
+}
 
 #extraText {
     width: 25%;
