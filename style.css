@@ -90,13 +90,13 @@
 }
 
 .click-btn {
-    border-radius: 3px;
+    border-radius: 30px;
     background: #17313a;
     border: none;
     color: hsla(0, 0%, 100%, .9);
     font-size: 15px;
     height: 35px;
-    padding-inline: 50px;
+    padding-inline: 70px;
     cursor: pointer;
     font-weight: 700;
 }
