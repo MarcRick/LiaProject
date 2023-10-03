@@ -14,47 +14,47 @@
 
 <body>
     <div class="container">
+        
+        <div>
+            <button class="openClose-btn" type="button" id="toggleBtn" onclick="toggleInfo();">Tips and tricks</button>
+                 <div
+                    id="extraText" class="goodToKnow" style="display: none;">
+                    <section class="syntaxInfo">
+                        <h1>Usefull Syntax</h1>
+                        <h4>Header</h4>
+                        <p># Header1</p>
+                        <p>## Header2</p>
+                        <p>### Header3</p>
+                        <hr>
+                    </section>
+                    <section class="syntaxInfo">
+                        <h4>Bit of code</h4>
+                        <p>
+                            ```(code-language)
+                            <br>
+                            let message = 'Hello world';
+                            alert(message);<br>
+                            ```
+                        </p>
+                        <hr>
+                    </section>
+                    <section class="syntaxInfo">
+                        <h4>Table</h4>
+                        <p>| T-Header | T-Header 2 | <br>
+                            | ---- | ---- | <br>
+                            | T-Body | T-Body 2|</p>
+                        </p>
+                        <hr>
+                    </section>
+                    <section class="syntaxInfo">
+                        <h4>Other good to know</h4>
+                        <p>- List</p>
+                        <p>*Italic*</p>
+                        <p>**Bold Text**</p>
+                        <p>--- Line</p>
+                    </section>
+                </div>
 
-        <div>
-        <button class="openClose-btn" type="button" id="toggleBtn" onclick="toggleInfo();">Tips and tricks</button>
-        <div>
-            <div id="extraText" class="goodToKnow" style="display: none;">
-                <section class="syntaxInfo">
-                    <h1>Usefull Syntax</h1>
-                    <h4>Header</h4>
-                    <p># Header1</p>
-                    <p>## Header2</p>
-                    <p>### Header3</p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Bit of code</h4>
-                    <p>
-                        ```(code-language)
-                        <br>
-                        let message = 'Hello world';
-                        alert(message);<br>
-                        ```
-                    </p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Table</h4>
-                    <p>| T-Header | T-Header 2 | <br>
-                        | ---- | ---- | <br>
-                        | T-Body | T-Body 2|</p>
-                    </p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Other good to know</h4>
-                    <p>- List</p>
-                    <p>*Italic*</p>
-                    <p>**Bold Text**</p>
-                    <p>--- Line</p>
-                </section>
-            </div>
-        </div>
         </div>
 
         <div class="btn-section">
@@ -73,6 +73,7 @@
                     </select>
                 </div>
             </div>
+
             <div>
                 <button class="save-btn" type="button">Save As Text File</button>
 
@@ -82,6 +83,15 @@
             <div class="option">
                 <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
             </div>
+        </div>
+
+        <div>
+            <button class="click-btn" type="button">Preview</button>
+            <button class="click-btn" type="button">Back</button>
+
+            <button class="click-btn" type="button">Next</button>
+            <button class="click-btn" type="button">View</button>
+
         </div>
         
         <div class="mark-section">
@@ -96,8 +106,7 @@
                 <div id="preview" class="text-output"></div>
                 
             </div>         
-        </div>
-
+        </div>           
         
     </div>
 
