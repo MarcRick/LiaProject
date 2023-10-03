@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (selectedFormat === "PDF (.pdf)"){
             console.log(window);
+
             Convert_HTML_To_PDF(fileNameInput.value);
             // Convert HTML content to PDF         
         }
@@ -102,26 +103,3 @@ function Convert_HTML_To_PDF(fileName) {
 
     html2pdf(element, opt);
 }
-
-
-// function Convert_HTML_To_PDF(fileName) {
-//     const doc = new window.jsPDF('p', 'pt', 'a3');
-    
-//     // Source HTMLElement or a string containing HTML.
-//     const elementHTML = document.querySelector("#content");
-
-//     doc.html(elementHTML, {
-//         callback: function(doc) {
-//             // Save the PDF
-//             doc.save(fileName);
-//         },
-//         margin: [10, 10, 10, 10],
-//         autoPaging: 'text',
-//         x: 0,
-//         y: 0,
-//         width: 190, //target width in the PDF document
-//         windowWidth: 805 //window width in CSS pixels
-//     });
-// }
-
-
