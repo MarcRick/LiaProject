@@ -1,3 +1,8 @@
+document.getElementById('fontSelect').addEventListener('change', function() {
+    const selectedFont = this.value;
+    document.getElementById('preview').style.fontFamily = selectedFont;    
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
