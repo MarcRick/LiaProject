@@ -33,8 +33,8 @@
             <div>
                 <button class="save-btn" type="button">Save As Text File</button>
 
-                <button class="save-btn" type="button"
-                    onclick="document.getElementById('uploadButton').click();">Choose File</button>
+                <button class="save-btn" type="button" onclick="document.getElementById('uploadButton').click();">Choose
+                    File</button>
             </div>
             <div class="option">
                 <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
@@ -49,8 +49,9 @@
                 <div id="preview" class="text-output"></div>
             </div>
         </div>
-            <div>
-                <div class="goodToKnow" id="extraText">
+        <button class="openClose-btn" type="button" id="toggleBtn" onclick="toggleInfo();">Tips and tricks</button>
+        <div>
+            <div id="extraText" class="goodToKnow" style="display: none;">
                 <section class="syntaxInfo">
                     <h1>Usefull Syntax</h1>
                     <h4>Header</h4>
@@ -63,7 +64,7 @@
                     <h4>Bit of code</h4>
                     <p>
                         ```(code-language)
-                    <br>
+                        <br>
                         let message = 'Hello world';
                         alert(message);<br>
                         ```
