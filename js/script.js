@@ -1,4 +1,5 @@
-const textKey = 0;
+var textKey = [];
+var textKeyIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
     const textarea = document.querySelector("textarea");
@@ -120,13 +121,31 @@ function toggleInfo() {
     isToggled = !isToggled;
 }
 
-/*function addPage(textKey) 
-{
-    var Key = textKey;
-    console.log(Key)
+function saveTextLS() 
+{    
     const textValue = document.getElementById("editor").value;
     console.log(textValue);
-    localStorage.setItem(Key,textValue);
+    localStorage.setItem(window.textKeyIndex, textValue);
+    window.textKey.push(textValue);
     document.getElementById("editor").value = "";
-    console.log(textKey);
-}*/ 
+    window.textKeyIndex+=1;
+    console.log(window.textKey);
+}
+
+function chosePage()
+{
+    window.textKeyIndex = knappval;
+    const Text = localStorage.getItem(window.textKey[textKeyIndex].value);
+    document.getElementById("editor").value = Text.value;
+} 
+
+//function addPage() {
+  //  console.log(totalPages);
+   // totalPages++;
+    //console.log(totalPages);
+    //const newPage = document.createElement('div');
+    //newPage.id = page${totalPages};
+    //newPage.className = 'page';
+    //newPage.textContent = Page ${totalPages} Content;
+    //document.getElementById('pageContainer').appendChild(newPage);
+//}

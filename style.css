@@ -21,8 +21,7 @@
 
 .input-area,
 .output-area {
-    width: 297mm;
-    height: 210mm;
+    width: 100%;
     padding: 20px;
 }
 
