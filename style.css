@@ -10,7 +10,7 @@
 .container {
     width: 100%;
     min-height: 100vh;
-    background-color: #08e4ec;
+    background-color: #31572c;
     display: flex;
     flex-direction: column;
 }
@@ -21,7 +21,8 @@
 
 .input-area,
 .output-area {
-    width: 100%;
+    width: 297mm;
+    height: 210mm;
     padding: 20px;
 }
 
