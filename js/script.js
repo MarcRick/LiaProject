@@ -1,3 +1,5 @@
+const textKey = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (selectedFormat === "PDF (.pdf)") {
             console.log(window);
+
             Convert_HTML_To_PDF(fileNameInput.value);
             // Convert HTML content to PDF         
         }
@@ -93,24 +96,16 @@ function autoResize(textarea) {
 }
 
 function Convert_HTML_To_PDF(fileName) {
-    const doc = new window.jsPDF('p', 'pt', 'a3');
+    const element = document.getElementById("content");
+    const opt= {
+        margin: [10,5,10,5],
+        filename: fileName,
+        pagebreak: { mode: 'avoid-all', before: '#page2el' }
+    };
 
-    // Source HTMLElement or a string containing HTML.
-    const elementHTML = document.querySelector("#content");
-
-    doc.html(elementHTML, {
-        callback: function (doc) {
-            // Save the PDF
-            doc.save(fileName);
-        },
-        margin: [10, 10, 10, 10],
-        autoPaging: 'text',
-        x: 0,
-        y: 0,
-        width: 190, //target width in the PDF document
-        windowWidth: 805 //window width in CSS pixels
-    });
+    html2pdf(element, opt);
 }
+
 var isToggled = false;
 function toggleInfo() {
     var showDiv = document.getElementById('extraText');
@@ -125,3 +120,13 @@ function toggleInfo() {
     isToggled = !isToggled;
 }
 
+/*function addPage(textKey) 
+{
+    var Key = textKey;
+    console.log(Key)
+    const textValue = document.getElementById("editor").value;
+    console.log(textValue);
+    localStorage.setItem(Key,textValue);
+    document.getElementById("editor").value = "";
+    console.log(textKey);
+}*/ 

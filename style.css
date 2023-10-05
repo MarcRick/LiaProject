@@ -10,7 +10,7 @@
 .container {
     width: 100%;
     min-height: 100vh;
-    background-color: #ced4da;
+    background-color: #31572c;
     display: flex;
     flex-direction: column;
 }
@@ -21,7 +21,8 @@
 
 .input-area,
 .output-area {
-    width: 50%;
+    width: 297mm;
+    height: 210mm;
     padding: 20px;
 }
 
@@ -29,7 +30,7 @@
 .text-output {
     width: 100%;
     border: 2px solid #17313a;
-    background: white;
+    background:white;
     color: black(0, 0%, 100%, .9);
     font-size: 21px;
     padding: 20px;
@@ -89,6 +90,17 @@
     font-weight: 700;
 }
 
+.click-btn {
+    border-radius: 30px;
+    background: #17313a;
+    border: none;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 70px;
+    cursor: pointer;
+    font-weight: 700;
+}
 
 #extraText {
     width: 25%;
@@ -123,4 +135,19 @@
 
 .syntaxInfo {
     padding-bottom: 20px;
-}
+  }
+
+  .btnShadow:hover
+  {
+    box-shadow:  0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  .nextBtn
+  {
+    float: right;
+  }
+
+  .text-output h1 {
+    color: blue;
+  }
+
