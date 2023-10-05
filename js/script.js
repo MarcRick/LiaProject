@@ -1,3 +1,5 @@
+const textKey = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
@@ -104,12 +106,13 @@ function Convert_HTML_To_PDF(fileName) {
     html2pdf(element, opt);
 }
 
-function addPage() 
+/*function addPage(textKey) 
 {
-    const Key = "textKey";
+    var Key = textKey;
     console.log(Key)
     const textValue = document.getElementById("editor").value;
     console.log(textValue);
     localStorage.setItem(Key,textValue);
     document.getElementById("editor").value = "";
-}   
+    console.log(textKey);
+}*/ 
