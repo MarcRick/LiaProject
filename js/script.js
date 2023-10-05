@@ -1,6 +1,33 @@
-document.getElementById('fontSelect').addEventListener('change', function() {
+const fontClasses = {
+    poppins: 'text-output',
+    butterflyKids: 'text-output.butterflyKids',
+    heebo: 'text-output.heebo',
+    homemadeApple: 'text-output.homemadeApple',
+    inconsolata: 'text-output.inconsolata',
+    marcellus: 'text-output.marcellus',
+    tenorSans: 'text-output.tenorSans',
+    theGirlNextDoor: 'text-output.theGirlNextDoor'
+};
+
+//const inputChangeFont = document.querySelector('#fontSelect');
+
+//function test(e){
+    //const inputTextBox = document.querySelector('.text-input');
+    //const outputTextBox = document.querySelector('.text-output');
+    //inputTextBox.style.fontFamily = e.target.value;
+    //outputTextBox.style.fontFamily = e.target.value;
+//}
+
+//inputChangeFont.addEventListener('change', test);
+
+const fontSelect = document.getElementById('fontSelect');
+const previewElement = document.getElementById('preview');
+
+fontSelect.addEventListener('change', function() {
     const selectedFont = this.value;
-    document.getElementById('preview').style.fontFamily = selectedFont;    
+
+    // Add the class corresponding to the selected font
+    previewElement.className = fontClasses[selectedFont];
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -116,5 +143,4 @@ function Convert_HTML_To_PDF(fileName) {
         windowWidth: 805 //window width in CSS pixels
     });
 }
-
 

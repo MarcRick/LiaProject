@@ -1,11 +1,8 @@
-/* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
 }
 
 .container {
@@ -34,8 +31,8 @@
     font-size: 21px;
     padding: 20px;
     padding-top: 10px;
-    min-height: 500px;    
-    font-family: 'Poppins', sans-serif;    
+    min-height: 500px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .text-output {
@@ -46,14 +43,36 @@
     font-size: 21px;
     padding: 20px;
     padding-top: 10px;
-    min-height: 500px;    
+    min-height: 500px;
     font-family: 'Poppins', sans-serif;
+
+}
+
+.text-output.butterflyKids {
     font-family: 'Butterfly Kids', cursive;
+}
+
+.text-output.heebo {
     font-family: 'Heebo', sans-serif;
+}
+
+.text-output.homemadeApple {
     font-family: 'Homemade Apple', cursive;
+}
+
+.text-output.inconsolata {
     font-family: 'Inconsolata', monospace;
-    font-family: 'Marcellus', serif;    
+}
+
+.text-output.marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+.text-output.tenorSans {
     font-family: 'Tenor Sans', sans-serif;
+}
+
+.text-output.theGirlNextDoor {
     font-family: 'The Girl Next Door', cursive;
 }
 
@@ -127,97 +146,11 @@
 }
 
 #extraText {
-=======
-  }
-  
-  .container {
-      width: 100%;
-      min-height: 100vh;
-      background-color: #ced4da;
-      display: flex;
-      flex-direction: column;
-  }
-  
-  .mark-section {
-      display: flex;
-  }
-  
-  .input-area,
-  .output-area {
-      width: 50%;
-      padding: 20px;
-  }
-  
-  .text-input,
-  .text-output{
-      width: 100%;
-      border: 2px solid #17313a;
-      background: white;
-      color: black(0,0%,100%,.9);
-      font-size: 21px;
-      padding: 20px;
-      padding-top: 10px;
-      min-height: 500px;
-      font-family: "sofia-pro",sans-serif;
-  }
-  .text-output img{
-    max-width: 500px;
-    max-height: 500px;
-  }
-  
-  .text-input {
-      resize: none;
-      overflow: hidden;
-  }
-  
-  .btn-section {
-      align-self: flex-end;
-      display: flex;
-      color: black;
-      gap: 10px;
-      align-items: flex-end;
-      padding-top: 7px;
-      padding-right: 20px;
-      font-size: 15px;
-      font-family: "sofia-pro",sans-serif;
-  }
-  
-  .option {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      align-items: flex-start;
-  }
-  
-  .input {
-      color: hsla(0,0%,100%,.9);
-      font-size: 14px;
-      background: #284b63;
-      padding-inline: 5px;
-      border: 1.5px solid black;
-      height: 35px;
-      font-weight: 700;
-  }
-  
-  .save-btn {
-      border-radius: 3px;
-      background: #17313a;
-      border: none;
-      color: hsla(0,0%,100%,.9);
-      font-size: 15px;
-      height: 35px;
-      padding-inline: 5px;
-      cursor: pointer;
-      font-weight: 700;
-  }
-  
-  #extraText{
->>>>>>> d32ce04592a772a45a9764cbcf46c905c23c5164
     width: 25%;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
-<<<<<<< HEAD
+
     border: 2px solid #17313a;
     background: white;
     color: black(0, 0%, 100%, .9);
@@ -251,19 +184,3 @@ h4 {
 pre {
     white-space: pre-wrap;
 }
-=======
-      border: 2px solid #17313a;
-      background: white;
-      color: black(0,0%,100%,.9);
-      font-size: 21px;
-      padding: 20px;
-      padding-top: 10px;
-      border-radius: 10px;
-      font-family: "sofia-pro",sans-serif;
-  }
-
-  .syntaxInfo
-  {
-    padding-bottom: 20px;
-  }
->>>>>>> d32ce04592a772a45a9764cbcf46c905c23c5164
