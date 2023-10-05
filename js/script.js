@@ -103,3 +103,13 @@ function Convert_HTML_To_PDF(fileName) {
 
     html2pdf(element, opt);
 }
+
+function addPage() 
+{
+    const Key = "textKey";
+    console.log(Key)
+    const textValue = document.getElementById("editor").value;
+    console.log(textValue);
+    localStorage.setItem(Key,textValue);
+    document.getElementById("editor").value = "";
+}   
