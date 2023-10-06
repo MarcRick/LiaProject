@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -44,36 +44,7 @@
     padding: 20px;
     padding-top: 10px;
     min-height: 500px;
-    font-family: 'Poppins', sans-serif;
-
-}
-
-.text-output.butterflyKids {
-    font-family: 'Butterfly Kids', cursive;
-}
-
-.text-output.heebo {
-    font-family: 'Heebo', sans-serif;
-}
-
-.text-output.homemadeApple {
-    font-family: 'Homemade Apple', cursive;
-}
-
-.text-output.inconsolata {
-    font-family: 'Inconsolata', monospace;
-}
-
-.text-output.marcellus {
-    font-family: 'Marcellus', serif;
-}
-
-.text-output.tenorSans {
-    font-family: 'Tenor Sans', sans-serif;
-}
-
-.text-output.theGirlNextDoor {
-    font-family: 'The Girl Next Door', cursive;
+    font-family: 'Poppins', sans-serif;    
 }
 
 .text-output img {
