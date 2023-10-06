@@ -21,11 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
             link.download = fileNameInput.value;
             link.href = fileUrl;
             link.click();
+            localStorage.clear();
         }
         if (selectedFormat === "PDF (.pdf)") {
             console.log(window);
 
             Convert_HTML_To_PDF(fileNameInput.value);
+            localStorage.clear();
             // Convert HTML content to PDF         
         }
         if (selectedFormat === "Word (.docx)") {
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link.download = fileNameInput.value;
             link.href = fileUrl;
             link.click();
+            localStorage.clear();
         }
     });
 
@@ -98,8 +101,8 @@ function autoResize(textarea) {
 
 function Convert_HTML_To_PDF(fileName) {
     const element = document.getElementById("content");
-    const opt= {
-        margin: [10,5,10,5],
+    const opt = {
+        margin: [10, 5, 10, 5],
         filename: fileName,
         pagebreak: { mode: 'avoid-all', before: '#page2el' }
     };
@@ -121,31 +124,61 @@ function toggleInfo() {
     isToggled = !isToggled;
 }
 
-function saveTextLS() 
-{    
+function saveTextLS() {
     const textValue = document.getElementById("editor").value;
     console.log(textValue);
     localStorage.setItem(window.textKeyIndex, textValue);
     window.textKey.push(textValue);
     document.getElementById("editor").value = "";
-    window.textKeyIndex+=1;
+    window.textKeyIndex += 1;
     console.log(window.textKey);
+    const newPage = document.createElement('div');
+    document.getElementById('editor').appendChild(newPage);
+
+    updateContent();
+}
+function previousPage() {
+    if (window.textKeyIndex > 0) {
+        window.textKeyIndex -= 1;
+        console.log(textKeyIndex)
+        const currentPageText = localStorage.getItem(window.textKeyIndex);
+        console.log(currentPageText)
+        document.getElementById('editor').value = currentPageText || "";
+    }
+    console.log(textKeyIndex)
+    updateContent();
+}
+function nextPage() {
+    if (window.textKeyIndex < textKey.length) {
+        window.textKeyIndex += 1;
+        console.log(textKeyIndex)
+        const currentPageText = localStorage.getItem(window.textKeyIndex);
+        console.log(currentPageText)
+        document.getElementById('editor').value = currentPageText || "";
+    }
+    console.log(textKeyIndex)
+    updateContent();
+
+}
+function updateContent() {
+    const showingPageText = localStorage.getItem(window.textKeyIndex);
+    document.getElementById('preview').textContent = showingPageText || "";
 }
 
-function chosePage()
-{
+
+function chosePage() {
     window.textKeyIndex = knappval;
     const Text = localStorage.getItem(window.textKey[textKeyIndex].value);
     document.getElementById("editor").value = Text.value;
-} 
+}
 
 //function addPage() {
-  //  console.log(totalPages);
-   // totalPages++;
-    //console.log(totalPages);
-    //const newPage = document.createElement('div');
-    //newPage.id = page${totalPages};
-    //newPage.className = 'page';
-    //newPage.textContent = Page ${totalPages} Content;
-    //document.getElementById('pageContainer').appendChild(newPage);
+//  console.log(totalPages);
+// totalPages++;
+//console.log(totalPages);
+//const newPage = document.createElement('div');
+//newPage.id = page${totalPages};
+//newPage.className = 'page';
+//newPage.textContent = Page ${totalPages} Content;
+//document.getElementById('pageContainer').appendChild(newPage);
 //}
