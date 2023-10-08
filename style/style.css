@@ -7,12 +7,48 @@
     box-sizing: border-box;
 }
 
-.container {
+#container {
     width: 100%;
     min-height: 100vh;
     background-color: #31572c;
-    display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+#headerDiv
+{
+    padding: 20px;
+    overflow: hidden;
+}
+
+#leftDiv
+{
+    width: 75%;
+    float: left;
+    padding: 20px;
+}
+#rightDiv
+{
+    width: 25%;
+    padding: 20px;
+    float: right;
+}
+#pageDisplay
+{
+    float: left;
+    width: 50%;
+}
+
+#btn-section {
+    float: right;
+    width: 50%;
+    gap: 10px;
+    font-size: 15px;
+    font-family: "sofia-pro", sans-serif;
+}
+.btnPosR
+{
+    float: right;
+    margin-top:20px;
 }
 
 .mark-section {
@@ -21,10 +57,12 @@
 
 .input-area,
 .output-area {
-    width: 75%;
-    padding: 20px;
+    width: 100%;
 }
-
+.output-area
+{
+    margin-top: 10px;
+}
 .text-input,
 .text-output {
     width: 100%;
@@ -32,8 +70,6 @@
     background: white;
     color: black(0, 0%, 100%, .9);
     font-size: 21px;
-    padding: 20px;
-    padding-top: 10px;
     min-height: 500px;
     font-family: "sofia-pro", sans-serif;
 }
@@ -48,20 +84,10 @@
     overflow: hidden;
 }
 
-.btn-section {
-    align-self: flex-end;
-    display: flex;
-    color: black;
-    gap: 10px;
-    align-items: flex-end;
-    padding-top: 7px;
-    padding-right: 20px;
-    font-size: 15px;
-    font-family: "sofia-pro", sans-serif;
-}
-
 .option {
+    float: right;
     display: flex;
+    margin-right: 3px;
     flex-direction: column;
     gap: 3px;
     align-items: flex-start;
@@ -80,7 +106,6 @@
 .save-btn {
     border-radius: 3px;
     background: #17313a;
-    border: none;
     color: hsla(0, 0%, 100%, .9);
     font-size: 15px;
     height: 35px;
@@ -102,7 +127,6 @@
 }
 
 #extraText {
-    width: 25%;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -123,7 +147,6 @@
     margin-bottom: 25px;
     width: 200px;
     background: #17313a;
-    border: none;
     color: hsla(0, 0%, 100%, .9);
     font-size: 15px;
     height: 35px;
@@ -146,4 +169,8 @@
 
 .text-output h1 {
     color: blue;
+}
+
+#header{
+    padding: 20px;
 }
