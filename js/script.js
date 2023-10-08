@@ -139,7 +139,20 @@ function createPages(editorValue) {
         }
         const lastSiblingdot = document.querySelector('.carousel__indicator:last-child');
         lastSiblingdot.classList.add('current-dot');
+
+
+
+        const leftButton = document.querySelector('.carousel__button--left');
+        if (pages.length > 1) {
+            leftButton.classList.remove('is-hidden')
+        }
+        else {
+            leftButton.classList.add('is-hidden');
+            const rightButton = document.querySelector('.carousel__button--right');
+            rightButton.classList.add('is-hidden');
+        }
     }
+
 
 
 }

@@ -1,5 +1,4 @@
 const output = document.querySelector('.output-area');
-const pages = Array.from(output.children);
 const nextButton = document.querySelector('.carousel__button--right');
 const prevButton = document.querySelector('.carousel__button--left');
 const dotsNavs = document.querySelector('.carousel__nav');
@@ -16,7 +15,20 @@ function updateDots(currentDot, targetDot) {
 }
 
 
-
+function hideShowArrows(slides, prevButton, nextButton, targetIndex) {
+    if (targetIndex === 0) {
+        prevButton.classList.add('is-hidden');
+        nextButton.classList.remove('is-hidden');
+    }
+    else if (targetIndex === slides.length - 1) {
+        prevButton.classList.remove('is-hidden');
+        nextButton.classList.add('is-hidden');
+    }
+    else {
+        prevButton.classList.remove('is-hidden');
+        nextButton.classList.remove('is-hidden');
+    }
+}
 
 
 
@@ -31,6 +43,9 @@ prevButton.addEventListener('click', e => {
     const prevDot = currentDot.previousElementSibling;
     updateDots(currentDot, prevDot);
 
+    const pages = Array.from(output.children);
+    const prevIndex = pages.findIndex(slide => slide === prevPage);
+    hideShowArrows(pages, prevButton, nextButton, prevIndex);
 })
 
 nextButton.addEventListener('click', e => {
@@ -41,6 +56,10 @@ nextButton.addEventListener('click', e => {
     const currentDot = dotsNavs.querySelector('.current-dot');
     const nextDot = currentDot.nextElementSibling;
     updateDots(currentDot, nextDot);
+
+    const pages = Array.from(output.children);
+    const prevIndex = pages.findIndex(slide => slide === nextPage);
+    hideShowArrows(pages, prevButton, nextButton, prevIndex);
 })
 
 dotsNavs.addEventListener('click', e => {
@@ -53,5 +72,12 @@ dotsNavs.addEventListener('click', e => {
 
     const dots = Array.from(dotsNavs.children);
     const targetIndex = dots.findIndex(dot => dot === targetDot);
+
+    const pages = Array.from(output.children);
+    const targetSlide = pages[targetIndex];
+
+    moveToSlide(currentPage, targetSlide);
+    updateDots(currentDot, targetDot);
+    hideShowArrows(pages, prevButton, nextButton, targetIndex);
 
 })
