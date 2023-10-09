@@ -1,0 +1,176 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #31572c;
+    flex-direction: column;
+    overflow: hidden;
+}
+#headerDiv
+{
+    padding: 20px;
+    overflow: hidden;
+}
+
+#leftDiv
+{
+    width: 75%;
+    float: left;
+    padding: 20px;
+}
+#rightDiv
+{
+    width: 25%;
+    padding: 20px;
+    float: right;
+}
+#pageDisplay
+{
+    float: left;
+    width: 50%;
+}
+
+#btn-section {
+    float: right;
+    width: 50%;
+    gap: 10px;
+    font-size: 15px;
+    font-family: "sofia-pro", sans-serif;
+}
+.btnPosR
+{
+    float: right;
+    margin-top:20px;
+}
+
+.mark-section {
+    display: flex;
+}
+
+.input-area,
+.output-area {
+    width: 100%;
+}
+.output-area
+{
+    margin-top: 10px;
+}
+.text-input,
+.text-output {
+    width: 100%;
+    border: 2px solid #17313a;
+    background: white;
+    color: black(0, 0%, 100%, .9);
+    font-size: 21px;
+    min-height: 500px;
+    font-family: "sofia-pro", sans-serif;
+}
+
+.text-output img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.text-input {
+    resize: none;
+    overflow: hidden;
+}
+
+.option {
+    float: right;
+    display: flex;
+    margin-right: 3px;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-start;
+}
+
+.input {
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 14px;
+    background: #284b63;
+    padding-inline: 5px;
+    border: 1.5px solid black;
+    height: 35px;
+    font-weight: 700;
+}
+
+.save-btn {
+    border-radius: 3px;
+    background: #17313a;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.click-btn {
+    border-radius: 30px;
+    background: #ffffff;
+    border: none;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 70px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#extraText {
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #17313a;
+    background: white;
+    color: black(0, 0%, 100%, .9);
+    font-size: 21px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-family: "sofia-pro", sans-serif;
+}
+
+.openClose-btn {
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: 200px;
+    background: #17313a;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.syntaxInfo {
+    padding-bottom: 20px;
+}
+
+.btnShadow:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nextBtn {
+    float: right;
+}
+
+.text-output h1 {
+    color: blue;
+}
+
+#header{
+    padding: 20px;
+}
