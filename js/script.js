@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     saveBtn.addEventListener("click", () => {
         const selectedFormat = selectMenu.options[selectMenu.selectedIndex].text;
         console.log(selectedFormat);
-        const fileNameInput = document.querySelector(".file-name input");
+        const fileNameInput = document.querySelector(".option input");
         if (selectedFormat === "Text File (.txt)") {
             const blob = new Blob([textarea.value], { type: selectMenu.value });
             const fileUrl = URL.createObjectURL(blob);

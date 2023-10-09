@@ -7,100 +7,99 @@
     <title>Document</title>
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div>
-            <button class="openClose-btn" type="button" id="toggleBtn" onclick="toggleInfo();">Tips and tricks</button>
-            <div id="extraText" class="goodToKnow" style="display: none;">
-                <section class="syntaxInfo">
-                    <h1>Usefull Syntax</h1>
-                    <h4>Header</h4>
-                    <p># Header1</p>
-                    <p>## Header2</p>
-                    <p>### Header3</p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Bit of code</h4>
-                    <p>
-                        ```(code-language)
-                        <br>
-                        let message = 'Hello world';
-                        alert(message);<br>
-                        ```
-                    </p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Table</h4>
-                    <p>| T-Header | T-Header 2 | <br>
-                        | ---- | ---- | <br>
-                        | T-Body | T-Body 2|</p>
-                    </p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Other good to know</h4>
-                    <p>- List</p>
-                    <p>*Italic*</p>
-                    <p>**Bold Text**</p>
-                    <p>--- Line</p>
-                </section>
+    <div id="container">
+        <div id="headerDiv">
+            <div id="pageDisplay">
+                <button class="click-btn" type="button"></button>
+                <button class="click-btn" type="button"></button>
+                <button class="click-btn" type="button"></button>
+                <button class="click-btn" type="button"></button>
             </div>
-        </div>
-        <div class="btn-section">
-            <div class="option file-name">
-                <label>File name:</label>
-                <input class="input" type="text" spellcheck="false" value="[Insert text]">
-            </div>
-            <div class="option save-as">
-                <label>Save as:</label>
-                <div class="select-menu">
-                    <select class="input">
+            <div id="btn-section">
+                <div class="btnPosR">
+                    <button class="save-btn btnShadow" type="button">Save As Text File</button>
+                    <button class="save-btn btnShadow" type="button"
+                      onclick="document.getElementById('uploadButton').click();">Choose File</button>
+                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
+                </div>
+                <div class="option">
+                    <label>File name:</label>
+                    <input class="input" type="text" spellcheck="false" value="[Insert text]">
+                </div>
+                <div class="option">
+                    <label>Save as:</label>
+                    <div class="select-menu">
+                        <select class="input">
                         <option value="text/plain">Text File (.txt)</option>
-                        <option value="application/pdf">PDF (.pdf)</option>
-                        <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">Word
-                            (.docx)</option>
-                    </select>
-                </div>
-            </div>
-            <div>
-                <button class="save-btn btnShadow" type="button">Save As Text File</button>
-                <button class="save-btn btnShadow" type="button"
-                    onclick="document.getElementById('uploadButton').click();">Choose File</button>
-            </div>
-            <div class="option">
-                <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
-            </div>
-        </div>
-        <div id="previewPic">
-            <button class="click-btn" type="button"></button>
-            <button class="click-btn" type="button"></button>
-            <button class="click-btn" type="button"></button>
-            <button class="click-btn" type="button"></button>
-        </div>
-        <div class="mark-section">
-            <div class="input-area">
-                <textarea oninput="autoResize(this)" class="text-input" id="editor" onkeyup="updatePreview()">
-                </textarea>
-                <div>
-                    <button class="preBtn btnShadow" onclick="previousPage()">pre</button>
-                    <button class="addPageBtn btnShadow" onclick="saveTextLS();">Add page</button>
-                    <button class="nextBtn btnShadow" onclick="nextPage();">next</button>
+                            <option value="application/pdf">PDF (.pdf)</option>
+                            <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">Word(.docx)</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="mark-section">
-            <div class="output-area" id="content">
-                <div id="preview" class="text-output"></div>
+            <div id="main">
+                <div id="leftDiv">
+                    <div class="input-area">
+                        <textarea oninput="autoResize(this)" class="text-input" id="editor"
+                            onkeyup="updatePreview()">
+                        </textarea>
+                    </div>
+                    <div class="mark-section">
+                        <div class="output-area" id="content">
+                            <div class="text-output" id="preview"></div>                
+                        </div>         
+                    </div> 
+                </div>
+                <div id="rightDiv">
+                    <div>
+                        <button class="openClose-btn btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips and tricks</button>
+                    </div>
+                    <div id="extraText" class="goodToKnow" style="display: none;">
+                        <section class="syntaxInfo">
+                            <h1>Usefull Syntax</h1>
+                            <h4>Header</h4>
+                            <p># Header1</p>
+                            <p>## Header2</p>
+                            <p>### Header3</p>
+                            <hr>
+                        </section>
+                    <section class="syntaxInfo">
+                        <h4>Bit of code</h4>
+                        <p>
+                            ```(code-language)
+                            <br>
+                            let message = 'Hello world';
+                            alert(message);<br>
+                            ```
+                        </p>
+                        <hr>
+                    </section>
+                    <section class="syntaxInfo">
+                        <h4>Table</h4>
+                        <p>| T-Header | T-Header 2 | <br>
+                            | ---- | ---- | <br>
+                            | T-Body | T-Body 2|</p>
+                        </p>
+                        <hr>
+                    </section>
+                    <section class="syntaxInfo">
+                        <h4>Other good to know</h4>
+                        <p>- List</p>
+                        <p>*Italic*</p>
+                        <p>**Bold Text**</p>
+                        <p>--- Line</p>
+                    </section>
+                </div>
             </div>
+        </div>
+        <div id=footerDiv>
+    
         </div>
     </div>
 </body>
