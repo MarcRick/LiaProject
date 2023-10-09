@@ -47,11 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     saveBtn.addEventListener("click", () => {
         const selectedFormat = selectMenu.options[selectMenu.selectedIndex].text;
         console.log(selectedFormat);
-<<<<<<< HEAD
-        const fileNameInput = document.querySelector(".file-name input");
-=======
         const fileNameInput = document.querySelector(".option input");
->>>>>>> 81a287412add405e14332d055222d94df11a17a4
         if (selectedFormat === "Text File (.txt)") {
             const blob = new Blob([textarea.value], { type: selectMenu.value });
             const fileUrl = URL.createObjectURL(blob);
@@ -59,10 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link.download = fileNameInput.value;
             link.href = fileUrl;
             link.click();
-<<<<<<< HEAD
-=======
             localStorage.clear();
->>>>>>> 81a287412add405e14332d055222d94df11a17a4
         }
         if (selectedFormat === "PDF (.pdf)") {
             console.log(window);
@@ -141,27 +134,6 @@ function autoResize(textarea) {
 }
 
 function Convert_HTML_To_PDF(fileName) {
-<<<<<<< HEAD
-    const doc = new window.jsPDF('p', 'pt', 'a3');
-
-    // Source HTMLElement or a string containing HTML.
-    const elementHTML = document.querySelector("#content");
-
-    doc.html(elementHTML, {
-        callback: function (doc) {
-            // Save the PDF
-            doc.save(fileName);
-        },
-        margin: [10, 10, 10, 10],
-        autoPaging: 'text',
-        x: 0,
-        y: 0,
-        width: 190, //target width in the PDF document
-        windowWidth: 805 //window width in CSS pixels
-    });
-}
-
-=======
     const element = document.getElementById("content");
     const opt = {
         margin: [10, 5, 10, 5],
@@ -244,4 +216,3 @@ function chosePage() {
 //newPage.textContent = Page ${totalPages} Content;
 //document.getElementById('pageContainer').appendChild(newPage);
 //}
->>>>>>> 81a287412add405e14332d055222d94df11a17a4
