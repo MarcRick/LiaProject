@@ -1,3 +1,6 @@
+var textKey = [];
+var textKeyIndex = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const fontSelect = document.getElementById("fontSelect");
@@ -44,7 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
     saveBtn.addEventListener("click", () => {
         const selectedFormat = selectMenu.options[selectMenu.selectedIndex].text;
         console.log(selectedFormat);
+<<<<<<< HEAD
         const fileNameInput = document.querySelector(".file-name input");
+=======
+        const fileNameInput = document.querySelector(".option input");
+>>>>>>> 81a287412add405e14332d055222d94df11a17a4
         if (selectedFormat === "Text File (.txt)") {
             const blob = new Blob([textarea.value], { type: selectMenu.value });
             const fileUrl = URL.createObjectURL(blob);
@@ -52,10 +59,16 @@ document.addEventListener("DOMContentLoaded", function () {
             link.download = fileNameInput.value;
             link.href = fileUrl;
             link.click();
+<<<<<<< HEAD
+=======
+            localStorage.clear();
+>>>>>>> 81a287412add405e14332d055222d94df11a17a4
         }
         if (selectedFormat === "PDF (.pdf)") {
             console.log(window);
+
             Convert_HTML_To_PDF(fileNameInput.value);
+            localStorage.clear();
             // Convert HTML content to PDF         
         }
         if (selectedFormat === "Word (.docx)") {
@@ -66,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link.download = fileNameInput.value;
             link.href = fileUrl;
             link.click();
+            localStorage.clear();
         }
     });
 
@@ -127,6 +141,7 @@ function autoResize(textarea) {
 }
 
 function Convert_HTML_To_PDF(fileName) {
+<<<<<<< HEAD
     const doc = new window.jsPDF('p', 'pt', 'a3');
 
     // Source HTMLElement or a string containing HTML.
@@ -146,3 +161,87 @@ function Convert_HTML_To_PDF(fileName) {
     });
 }
 
+=======
+    const element = document.getElementById("content");
+    const opt = {
+        margin: [10, 5, 10, 5],
+        filename: fileName,
+        pagebreak: { mode: 'avoid-all', before: '#page2el' }
+    };
+
+    html2pdf(element, opt);
+}
+
+var isToggled = false;
+function toggleInfo() {
+    var showDiv = document.getElementById('extraText');
+
+    if (isToggled) {
+        showDiv.style.display = 'none';
+        console.log(isToggled)
+    } else {
+        showDiv.style.display = 'block';
+        console.log(isToggled)
+    }
+    isToggled = !isToggled;
+}
+
+function saveTextLS() {
+    const textValue = document.getElementById("editor").value;
+    console.log(textValue);
+    localStorage.setItem(window.textKeyIndex, textValue);
+    window.textKey.push(textValue);
+    document.getElementById("editor").value = "";
+    window.textKeyIndex += 1;
+    console.log(window.textKey);
+    const newPage = document.createElement('div');
+    document.getElementById('editor').appendChild(newPage);
+
+    updateContent();
+}
+function previousPage() {
+    if (window.textKeyIndex > 0) {
+        window.textKeyIndex -= 1;
+        console.log(textKeyIndex)
+        const currentPageText = localStorage.getItem(window.textKeyIndex);
+        console.log(currentPageText)
+        document.getElementById('editor').value = currentPageText || "";
+    }
+    console.log(textKeyIndex)
+    updateContent();
+}
+function nextPage() {
+    if (window.textKeyIndex < textKey.length) {
+        window.textKeyIndex += 1;
+        console.log(textKeyIndex)
+        const currentPageText = localStorage.getItem(window.textKeyIndex);
+        console.log(currentPageText)
+        document.getElementById('editor').value = currentPageText || "";
+    }
+    console.log(textKeyIndex)
+    updateContent();
+
+}
+function updateContent() {
+    const showingPageText = localStorage.getItem(window.textKeyIndex);
+    document.getElementById('preview').textContent = showingPageText || "";
+}
+
+
+function chosePage() {
+    window.textKeyIndex = knappval;
+    const Text = localStorage.getItem(window.textKey[textKeyIndex].value);
+    document.getElementById("editor").value = Text.value;
+}
+
+//function addPage() {
+//  console.log(totalPages);
+// totalPages++;
+//console.log(totalPages);
+//const newPage = document.createElement('div');
+//newPage.id = page${totalPages};
+//newPage.className = 'page';
+//newPage.textContent = Page ${totalPages} Content;
+//document.getElementById('pageContainer').appendChild(newPage);
+//}
+>>>>>>> 81a287412add405e14332d055222d94df11a17a4
