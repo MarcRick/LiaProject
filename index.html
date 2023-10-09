@@ -9,6 +9,11 @@
     <script src="./js/script.js"></script>
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Marcellus&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -19,7 +24,21 @@
                 <button class="click-btn" type="button"></button>
                 <button class="click-btn" type="button"></button>
                 <button class="click-btn" type="button"></button>
+                <div class="font-selector">
+                    <label for="fontSelect">Choose a Font:</label>
+                    <select id="fontSelect">
+                        <option value='poppins'>Poppins (Default)</option>
+                        <option value='butterflyKids'>Butterfly Kids</option>
+                        <option value='heebo'>Heebo</option>
+                        <option value='homemadeApple'>Homemade Apple</option>
+                        <option value='inconsolata'>Inconsolata</option>
+                        <option value='marcellus'>Marcellus</option>
+                        <option value='tenorSans'>Tenor Sans</option>
+                        <option value='theGirlNextDoor'>The Girl Next Door</option>
+                    </select>
+                </div>
             </div>
+            
             <div id="btn-section">
                 <div class="btnPosR">
                     <button class="save-btn btnShadow" type="button">Save As Text File</button>
@@ -29,7 +48,7 @@
                 </div>
                 <div class="option">
                     <label>File name:</label>
-                    <input class="input" type="text" spellcheck="false" value="[Insert text]">
+                    <input class="input" type="text" spellcheck="false" placeholder="Insert text">
                 </div>
                 <div class="option">
                     <label>Save as:</label>
@@ -41,7 +60,8 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div>          
+            
         </div>
             <div id="main">
                 <div id="leftDiv">

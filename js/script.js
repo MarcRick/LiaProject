@@ -2,6 +2,40 @@ var textKey = [];
 var textKeyIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    const fontSelect = document.getElementById("fontSelect");
+    const previewElement = document.getElementById("preview");
+
+    fontSelect.addEventListener('change', function () {
+        const selectedFont = this.value;
+        let fontFamily = '';
+
+        switch (selectedFont) {
+            case 'butterflyKids':
+                fontFamily = "'Butterfly Kids', cursive";
+                break;
+            case 'heebo':
+                fontFamily = "'Heebo', sans-serif";
+                break;
+            case 'homemadeApple':
+                fontFamily = "'Homemade Apple', cursive";
+                break;
+            case 'inconsolata':
+                fontFamily = "'Inconsolata', monospace";
+                break;
+            case 'marcellus':
+                fontFamily = "'Marcellus', serif";
+                break;
+            case 'tenorSans':
+                fontFamily = "'Tenor Sans', sans-serif";
+                break;
+            case 'theGirlNextDoor':
+                fontFamily = "'The Girl Next Door', cursive";
+                break;
+        }
+        previewElement.style.fontFamily = fontFamily;
+    });
+
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
     const saveBtn = document.querySelector(".save-btn");
