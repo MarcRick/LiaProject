@@ -100,32 +100,119 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-function updatePreview() {
+function updatePreview(e) {
     let previewElement = document.getElementById("preview");
     let editorValue = document.getElementById("editor").value;
+
+
+    let markedUpHTML = marked(findImgMatch(editorValue));
+    createPages(markedUpHTML);
+}
+
+function createPages(editorValue) {
+
+    let newPages = false;
+    const occurrences = editorValue.split('<hr>');
+    const track = document.querySelector('.output-area');
+    const pages = Array.from(track.children);
+    // dots
+    const dots = document.querySelector('.carousel__nav');
+    // Ensure there are enough pages
+    while (occurrences.length > pages.length) {
+        const newLi = document.createElement('li');
+        newLi.className = 'text-output';
+        track.appendChild(newLi);
+        pages.push(newLi); // Add the new page to the pages array
+        addCurrentToLast(track);
+        newPages = true;
+        // dots 
+    }
+
+    // Remove extra pages if there are more pages than occurrences
+    while (occurrences.length < pages.length) {
+        const extraPage = pages.pop(); // Remove the last page
+        track.removeChild(extraPage); // Remove it from the DOM
+        addCurrentToLast(track);
+        newPages = true;
+    }
+
+        // Update the innerHTML for each page
+        for (let i = 0; i < occurrences.length; i++) {
+            pages[i].innerHTML = occurrences[i];
+            if (newPages) {
+                if (i === 0) {
+                    while (dots.firstChild) {
+                        dots.removeChild(dots.firstChild);
+                      }
+                }
+    
+                const newdot = document.createElement('button');
+                newdot.className = 'carousel__indicator';
+                dots.appendChild(newdot);
+            }
+    
+        }
+
+    if (newPages) {
+        const allCurrent = document.querySelectorAll('.current-dot') || [];
+        if (allCurrent.length > 0) {
+            allCurrent.forEach(x => x.classList.remove('current-dot'));
+        }
+        const lastSiblingdot = document.querySelector('.carousel__indicator:last-child');
+        lastSiblingdot.classList.add('current-dot');
+
+
+
+        const leftButton = document.querySelector('.carousel__button--left');
+        if (pages.length > 1) {
+            leftButton.classList.remove('is-hidden')
+        }
+        else {
+            leftButton.classList.add('is-hidden');
+            const rightButton = document.querySelector('.carousel__button--right');
+            rightButton.classList.add('is-hidden');
+        }
+    }
+
+
+
+}
+
+function findImgMatch(editorValue){
 
     // Hitta alla matchningar av ![](...) i texten
     let matches = editorValue.match(/!\[([^\]]*)\]\((.*?)\)/g);
 
     // Replace matches with imgDataUrl from localStorage
     if (matches) {
-
+   
         editorValue = editorValue.replace(/!\[([^\]]*)\]\((.*?)\)/g
-            , (match, altText, key) => {
-                const imgDataUrl = localStorage.getItem(key);
-                if (imgDataUrl) {
-                    return `![${altText}](${imgDataUrl})`;
-                } else {
-                    // If imgDataUrl not found in localStorage, you can handle it here.
-                    return match; // Keep the original text if no replacement is available.
-                }
-            });
-
+        , (match, altText, key) => {
+            const imgDataUrl = localStorage.getItem(key);
+            if (imgDataUrl) {
+            return `![${altText}](${imgDataUrl})`;
+            } else {
+            // If imgDataUrl not found in localStorage, you can handle it here.
+            return match; // Keep the original text if no replacement is available.
+            }
+        });
+   
     }
 
-    let markedUpHTML = marked(editorValue);
-    previewElement.innerHTML = markedUpHTML;
+    return editorValue
 }
+
+
+function addCurrentToLast(track) {
+    const allCurrent = track.querySelectorAll('.current-page') || [];
+    if (allCurrent.length > 0) {
+        allCurrent.forEach(x => x.classList.remove('current-page'));
+    }
+
+    const lastSibling = track.querySelector('.text-output:last-child');
+    lastSibling.classList.add('current-page');
+}
+
 
 // Funktion för att ändra höjden på textarea baserat på innehållet
 function autoResize(textarea) {
