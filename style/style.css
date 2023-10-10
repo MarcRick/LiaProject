@@ -53,16 +53,23 @@
 
 .mark-section {
     display: flex;
+    position: relative;
+    height: 530px;
 }
 
 .input-area,
 .output-area {
     width: 100%;
 }
-.output-area
-{
+
+.output-area{
     margin-top: 10px;
+    list-style: none;
+    position: relative;
+    position: absolute;
+
 }
+
 .text-input,
 .text-output {
     width: 100%;
@@ -101,11 +108,25 @@
     border: 1.5px solid black;
     height: 35px;
     font-weight: 700;
+    position: relative;
 }
 
 .save-btn {
     border-radius: 3px;
     background: #17313a;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+.btnShadow:hover {
+    border-radius: 3px;
+    background: #80aaff;
+    border: none;
     color: hsla(0, 0%, 100%, .9);
     font-size: 15px;
     height: 35px;
@@ -171,6 +192,64 @@
     color: blue;
 }
 
+.text-output {
+    position: absolute;
+}
+
 #header{
     padding: 20px;
 }
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carousel__button--left {
+    left: -30px;
+}
+
+.carousel__button--right {
+    right: -30px;
+}
+
+.is-hidden {display: none;}
+
+.current-page {
+    z-index: 1;
+}
+
+.carousel__nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0,0,0,.3);
+    margin: 0 7px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.current-dot {
+    background: rgba(0, 0, 0, .75);
+}
+
+.arrows {
+    width: 50px;
+    height: 70px;
+  }
