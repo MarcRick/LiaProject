@@ -1,0 +1,251 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #31572c;
+    flex-direction: column;
+    overflow: hidden;
+}
+#headerDiv
+{
+    padding: 20px;
+    overflow: hidden;
+}
+
+#leftDiv
+{
+    width: 75%;
+    float: left;
+    padding: 20px;
+}
+#rightDiv
+{
+    width: 25%;
+    padding: 20px;
+    float: right;
+}
+#pageDisplay
+{
+    float: left;
+    width: 50%;
+}
+
+#btn-section {
+    float: right;
+    width: 50%;
+    gap: 10px;
+    font-size: 15px;
+    font-family: "sofia-pro", sans-serif;
+}
+.btnPosR
+{
+    float: right;
+    margin-top:20px;
+}
+
+.mark-section {
+    display: flex;
+    position: relative;
+    height: 530px;
+}
+
+.input-area,
+.output-area {
+    width: 100%;
+}
+
+.output-area{
+    margin-top: 10px;
+    list-style: none;
+    position: relative;
+    position: absolute;
+
+}
+
+.text-input,
+.text-output {
+    width: 100%;
+    border: 2px solid #17313a;
+    background: white;
+    color: black(0, 0%, 100%, .9);
+    font-size: 21px;
+    min-height: 500px;
+    font-family: "sofia-pro", sans-serif;
+}
+
+.text-output img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.text-input {
+    resize: none;
+    overflow: hidden;
+}
+
+.option {
+    float: right;
+    display: flex;
+    margin-right: 3px;
+    flex-direction: column;
+    gap: 3px;
+    align-items: flex-start;
+}
+
+.input {
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 14px;
+    background: #284b63;
+    padding-inline: 5px;
+    border: 1.5px solid black;
+    height: 35px;
+    font-weight: 700;
+    position: relative;
+}
+
+.save-btn {
+    border-radius: 3px;
+    background: #17313a;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+
+.btnShadow:hover {
+    border-radius: 3px;
+    background: #80aaff;
+    border: none;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.click-btn {
+    border-radius: 30px;
+    background: #ffffff;
+    border: none;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 70px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#extraText {
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #17313a;
+    background: white;
+    color: black(0, 0%, 100%, .9);
+    font-size: 21px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-family: "sofia-pro", sans-serif;
+}
+
+.openClose-btn {
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    width: 200px;
+    background: #17313a;
+    color: hsla(0, 0%, 100%, .9);
+    font-size: 15px;
+    height: 35px;
+    padding-inline: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.syntaxInfo {
+    padding-bottom: 20px;
+}
+
+.btnShadow:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nextBtn {
+    float: right;
+}
+
+.text-output {
+    position: absolute;
+}
+
+#header{
+    padding: 20px;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carousel__button--left {
+    left: -30px;
+}
+
+.carousel__button--right {
+    right: -30px;
+}
+
+.is-hidden {display: none;}
+
+.current-page {
+    z-index: 1;
+}
+
+.carousel__nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel__indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(0,0,0,.3);
+    margin: 0 7px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.current-dot {
+    background: rgba(0, 0, 0, .75);
+}
+
+.arrows {
+    width: 50px;
+    height: 70px;
+  }
