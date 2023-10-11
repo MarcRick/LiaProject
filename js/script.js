@@ -136,22 +136,22 @@ function createPages(editorValue) {
         newPages = true;
     }
 
-        // Update the innerHTML for each page
-        for (let i = 0; i < occurrences.length; i++) {
-            pages[i].innerHTML = occurrences[i];
-            if (newPages) {
-                if (i === 0) {
-                    while (dots.firstChild) {
-                        dots.removeChild(dots.firstChild);
-                      }
+    // Update the innerHTML for each page
+    for (let i = 0; i < occurrences.length; i++) {
+        pages[i].innerHTML = occurrences[i];
+        if (newPages) {
+            if (i === 0) {
+                while (dots.firstChild) {
+                    dots.removeChild(dots.firstChild);
                 }
-    
-                const newdot = document.createElement('button');
-                newdot.className = 'carousel__indicator';
-                dots.appendChild(newdot);
             }
-    
+
+            const newdot = document.createElement('button');
+            newdot.className = 'carousel__indicator';
+            dots.appendChild(newdot);
         }
+
+    }
 
     if (newPages) {
         const allCurrent = document.querySelectorAll('.current-dot') || [];
@@ -178,25 +178,25 @@ function createPages(editorValue) {
 
 }
 
-function findImgMatch(editorValue){
+function findImgMatch(editorValue) {
 
     // Hitta alla matchningar av ![](...) i texten
     let matches = editorValue.match(/!\[([^\]]*)\]\((.*?)\)/g);
 
     // Replace matches with imgDataUrl from localStorage
     if (matches) {
-   
+
         editorValue = editorValue.replace(/!\[([^\]]*)\]\((.*?)\)/g
-        , (match, altText, key) => {
-            const imgDataUrl = localStorage.getItem(key);
-            if (imgDataUrl) {
-            return `![${altText}](${imgDataUrl})`;
-            } else {
-            // If imgDataUrl not found in localStorage, you can handle it here.
-            return match; // Keep the original text if no replacement is available.
-            }
-        });
-   
+            , (match, altText, key) => {
+                const imgDataUrl = localStorage.getItem(key);
+                if (imgDataUrl) {
+                    return `![${altText}](${imgDataUrl})`;
+                } else {
+                    // If imgDataUrl not found in localStorage, you can handle it here.
+                    return match; // Keep the original text if no replacement is available.
+                }
+            });
+
     }
 
     return editorValue
@@ -292,6 +292,7 @@ function chosePage() {
     const Text = localStorage.getItem(window.textKey[textKeyIndex].value);
     document.getElementById("editor").value = Text.value;
 }
+
 
 //function addPage() {
 //  console.log(totalPages);
