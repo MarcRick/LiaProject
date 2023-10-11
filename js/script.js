@@ -221,15 +221,34 @@ function autoResize(textarea) {
 }
 
 function Convert_HTML_To_PDF(fileName) {
-    const element = document.getElementById("content");
+    const elements = document.querySelectorAll(".output-area li");
+
+    // Create an array to store the content for each page
+    const pages = [];
+
+    elements.forEach((element, index) => {
+        // Add a page break before each item except the first one
+        if (index > 0) {
+            pages.push('<div style="page-break-before: always;"></div>');
+        }
+
+        // Add the content of the list item
+        pages.push(element.innerHTML);
+    });
+
+    // Combine the pages into a single HTML string
+    const htmlContent = pages.join('');
+
+    // Define the PDF generation options
     const opt = {
         margin: [10, 5, 10, 5],
-        filename: fileName,
-        pagebreak: { mode: 'avoid-all', before: '#page2el' }
+        filename: fileName
     };
 
-    html2pdf(element, opt);
+    // Use the html2pdf library to generate the PDF
+    html2pdf(htmlContent, opt);
 }
+
 
 var isToggled = false;
 function toggleInfo() {
