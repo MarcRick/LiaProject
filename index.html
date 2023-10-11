@@ -9,6 +9,11 @@
     <script src="./js/script.js"></script>
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Marcellus&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -19,7 +24,21 @@
                 <button class="click-btn" type="button"></button>
                 <button class="click-btn" type="button"></button>
                 <button class="click-btn" type="button"></button>
+                <div class="font-selector">
+                    <label for="fontSelect">Choose a Font:</label>
+                    <select id="fontSelect">
+                        <option value='poppins'>Poppins (Default)</option>
+                        <option value='butterflyKids'>Butterfly Kids</option>
+                        <option value='heebo'>Heebo</option>
+                        <option value='homemadeApple'>Homemade Apple</option>
+                        <option value='inconsolata'>Inconsolata</option>
+                        <option value='marcellus'>Marcellus</option>
+                        <option value='tenorSans'>Tenor Sans</option>
+                        <option value='theGirlNextDoor'>The Girl Next Door</option>
+                    </select>
+                </div>
             </div>
+            
             <div id="btn-section">
                 <div class="btnPosR">
                     <button class="save-btn btnShadow" type="button">Save As Text File</button>
@@ -29,7 +48,7 @@
                 </div>
                 <div class="option">
                     <label>File name:</label>
-                    <input class="input" type="text" spellcheck="false" value="[Insert text]">
+                    <input class="input" type="text" spellcheck="false" placeholder="Insert text">
                 </div>
                 <div class="option">
                     <label>Save as:</label>
@@ -41,19 +60,36 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div>          
+            
         </div>
             <div id="main">
                 <div id="leftDiv">
                     <div class="input-area">
                         <textarea oninput="autoResize(this)" class="text-input" id="editor"
-                            onkeyup="updatePreview()">
-                        </textarea>
+                            onkeyup="updatePreview()"></textarea>
                     </div>
                     <div class="mark-section">
-                        <div class="output-area" id="content">
-                            <div class="text-output" id="preview"></div>                
-                        </div>         
+                        
+                        <button class="carousel__button carousel__button--left is-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                              </svg>
+                        </button>
+                        
+                        <ul class="output-area" id="content">
+                            <li id="preview" class="text-output current-page"></li>
+                        </ul>
+        
+                        <button class="carousel__button carousel__button--right is-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                              </svg>
+                        </button>
+        
+                        <div class="carousel__nav">
+                            <button class="carousel__indicator current-dot"></button>
+                        </div>       
                     </div> 
                 </div>
                 <div id="rightDiv">
@@ -102,6 +138,9 @@
     
         </div>
     </div>
+
+
+    <script src="./js/carousel.js"></script>
 </body>
 
 </html>
