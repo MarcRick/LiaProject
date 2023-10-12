@@ -36,6 +36,35 @@ document.addEventListener("DOMContentLoaded", function () {
         previewElement.style.fontFamily = fontFamily;
     });
 
+    const layoutSelect = document.getElementById("layoutSelect");
+    const inputLayout = document.getElementById("content");
+    layoutSelect.addEventListener('change', function () {
+        const selectedLayout = layoutSelect.value;
+        let layoutStyle = '';
+        switch (selectedLayout) {
+            case 'A3':
+                layoutStyle =
+                    inputLayout.style.width = "11.7in";
+                inputLayout.style.height = "16.5in";
+                break;
+            case 'A4':
+                layoutStyle =
+                    inputLayout.style.width = "8.3in";
+                inputLayout.style.height = "11.7in";
+                break;
+            case 'A5':
+                layoutStyle =
+                    inputLayout.style.width = "5.8in";
+                inputLayout.style.height = "8.3in";
+                break;
+            default:
+                break;
+
+        }
+        selectedLayout.style.layoutStyle = layoutStyle;
+
+    });
+
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
     const saveBtn = document.querySelector(".save-btn");
