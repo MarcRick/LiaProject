@@ -36,6 +36,35 @@ document.addEventListener("DOMContentLoaded", function () {
         previewElement.style.fontFamily = fontFamily;
     });
 
+    const layoutSelect = document.getElementById("layoutSelect");
+    const inputLayout = document.getElementById("content");
+    layoutSelect.addEventListener('change', function () {
+        const selectedLayout = layoutSelect.value;
+        let layoutStyle = '';
+        switch (selectedLayout) {
+            case 'A3':
+                layoutStyle =
+                    inputLayout.style.width = "11.7in";
+                inputLayout.style.height = "16.5in";
+                break;
+            case 'A4':
+                layoutStyle =
+                    inputLayout.style.width = "8.3in";
+                inputLayout.style.height = "11.7in";
+                break;
+            case 'A5':
+                layoutStyle =
+                    inputLayout.style.width = "5.8in";
+                inputLayout.style.height = "8.3in";
+                break;
+            default:
+                break;
+
+        }
+        selectedLayout.style.layoutStyle = layoutStyle;
+
+    });
+
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
     const saveBtn = document.querySelector(".save-btn");
@@ -221,15 +250,34 @@ function autoResize(textarea) {
 }
 
 function Convert_HTML_To_PDF(fileName) {
-    const element = document.getElementById("content");
+    const elements = document.querySelectorAll(".output-area li");
+
+    // Create an array to store the content for each page
+    const pages = [];
+
+    elements.forEach((element, index) => {
+        // Add a page break before each item except the first one
+        if (index > 0) {
+            pages.push('<div style="page-break-before: always;"></div>');
+        }
+
+        // Add the content of the list item
+        pages.push(element.innerHTML);
+    });
+
+    // Combine the pages into a single HTML string
+    const htmlContent = pages.join('');
+
+    // Define the PDF generation options
     const opt = {
         margin: [10, 5, 10, 5],
-        filename: fileName,
-        pagebreak: { mode: 'avoid-all', before: '#page2el' }
+        filename: fileName
     };
 
-    html2pdf(element, opt);
+    // Use the html2pdf library to generate the PDF
+    html2pdf(htmlContent, opt);
 }
+
 
 var isToggled = false;
 function toggleInfo() {
@@ -292,7 +340,6 @@ function chosePage() {
     const Text = localStorage.getItem(window.textKey[textKeyIndex].value);
     document.getElementById("editor").value = Text.value;
 }
-
 
 //function addPage() {
 //  console.log(totalPages);
