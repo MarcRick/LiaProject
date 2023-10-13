@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
     layoutSelect.addEventListener('change', function () {
         const selectedLayout = layoutSelect.value;
 
-        if (selectedLayout === 'A4') {
+        if (selectedLayout === 'CB') {
             inputLayout.style.width = "10in";
             inputLayout.style.height = "7in";
-        } else if (selectedLayout === 'A5') {
+        } else if (selectedLayout === 'PB') {
             inputLayout.style.width = "5.8in";
             inputLayout.style.height = "8.3in";
         }
