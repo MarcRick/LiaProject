@@ -9,7 +9,7 @@
 #container {
     width: 100%;
     min-height: 100vh;
-    background-color: #31572c;
+    background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
 }
@@ -17,6 +17,7 @@
 {
     padding: 20px;
     overflow: hidden;
+    background-color: #0b090a;
 }
 
 #leftDiv
@@ -121,7 +122,7 @@
 .btnPosR
 {
     float: right;
-    margin-top:20px;
+    margin-top: 24px;
 }
 
 .option {
@@ -135,7 +136,6 @@
 
 .btnShadow:hover {
     border-radius: 3px;
-    background: #80aaff;
     border: none;
     color: hsla(0, 0%, 100%, .9);
     font-size: 15px;
@@ -247,4 +247,10 @@
 .arrows {
     width: 50px;
     height: 70px;
+  }
+
+  label {
+    color: white;
+    font-weight: 600;
+    font-family: cursive;
   }

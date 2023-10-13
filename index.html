@@ -20,12 +20,8 @@
     <div id="container">
         <div id="headerDiv">
             <div id="pageDisplay">
-                <button class="click-btn" type="button"></button>
-                <button class="click-btn" type="button"></button>
-                <button class="click-btn" type="button"></button>
-                <button class="click-btn" type="button"></button>
                 <div class="font-selector">
-                    <label for="fontSelect">Choose a Font:</label>
+                    <label for="fontSelect">Font:</label>
                     <select id="fontSelect">
                         <option value='poppins'>Poppins (Default)</option>
                         <option value='butterflyKids'>Butterfly Kids</option>
@@ -38,16 +34,23 @@
                     </select>
                 </div>
                 <div class="layout-select">
-                    <label for="layoutSelect">Choose a book layout:</label>
+                    <label for="layoutSelect">Layout:</label>
                     <select id="layoutSelect">
                         <option value='A4'>A4</option>
                         <option value='A5'>A5</option>
                     </select>
                 </div>
+                <div>    
+                    <label>Pic Placement:</label>
+                    <select id="positionSelect" onchange="ChangeIMGLayout()">
+                        <option value="bottom">Bottom</option>
+                        <option value="top">Top</option>
+                    </select>
+                </div>
             </div>
             <div id="btn-section">
                 <div class="btnPosR">
-                    <button class="save-btn btnShadow" type="button">Save As Text File</button>
+                    <button class="save-btn btnShadow" type="button">Save File</button>
                     <button class="save-btn btnShadow" type="button"
                       onclick="document.getElementById('uploadButton').click();">Choose File</button>
                     <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
@@ -60,9 +63,9 @@
                     <label>Save as:</label>
                     <div class="select-menu">
                         <select class="input">
-                        <option value="text/plain">Text File (.txt)</option>
+                            <option value="text/plain">Text File (.txt)</option>
                             <option value="application/pdf">PDF (.pdf)</option>
-                            <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">Word(.docx)</option>
+                            <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">Word (.docx)</option>
                         </select>
                     </div>
                 </div>
@@ -72,7 +75,7 @@
                 <div id="leftDiv">
                     <div class="input-area">
                         <textarea oninput="autoResize(this)" class="text-input" id="editor"
-                            onkeyup="updatePreview()"></textarea>
+                            onkeyup="updatePreview()" placeholder="Insert text"></textarea>
                     </div>
                     <div class="mark-section">
                         

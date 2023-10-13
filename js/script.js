@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedLayout.style.layoutStyle = layoutStyle;
 
     });
-
+    
 
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
@@ -198,9 +198,27 @@ function createPages(editorValue) {
             rightButton.classList.add('is-hidden');
         }
     }
+}
 
+function ChangeIMGLayout() {
+    const positionSelect = document.getElementById('positionSelect');
+    const selectedPosition = positionSelect.value;
 
+    const styleSheet = document.styleSheets[0];
+    const rules = styleSheet.cssRules;
 
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].selectorText === '.text-output img') {
+            const rule = rules[i];
+            if (selectedPosition === 'bottom') {
+                rule.style.bottom = rule.style.top;
+                rule.style.removeProperty('top');
+            } else {
+                rule.style.top = rule.style.bottom;
+                rule.style.removeProperty('bottom');
+            }
+        }
+    }
 }
 
 function findImgMatch(editorValue){
