@@ -38,39 +38,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const layoutSelect = document.getElementById("layoutSelect");
     const inputLayout = document.getElementById("content");
+
     layoutSelect.addEventListener('change', function () {
         const selectedLayout = layoutSelect.value;
-        let layoutStyle = '';
-        switch (selectedLayout) {
-            case 'A3':
-                layoutStyle =
-                    inputLayout.style.width = "11.7in";
-                inputLayout.style.height = "16.5in";
-                break;
-            case 'A4':
-                layoutStyle =
-                    inputLayout.style.width = "8.3in";
-                inputLayout.style.height = "11.7in";
-                break;
-            case 'A5':
-                layoutStyle =
-                    inputLayout.style.width = "5.8in";
-                inputLayout.style.height = "8.3in";
-                break;
-            default:
-                break;
 
+        if (selectedLayout === 'A4') {
+            inputLayout.style.width = "10in";
+            inputLayout.style.height = "7in";
+        } else if (selectedLayout === 'A5') {
+            inputLayout.style.width = "5.8in";
+            inputLayout.style.height = "8.3in";
         }
-        selectedLayout.style.layoutStyle = layoutStyle;
+
 
     });
+
 
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
     const saveBtn = document.querySelector(".save-btn");
     selectMenu.addEventListener("change", () => {
         const selectedFormat = selectMenu.options[selectMenu.selectedIndex].text;
-        saveBtn.innerText = `Save As ${selectedFormat.split(" ")[0]} File`;
+
     });
 
     saveBtn.addEventListener("click", () => {
@@ -128,6 +117,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+function changeIMGLayout() {
+    const positionSelect = document.getElementById('picturePlacement');
+    const selectedPosition = positionSelect.value;
+
+    const styleSheet = document.styleSheets[0];
+    const rules = styleSheet.cssRules;
+
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].selectorText === '.text-output img') {
+            const rule = rules[i];
+            if (selectedPosition === 'Bottom') {
+                rule.style.bottom = rule.style.top;
+                rule.style.removeProperty('Top');
+            } else {
+                rule.style.top = rule.style.bottom;
+                rule.style.removeProperty('Bottom');
+            }
+        }
+    }
+};
 
 function updatePreview(e) {
     let previewElement = document.getElementById("preview");
