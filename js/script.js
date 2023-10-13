@@ -42,11 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedLayout = layoutSelect.value;
         let layoutStyle = '';
         switch (selectedLayout) {
-            case 'A3':
-                layoutStyle =
-                    inputLayout.style.width = "11.7in";
-                inputLayout.style.height = "16.5in";
-                break;
             case 'A4':
                 layoutStyle =
                     inputLayout.style.width = "8.3in";
@@ -64,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedLayout.style.layoutStyle = layoutStyle;
 
     });
+
 
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');

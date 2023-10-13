@@ -37,21 +37,24 @@
     width: 50%;
 }
 
-.input-area,
-.output-area {
-    width: 100%;
-}
-
 .input-area{
     overflow-y: auto;
-    height: 504px;
+    height: 404px;
+    width: 65%;
 }
 
 .output-area{
+    width: 8.3in;
+    height: 100%;
     margin-top: 10px;
     list-style: none;
     position: relative;
+}
 
+.mark-section {
+    display: flex;
+    position: relative;
+    height: 100%;
 }
 
 .text-input,
@@ -61,10 +64,10 @@
     background: white;
     color: black(0, 0%, 100%, .9);
     font-size: 21px;
-    min-height: 500px;
+    min-height: 400px;
     font-family: "sofia-pro", sans-serif;
-    padding: 10px;
     overflow-wrap: break-word;
+    padding: 10px
 }
 
 .text-input {
@@ -73,12 +76,16 @@
 }
 
 .text-output {
+    height:98%;
     position: absolute;
 }
 
 .text-output img {
     max-width: 100%;
     max-height: 80%;
+    bottom: 0;
+    position: absolute;
+    left:0;
 }
 
 .input {
@@ -115,12 +122,6 @@
 {
     float: right;
     margin-top:20px;
-}
-
-.mark-section {
-    display: flex;
-    position: relative;
-    height: 530px;
 }
 
 .option {
