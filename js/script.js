@@ -3,6 +3,17 @@ var textKeyIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    const previewBtn = document.getElementById("preButton");
+    const clickPreview = document.getElementById("overlay");
+
+    previewBtn.addEventListener('click', function () {
+        if (clickPreview.style.display === "none")
+            clickPreview.style.display = "block"; // Change the display property
+        else
+            clickPreview.style.display = "none";
+
+    });
+
     const fontSelect = document.getElementById("fontSelect");
     const previewElement = document.getElementById("preview");
 
@@ -52,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     });
-
 
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
@@ -287,6 +297,32 @@ function Convert_HTML_To_PDF(fileName) {
     // Use the html2pdf library to generate the PDF
     html2pdf(htmlContent, opt);
 }
+/*function Create_Preview() {
+    const elements = document.querySelectorAll(".output-area li");
+    const previewContainer = document.getElementById("preview-container");
+
+    // Hide the output area
+    const outputArea = document.querySelector(".output-area");
+    outputArea.style.display = "none";
+
+    elements.forEach((element, index) => {
+        const prePageDiv = document.createElement("preview");
+        prePageDiv.classList.add("page-preview");
+
+        prePageDiv.innerHTML = element.innerHTML;
+
+        previewContainer.appendChild(prePageDiv);
+
+        if (index < elements.length - 1) {
+            const pageBreak = document.createElement("div");
+            pageBreak.style.pageBreakBefore = "always";
+            previewContainer.appendChild(pageBreak);
+        }
+    });
+}*/
+
+// Call Create_Preview to generate and display the preview
+/*Create_Preview();*/
 
 
 var isToggled = false;
@@ -351,13 +387,5 @@ function chosePage() {
     document.getElementById("editor").value = Text.value;
 }
 
-//function addPage() {
-//  console.log(totalPages);
-// totalPages++;
-//console.log(totalPages);
-//const newPage = document.createElement('div');
-//newPage.id = page${totalPages};
-//newPage.className = 'page';
-//newPage.textContent = Page ${totalPages} Content;
-//document.getElementById('pageContainer').appendChild(newPage);
-//}
+
+
