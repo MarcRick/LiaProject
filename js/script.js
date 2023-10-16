@@ -3,37 +3,39 @@ var textKeyIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    let selectedFontFamily = '';
+
     const fontSelect = document.getElementById("fontSelect");
     const previewElement = document.getElementById("preview");
 
     fontSelect.addEventListener('change', function () {
         const selectedFont = this.value;
-        let fontFamily = '';
+        
 
         switch (selectedFont) {
             case 'butterflyKids':
-                fontFamily = "'Butterfly Kids', cursive";
+                selectedFontFamily = "'Butterfly Kids', cursive";
                 break;
             case 'heebo':
-                fontFamily = "'Heebo', sans-serif";
+                selectedFontFamily = "'Heebo', sans-serif";
                 break;
             case 'homemadeApple':
-                fontFamily = "'Homemade Apple', cursive";
+                selectedFontFamily = "'Homemade Apple', cursive";
                 break;
             case 'inconsolata':
-                fontFamily = "'Inconsolata', monospace";
+                selectedFontFamily = "'Inconsolata', monospace";
                 break;
             case 'marcellus':
-                fontFamily = "'Marcellus', serif";
+                selectedFontFamily = "'Marcellus', serif";
                 break;
             case 'tenorSans':
-                fontFamily = "'Tenor Sans', sans-serif";
+                selectedFontFamily = "'Tenor Sans', sans-serif";
                 break;
             case 'theGirlNextDoor':
-                fontFamily = "'The Girl Next Door', cursive";
+                selectedFontFamily = "'The Girl Next Door', cursive";
                 break;
         }
-        previewElement.style.fontFamily = fontFamily;
+        previewElement.style.fontFamily = selectedFontFamily;
     });
 
     const layoutSelect = document.getElementById("layoutSelect");
@@ -178,6 +180,7 @@ function createPages(editorValue) {
     // Update the innerHTML for each page
     for (let i = 0; i < occurrences.length; i++) {
         pages[i].innerHTML = occurrences[i];
+        pages[i].style.fontFamily = selectedFontFamily; // ☆ADDED　Apply the selected font
         if (newPages) {
             if (i === 0) {
                 while (dots.firstChild) {
