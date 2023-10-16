@@ -36,12 +36,30 @@ document.addEventListener("DOMContentLoaded", function () {
         previewElement.style.fontFamily = fontFamily;
     });
 
+    const layoutSelect = document.getElementById("layoutSelect");
+    const inputLayout = document.getElementById("content");
+
+    layoutSelect.addEventListener('change', function () {
+        const selectedLayout = layoutSelect.value;
+
+        if (selectedLayout === 'CB') {
+            inputLayout.style.width = "10in";
+            inputLayout.style.height = "7in";
+        } else if (selectedLayout === 'PB') {
+            inputLayout.style.width = "5.8in";
+            inputLayout.style.height = "8.3in";
+        }
+
+
+    });
+
+
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
     const saveBtn = document.querySelector(".save-btn");
     selectMenu.addEventListener("change", () => {
         const selectedFormat = selectMenu.options[selectMenu.selectedIndex].text;
-        saveBtn.innerText = `Save As ${selectedFormat.split(" ")[0]} File`;
+
     });
 
     saveBtn.addEventListener("click", () => {
@@ -100,6 +118,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+function changeIMGLayout() {
+    const positionSelect = document.getElementById('picturePlacement');
+    const selectedPosition = positionSelect.value;
+
+    const styleSheet = document.styleSheets[0];
+    const rules = styleSheet.cssRules;
+
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].selectorText === '.text-output img') {
+            const rule = rules[i];
+            if (selectedPosition === 'Bottom') {
+                rule.style.bottom = rule.style.top;
+                rule.style.removeProperty('Top');
+            } else {
+                rule.style.top = rule.style.bottom;
+                rule.style.removeProperty('Bottom');
+            }
+        }
+    }
+};
+
 function updatePreview(e) {
     let previewElement = document.getElementById("preview");
     let editorValue = document.getElementById("editor").value;
@@ -136,22 +175,22 @@ function createPages(editorValue) {
         newPages = true;
     }
 
-        // Update the innerHTML for each page
-        for (let i = 0; i < occurrences.length; i++) {
-            pages[i].innerHTML = occurrences[i];
-            if (newPages) {
-                if (i === 0) {
-                    while (dots.firstChild) {
-                        dots.removeChild(dots.firstChild);
-                      }
+    // Update the innerHTML for each page
+    for (let i = 0; i < occurrences.length; i++) {
+        pages[i].innerHTML = occurrences[i];
+        if (newPages) {
+            if (i === 0) {
+                while (dots.firstChild) {
+                    dots.removeChild(dots.firstChild);
                 }
-    
-                const newdot = document.createElement('button');
-                newdot.className = 'carousel__indicator';
-                dots.appendChild(newdot);
             }
-    
+
+            const newdot = document.createElement('button');
+            newdot.className = 'carousel__indicator';
+            dots.appendChild(newdot);
         }
+
+    }
 
     if (newPages) {
         const allCurrent = document.querySelectorAll('.current-dot') || [];
@@ -178,25 +217,25 @@ function createPages(editorValue) {
 
 }
 
-function findImgMatch(editorValue){
+function findImgMatch(editorValue) {
 
     // Hitta alla matchningar av ![](...) i texten
     let matches = editorValue.match(/!\[([^\]]*)\]\((.*?)\)/g);
 
     // Replace matches with imgDataUrl from localStorage
     if (matches) {
-   
+
         editorValue = editorValue.replace(/!\[([^\]]*)\]\((.*?)\)/g
-        , (match, altText, key) => {
-            const imgDataUrl = localStorage.getItem(key);
-            if (imgDataUrl) {
-            return `![${altText}](${imgDataUrl})`;
-            } else {
-            // If imgDataUrl not found in localStorage, you can handle it here.
-            return match; // Keep the original text if no replacement is available.
-            }
-        });
-   
+            , (match, altText, key) => {
+                const imgDataUrl = localStorage.getItem(key);
+                if (imgDataUrl) {
+                    return `![${altText}](${imgDataUrl})`;
+                } else {
+                    // If imgDataUrl not found in localStorage, you can handle it here.
+                    return match; // Keep the original text if no replacement is available.
+                }
+            });
+
     }
 
     return editorValue
