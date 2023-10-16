@@ -49,8 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             inputLayout.style.width = "5.8in";
             inputLayout.style.height = "8.3in";
         }
-
-
+        
     });
 
 
@@ -126,7 +125,7 @@ function changeIMGLayout() {
     const rules = styleSheet.cssRules;
 
     for (let i = 0; i < rules.length; i++) {
-        if (rules[i].selectorText === '.text-output img') {
+        if (rules[i].selectorText === '.textOutput img') {
             const rule = rules[i];
             if (selectedPosition === 'Bottom') {
                 rule.style.bottom = rule.style.top;
@@ -159,7 +158,7 @@ function createPages(editorValue) {
     // Ensure there are enough pages
     while (occurrences.length > pages.length) {
         const newLi = document.createElement('li');
-        newLi.className = 'text-output';
+        newLi.className = 'textOutput';
         track.appendChild(newLi);
         pages.push(newLi); // Add the new page to the pages array
         addCurrentToLast(track);
@@ -222,7 +221,7 @@ function ChangeIMGLayout() {
     const rules = styleSheet.cssRules;
 
     for (let i = 0; i < rules.length; i++) {
-        if (rules[i].selectorText === '.text-output img') {
+        if (rules[i].selectorText === '.textOutput img') {
             const rule = rules[i];
             if (selectedPosition === 'bottom') {
                 rule.style.bottom = rule.style.top;
@@ -266,7 +265,7 @@ function addCurrentToLast(track) {
         allCurrent.forEach(x => x.classList.remove('current-page'));
     }
 
-    const lastSibling = track.querySelector('.text-output:last-child');
+    const lastSibling = track.querySelector('.textOutput:last-child');
     lastSibling.classList.add('current-page');
 }
 

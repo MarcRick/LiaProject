@@ -7,6 +7,7 @@
     <title>Document</title>
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/preview.js"></script>
     <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
@@ -20,6 +21,10 @@
 
 <body>
     <div id="container">
+        <div class="modalTest" id="modalTest">
+            <div class="modal-contentTest" id="modal-contentTest"></div>
+            <span class="closeTest" id="close-modalTest">&times;</span>
+        </div>
         <div id="headerDiv">
             <div id="pageDisplay">
                 <div class="font-selector">
@@ -48,6 +53,9 @@
                         <option value='Bottom'>Bottom</option>
                         <option value='Top'>Top</option>
                     </select>
+                </div>
+                <div>
+                    <button id="showModalButton">Show Modal</button>
                 </div>
             </div>
 
@@ -92,8 +100,9 @@
                         </svg>
                     </button>
                     <ul class="output-area" id="content">
-                        <li id="preview" class="text-output current-page text-output img output-area"></li>
+                        <li id="preview" class="textOutput current-page textOutput img output-area"></li>
                     </ul>
+
                     <button class="carousel__button carousel__button--right is-hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
