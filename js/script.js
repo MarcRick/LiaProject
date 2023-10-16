@@ -117,27 +117,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
-
-function changeIMGLayout() {
+function ChangeImage() {
     const positionSelect = document.getElementById('picturePlacement');
     const selectedPosition = positionSelect.value;
+    const outputContent = document.querySelector(".content")
 
-    const styleSheet = document.styleSheets[0];
-    const rules = styleSheet.cssRules;
-
-    for (let i = 0; i < rules.length; i++) {
-        if (rules[i].selectorText === '.text-output img') {
-            const rule = rules[i];
-            if (selectedPosition === 'Bottom') {
-                rule.style.bottom = rule.style.top;
-                rule.style.removeProperty('Top');
-            } else {
-                rule.style.top = rule.style.bottom;
-                rule.style.removeProperty('Bottom');
-            }
-        }
+    if (selectedPosition === "Top") {
+        outputContent.style.flexDirection = "column-reverse";
     }
-};
+    else {
+        outputContent.style.flexDirection = "column";
+    }
+}
 
 function updatePreview(e) {
     let previewElement = document.getElementById("preview");
@@ -361,3 +352,25 @@ function chosePage() {
 //newPage.textContent = Page ${totalPages} Content;
 //document.getElementById('pageContainer').appendChild(newPage);
 //}
+
+/*function changeIMGLayout() {
+    const positionSelect = document.getElementById('picturePlacement');
+    const selectedPosition = positionSelect.value;
+    const outputContent = document.querySelector(".content")
+
+    const styleSheet = document.styleSheets[0];
+    const rules = styleSheet.cssRules;
+
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].selectorText === '.text-output img') {
+            const rule = rules[i];
+            if (selectedPosition === 'Bottom') {
+                rule.style.bottom = rule.style.top;
+                rule.style.removeProperty('Top');
+            } else {
+                rule.style.top = rule.style.bottom;
+                rule.style.removeProperty('Bottom');
+            }
+        }
+    }
+}; */
