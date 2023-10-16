@@ -8,7 +8,9 @@
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -34,25 +36,26 @@
                     </select>
                 </div>
                 <div class="layout-select">
-                    <label for="layoutSelect">Layout:</label>
+                    <label for="layoutSelect">Choose a book layout:</label>
                     <select id="layoutSelect">
-                        <option value='A4'>A4</option>
-                        <option value='A5'>A5</option>
+                        <option value='CB'>Childen's book</option>
+                        <option value='PB'>Pocket book</option>
                     </select>
                 </div>
-                <div>    
-                    <label>Pic Placement:</label>
-                    <select id="positionSelect" onchange="ChangeIMGLayout()">
-                        <option value="bottom">Bottom</option>
-                        <option value="top">Top</option>
+                <div class="placement-select">
+                    <label for="picturePlacement">Picture placement:</label>
+                    <select id="picturePlacement" onchange="changeIMGLayout()">
+                        <option value='Bottom'>Bottom</option>
+                        <option value='Top'>Top</option>
                     </select>
                 </div>
             </div>
+
             <div id="btn-section">
                 <div class="btnPosR">
                     <button class="save-btn btnShadow" type="button">Save File</button>
                     <button class="save-btn btnShadow" type="button"
-                      onclick="document.getElementById('uploadButton').click();">Choose File</button>
+                        onclick="document.getElementById('uploadButton').click();">Choose File</button>
                     <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
                 </div>
                 <div class="option">
@@ -65,54 +68,59 @@
                         <select class="input">
                             <option value="text/plain">Text File (.txt)</option>
                             <option value="application/pdf">PDF (.pdf)</option>
-                            <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">Word (.docx)</option>
+                            <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                Word (.docx)</option>
                         </select>
                     </div>
                 </div>
-            </div>                 
+            </div>
+
         </div>
-            <div id="main">
-                <div id="leftDiv">
-                    <div class="input-area">
-                        <textarea oninput="autoResize(this)" class="text-input" id="editor"
-                            onkeyup="updatePreview()" placeholder="Insert text"></textarea>
-                    </div>
-                    <div class="mark-section">
-                        
-                        <button class="carousel__button carousel__button--left is-hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
-                              </svg>
-                        </button>
-                        
-                        <ul class="output-area" id="content">
-                            <li id="preview" class="text-output current-page"></li>
-                        </ul>
-        
-                        <button class="carousel__button carousel__button--right is-hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-                              </svg>
-                        </button>
-        
-                        <div class="carousel__nav">
-                            <button class="carousel__indicator current-dot"></button>
-                        </div>       
-                    </div> 
+        <div id="main">
+            <div id="leftDiv">
+                <div class="input-area">
+                    <textarea oninput="autoResize(this)" class="text-input" id="editor"
+                        onkeyup="updatePreview()"></textarea>
                 </div>
-                <div id="rightDiv">
-                    <div>
-                        <button class="openClose-btn btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips and tricks</button>
+                <div class="mark-section">
+
+                    <button class="carousel__button carousel__button--left is-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                        </svg>
+                    </button>
+                    <ul class="output-area" id="content">
+                        <li id="preview" class="text-output current-page text-output img output-area"></li>
+                    </ul>
+                    <button class="carousel__button carousel__button--right is-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                        </svg>
+                    </button>
+
+                    <div class="carousel__nav">
+                        <button class="carousel__indicator current-dot"></button>
                     </div>
-                    <div id="extraText" class="goodToKnow" style="display: none;">
-                        <section class="syntaxInfo">
-                            <h1>Usefull Syntax</h1>
-                            <h4>Header</h4>
-                            <p># Header1</p>
-                            <p>## Header2</p>
-                            <p>### Header3</p>
-                            <hr>
-                        </section>
+                </div>
+            </div>
+            <div id="rightDiv">
+                <div>
+                    <button class="openClose-btn btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
+                        and tricks</button>
+                </div>
+                <div id="extraText" class="goodToKnow" style="display: none;">
+                    <section class="syntaxInfo">
+                        <h1>Usefull Syntax</h1>
+                        <h4>Header</h4>
+                        <p># Header1</p>
+                        <p>## Header2</p>
+                        <p>### Header3</p>
+                        <hr>
+                    </section>
                     <section class="syntaxInfo">
                         <h4>Table</h4>
                         <p>| T-Header | T-Header 2 | <br>
@@ -132,7 +140,7 @@
             </div>
         </div>
         <div id=footerDiv>
-    
+
         </div>
     </div>
 

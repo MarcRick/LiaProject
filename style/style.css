@@ -12,39 +12,41 @@
     background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
+    opacity: 90%;
 }
-#headerDiv
-{
+
+#headerDiv {
     padding: 20px;
     overflow: hidden;
     background-color: #0b090a;
+    opacity: 85%;
+
 }
 
-#leftDiv
-{
+#leftDiv {
     width: 75%;
     float: left;
     padding: 20px;
 }
-#rightDiv
-{
+
+#rightDiv {
     width: 25%;
     padding: 20px;
     float: right;
 }
-#pageDisplay
-{
+
+#pageDisplay {
     float: left;
     width: 50%;
 }
 
-.input-area{
+.input-area {
     overflow-y: auto;
     height: 404px;
     width: 65%;
 }
 
-.output-area{
+.output-area {
     width: 8.3in;
     height: 100%;
     margin-top: 10px;
@@ -77,7 +79,7 @@
 }
 
 .text-output {
-    height:98%;
+    height: 98%;
     position: absolute;
 }
 
@@ -86,7 +88,7 @@
     max-height: 80%;
     bottom: 0;
     position: absolute;
-    left:0;
+    left: 0;
 }
 
 .input {
@@ -119,10 +121,10 @@
     font-weight: 700;
 }
 
-.btnPosR
-{
+.btnPosR {
     float: right;
     margin-top: 24px;
+    margin-left: 10px;
 }
 
 .option {
@@ -213,7 +215,9 @@
     right: -30px;
 }
 
-.is-hidden {display: none;}
+.is-hidden {
+    display: none;
+}
 
 .current-page {
     z-index: 1;
@@ -227,14 +231,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .carousel__indicator {
+.carousel__indicator {
     border: 0;
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    background: rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, .3);
     margin: 0 7px;
     cursor: pointer;
     z-index: 10;
@@ -247,10 +251,10 @@
 .arrows {
     width: 50px;
     height: 70px;
-  }
+}
 
-  label {
+label {
     color: white;
     font-weight: 600;
     font-family: cursive;
-  }
+}
