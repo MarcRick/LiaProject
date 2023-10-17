@@ -12,7 +12,7 @@
     background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
-    opacity: 90%;
+    /* opacity: 90%; */
 }
 
 #headerDiv {
@@ -20,7 +20,6 @@
     overflow: hidden;
     background-color: #0b090a;
     opacity: 85%;
-
 }
 
 #leftDiv {
@@ -83,7 +82,7 @@
     position: absolute;
 }
 
-.textOutput img {
+.output-area img {
     max-width: 100%;
     max-height: 80%;
     bottom: 0;
@@ -196,41 +195,41 @@
 .nextBtn {
     float: right;
 }
-
+.newClass{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 .carousel__button {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
     border: 0;
     cursor: pointer;
-    z-index: 2;
+    z-index: 2; */
 }
 
 .carousel__button--left {
-    left: -30px;
+    /* left: -30px; */
 }
 
 .carousel__button--right {
-    right: -30px;
+    /* right: -30px; */
 }
 
-.is-hidden {
+/* .is-hidden {
     display: none;
-}
+} */
 
 .current-page {
     z-index: 1;
 }
 
 .carousel__nav {
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .carousel__indicator {

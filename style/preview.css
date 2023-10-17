@@ -10,13 +10,15 @@
 }
 
 .preContainer {
+    position: relative;
     display: block;
     background-color: white;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 60%;
+    height: 500px;
+    width: fit-content;
 }
 
 .close {
