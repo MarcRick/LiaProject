@@ -9,8 +9,8 @@ function showContent(index) {
     modalContent.innerHTML = boxes[index].innerHTML;
 }
 
-boxes.forEach((box, index) => {
-    box.addEventListener("click", () => {
+boxes.forEach((derp, index) => {
+    derp.addEventListener("click", () => {
         modal.style.display = "block";
         showContent(index);
         currentIndex = index;

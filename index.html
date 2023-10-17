@@ -9,6 +9,7 @@
     <script src="./js/script.js"></script>
     <script src="./js/preview.js"></script>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/preview.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -21,6 +22,9 @@
 
 <body>
     <div id="container">
+        <div id = preBox class="preBox">
+            <div>hej</div>
+        </div>
         <div id="headerDiv">
             <div id="pageDisplay">
                 <div class="font-selector">
@@ -51,10 +55,9 @@
                     </select>
                 </div>
                 <div>
-                    <button id="showModalButton">Show Modal</button>
+                    <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
                 </div>
             </div>
-
             <div id="btn-section">
                 <div class="btnPosR">
                     <button class="save-btn btnShadow" type="button">Save File</button>
