@@ -17,8 +17,13 @@ boxes.forEach((box, index) => {
     });
 });
 
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
 modal.addEventListener("click", (event) => {
     if (event.target === modal) {
+        console.log()
         currentIndex = (currentIndex + 1) % boxes.length;
         showContent(currentIndex);
     }

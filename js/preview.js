@@ -1,32 +1,13 @@
-const previews = document.querySelectorAll(".textOutput");
-const modal = document.getElementById("modalTest");
-const modalContent = document.getElementById("modal-contentTest");
-const closeModal = document.getElementById("close-modalTest");
-const showModalButton = document.getElementById("showModalButton");
-
-
+const listItems = document.querySelectorAll('.textOutput');
 let currentIndex = 0;
 
-function showContent(index) {
-    modalContent.innerHTML = previews[index].innerHTML;
+function showNextItem() {
+  listItems[currentIndex].style.display = 'none';
+  currentIndex = (currentIndex + 1) % listItems.length;
+  listItems[currentIndex].style.display = 'block';
 }
 
-previews.forEach((preview, index) => {
-    preview.addEventListener("click", () => {
-        modal.style.display = "block";
-        showContent(index);
-        currentIndex = index;
-    });
-});
+document.getElementById('next-button').addEventListener('click', showNextItem);
 
-modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        currentIndex = (currentIndex + 1) % previews.length;
-        showContent(currentIndex);
-    }
-});
-
-showModalButton.addEventListener("click", () => {
-    modal.style.display = "block";
-    showContent(currentIndex); // Show the current content when the button is clicked
-});
+// Show the first item initially
+listItems[currentIndex].style.display = 'block';
