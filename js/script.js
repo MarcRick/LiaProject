@@ -160,27 +160,32 @@ function updatePreview(e) {
     createPages(markedUpHTML);
 }
 
+
+
 function createPages(editorValue) {
 
     let newPages = false;
-    const occurrences = editorValue.split('<hr>');
-    const track = document.querySelector('.output-area');
-    const pages = Array.from(track.children);
+    const occurrences = editorValue.split('<hr>'); // split the input into two, when <hr>(---) is typed in 
+    const track = document.querySelector('.output-area'); // track points to the text output area
+    const pages = Array.from(track.children);  // pages is an array made of child elements in the track (<li> element which is in the <ul>)
     // dots
     const dots = document.querySelector('.carousel__nav');
     // Ensure there are enough pages
     while (occurrences.length > pages.length) {
         const newLi = document.createElement('li');
         newLi.className = 'text-output';
-        track.appendChild(newLi);
+        track.appendChild(newLi); // adding a new <li> to .output-area in html
         pages.push(newLi); // Add the new page to the pages array
         addCurrentToLast(track);
         newPages = true;
-        // dots  
+        // dots        
 
-        // Apply font style to the new page
-        applyFontStyle(newLi);
-
+        // Add an event listener for the fontSelect dropdown's change event
+        const fontSelect = document.getElementById('fontSelect');
+        fontSelect.addEventListener('change', function () {
+            applyFontStyle(newLi); // Reapply font style when font selection changes
+        });
+        
     }
 
     // Remove extra pages if there are more pages than occurrences
@@ -226,16 +231,13 @@ function createPages(editorValue) {
             leftButton.classList.add('is-hidden');
             const rightButton = document.querySelector('.carousel__button--right');
             rightButton.classList.add('is-hidden');
-        }
-        // Apply font style to the last created page
-        applyFontStyle(pages[pages.length - 1]);
+        }        
     }
 
 }
 
-function applyFontStyle(page) {
+function applyFontStyle(page) {  
 
-    //const pages = document.querySelectorAll('.text-output');
     const selectedFont = document.getElementById('fontSelect').value;
     let selectedFontFamily = '';
 
@@ -268,11 +270,8 @@ function applyFontStyle(page) {
             selectedFontFamily = "'Poppins', sans-serif"; // Default to the browser's default font
             break;
     }
-    // Apply the selected font style to all pages
-    /*pages.forEach((page) => {
-        page.style.fontFamily = selectedFontFamily;
-    });*/
-    page.style.fontFamily = selectedFontFamily;
+
+    page.style.fontFamily = selectedFontFamily;    
 }
 
 function findImgMatch(editorValue) {
