@@ -33,12 +33,35 @@
                 </div>
             </div>
         </div>
-            <!-- <div id ="headMid">mid
-                <div>
-                    <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
+        <!-- <div class="layout-select">
+            <label for="layoutSelect">Choose a book layout:</label>
+            <select id="layoutSelect">
+                <option value='CB'>Childen's book</option>
+                <option value='PB'>Pocket book</option>
+            </select>
+        </div> -->
+        <!-- <div class="placement-select">
+            <label for="picturePlacement">Picture placement:</label>
+            <select id="picturePlacement" onchange="changeIMGLayout()">
+                <option value='Bottom'>Bottom</option>
+                <option value='Top'>Top</option>
+            </select>
+        </div> -->
+        <div id="leftBox">
+            <div id="leftContainer">
+                <div id="leftTop">
+                    <div id="input-area">
+                        <textarea oninput="autoResize(this)" id="editor"
+                            onkeyup="updatePreview()"></textarea>
+                    </div>
                 </div>
-            </div> -->
-            <!-- <div class="font-selector">
+                <div id="leftBot">Bot
+                    
+                </div>
+            </div>
+        </div>
+        <div id ="midBox">
+            <div class="font-selector">
                 <label for="fontSelect">Font:</label>
                 <select id="fontSelect">
                     <option value='poppins'>Poppins (Default)</option>
@@ -51,29 +74,9 @@
                     <option value='theGirlNextDoor'>The Girl Next Door</option>
                 </select>
             </div>
-            <div class="layout-select">
-                <label for="layoutSelect">Choose a book layout:</label>
-                <select id="layoutSelect">
-                    <option value='CB'>Childen's book</option>
-                    <option value='PB'>Pocket book</option>
-                </select>
-            </div>
-            <div class="placement-select">
-                <label for="picturePlacement">Picture placement:</label>
-                <select id="picturePlacement" onchange="changeIMGLayout()">
-                    <option value='Bottom'>Bottom</option>
-                    <option value='Top'>Top</option>
-                </select>
+            <!-- <div>
+                <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
             </div> -->
-        <div id="leftBox">
-            <div class="grid" id="leftContainer">
-                <div id="leftTop">Top
-                    
-                </div>
-                <div id="leftBot">Bot
-                    
-                </div>
-            </div>
         </div>
         <div class="rightBox" id="rightBox">Right
 
