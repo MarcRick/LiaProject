@@ -78,7 +78,7 @@
 }
 
 .textOutput {
-    height: 98%;
+    height: 100%;
     position: absolute;
 }
 
@@ -199,6 +199,11 @@
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.newClass2 {
+    display: flex;
+    
 }
 .carousel__button {
     /* position: absolute;
