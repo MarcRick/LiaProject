@@ -9,66 +9,62 @@
 <body>
     <div class="grid" id="container">
         <div id="headerDiv">
-            <div id ="headLeft">left
-                <div class="font-selector">
-                    <label for="fontSelect">Font:</label>
-                    <select id="fontSelect">
-                        <option value='poppins'>Poppins (Default)</option>
-                        <option value='butterflyKids'>Butterfly Kids</option>
-                        <option value='heebo'>Heebo</option>
-                        <option value='homemadeApple'>Homemade Apple</option>
-                        <option value='inconsolata'>Inconsolata</option>
-                        <option value='marcellus'>Marcellus</option>
-                        <option value='tenorSans'>Tenor Sans</option>
-                        <option value='theGirlNextDoor'>The Girl Next Door</option>
-                    </select>
+            <div id="btn-section">
+                <div class="btnBox">
+                    <button class="save-btn btnShadow" type="button">Save File</button>
+                    <button class="save-btn btnShadow" type="button"
+                        onclick="document.getElementById('uploadButton').click();">Choose File</button>
+                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
                 </div>
-                <div class="layout-select">
-                    <label for="layoutSelect">Choose a book layout:</label>
-                    <select id="layoutSelect">
-                        <option value='CB'>Childen's book</option>
-                        <option value='PB'>Pocket book</option>
-                    </select>
+                <div class="option">
+                    <label>File name:</label>
+                    <input class="input" type="text" spellcheck="false" placeholder="Insert text">
                 </div>
-                <div class="placement-select">
-                    <label for="picturePlacement">Picture placement:</label>
-                    <select id="picturePlacement" onchange="changeIMGLayout()">
-                        <option value='Bottom'>Bottom</option>
-                        <option value='Top'>Top</option>
-                    </select>
+                <div class="option">
+                    <label>Save as:</label>
+                    <div class="select-menu">
+                        <select class="input">
+                            <option value="text/plain">Text File (.txt)</option>
+                            <option value="application/pdf">PDF (.pdf)</option>
+                            <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                Word (.docx)</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+        </div>
             <!-- <div id ="headMid">mid
                 <div>
                     <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
                 </div>
             </div> -->
-            <div id="headRight">right
-                <div id="btn-section">
-                    <div class="btnPosR">
-                        <button class="save-btn btnShadow" type="button">Save File</button>
-                        <button class="save-btn btnShadow" type="button"
-                            onclick="document.getElementById('uploadButton').click();">Choose File</button>
-                        <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
-                    </div>
-                    <div class="option">
-                        <label>File name:</label>
-                        <input class="input" type="text" spellcheck="false" placeholder="Insert text">
-                    </div>
-                    <div class="option">
-                        <label>Save as:</label>
-                        <div class="select-menu">
-                            <select class="input">
-                                <option value="text/plain">Text File (.txt)</option>
-                                <option value="application/pdf">PDF (.pdf)</option>
-                                <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-                                    Word (.docx)</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+            <!-- <div class="font-selector">
+                <label for="fontSelect">Font:</label>
+                <select id="fontSelect">
+                    <option value='poppins'>Poppins (Default)</option>
+                    <option value='butterflyKids'>Butterfly Kids</option>
+                    <option value='heebo'>Heebo</option>
+                    <option value='homemadeApple'>Homemade Apple</option>
+                    <option value='inconsolata'>Inconsolata</option>
+                    <option value='marcellus'>Marcellus</option>
+                    <option value='tenorSans'>Tenor Sans</option>
+                    <option value='theGirlNextDoor'>The Girl Next Door</option>
+                </select>
             </div>
-        </div>
+            <div class="layout-select">
+                <label for="layoutSelect">Choose a book layout:</label>
+                <select id="layoutSelect">
+                    <option value='CB'>Childen's book</option>
+                    <option value='PB'>Pocket book</option>
+                </select>
+            </div>
+            <div class="placement-select">
+                <label for="picturePlacement">Picture placement:</label>
+                <select id="picturePlacement" onchange="changeIMGLayout()">
+                    <option value='Bottom'>Bottom</option>
+                    <option value='Top'>Top</option>
+                </select>
+            </div> -->
         <div id="leftBox">
             <div class="grid" id="leftContainer">
                 <div id="leftTop">Top

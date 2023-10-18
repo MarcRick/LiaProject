@@ -120,10 +120,8 @@
     font-weight: 700;
 }
 
-.btnPosR {
-    float: right;
+.btnBox {
     margin-top: 24px;
-    margin-left: 10px;
 }
 
 .option {
