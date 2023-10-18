@@ -3,16 +3,24 @@ var textKeyIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    let selectedFontFamily = '';
-
     const fontSelect = document.getElementById("fontSelect");
     const previewElement = document.getElementById("preview");
+    let selectedFontFamily = '';
 
     fontSelect.addEventListener('change', function () {
         const selectedFont = this.value;
-        
+        //const selectedFontFamily = getFontFamily(selectedFont);
+
+        // Apply the selected font family to all pages
+        /*const pages = document.querySelectorAll('.text-output');
+        pages.forEach(page => {
+            page.style.fontFamily = selectedFontFamily;
+        });*/
 
         switch (selectedFont) {
+            case 'poppins':
+                selectedFontFamily = "'Poppins', sans-serif";
+                break;
             case 'butterflyKids':
                 selectedFontFamily = "'Butterfly Kids', cursive";
                 break;
@@ -37,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         previewElement.style.fontFamily = selectedFontFamily;
     });
+
 
     const layoutSelect = document.getElementById("layoutSelect");
     const inputLayout = document.getElementById("content");
@@ -110,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updatePreview();
         });
 
+
         reader.readAsDataURL(this.files[0]);
     }
 
@@ -166,7 +176,11 @@ function createPages(editorValue) {
         pages.push(newLi); // Add the new page to the pages array
         addCurrentToLast(track);
         newPages = true;
-        // dots 
+        // dots  
+
+        // Apply font style to the new page
+        applyFontStyle(newLi);
+
     }
 
     // Remove extra pages if there are more pages than occurrences
@@ -180,7 +194,6 @@ function createPages(editorValue) {
     // Update the innerHTML for each page
     for (let i = 0; i < occurrences.length; i++) {
         pages[i].innerHTML = occurrences[i];
-        pages[i].style.fontFamily = selectedFontFamily; // ☆ADDED　Apply the selected font
         if (newPages) {
             if (i === 0) {
                 while (dots.firstChild) {
@@ -214,10 +227,52 @@ function createPages(editorValue) {
             const rightButton = document.querySelector('.carousel__button--right');
             rightButton.classList.add('is-hidden');
         }
+        // Apply font style to the last created page
+        applyFontStyle(pages[pages.length - 1]);
     }
 
+}
 
+function applyFontStyle(page) {
 
+    //const pages = document.querySelectorAll('.text-output');
+    const selectedFont = document.getElementById('fontSelect').value;
+    let selectedFontFamily = '';
+
+    switch (selectedFont) {
+        case 'poppins':
+            selectedFontFamily = "'Poppins', sans-serif";
+            break;
+        case 'butterflyKids':
+            selectedFontFamily = "'Butterfly Kids', cursive";
+            break;
+        case 'heebo':
+            selectedFontFamily = "'Heebo', sans-serif";
+            break;
+        case 'homemadeApple':
+            selectedFontFamily = "'Homemade Apple', cursive";
+            break;
+        case 'inconsolata':
+            selectedFontFamily = "'Inconsolata', monospace";
+            break;
+        case 'marcellus':
+            selectedFontFamily = "'Marcellus', serif";
+            break;
+        case 'tenorSans':
+            selectedFontFamily = "'Tenor Sans', sans-serif";
+            break;
+        case 'theGirlNextDoor':
+            selectedFontFamily = "'The Girl Next Door', cursive";
+            break;
+        default:
+            selectedFontFamily = "'Poppins', sans-serif"; // Default to the browser's default font
+            break;
+    }
+    // Apply the selected font style to all pages
+    /*pages.forEach((page) => {
+        page.style.fontFamily = selectedFontFamily;
+    });*/
+    page.style.fontFamily = selectedFontFamily;
 }
 
 function findImgMatch(editorValue) {
