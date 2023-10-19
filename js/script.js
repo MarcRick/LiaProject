@@ -269,13 +269,6 @@ function addCurrentToLast(track) {
     lastSibling.classList.add('current-page');
 }
 
-
-// Funktion för att ändra höjden på textarea baserat på innehållet
-function autoResize(textarea) {
-    textarea.style.height = 'auto'; // Återställ höjden till auto för att mäta rätt höjd
-    textarea.style.height = (textarea.scrollHeight) + 'px'; // Sätt höjden till scrollhöjden
-}
-
 function Convert_HTML_To_PDF(fileName) {
     const elements = document.querySelectorAll(".output-area li");
 

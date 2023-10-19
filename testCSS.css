@@ -192,14 +192,6 @@ label {
     align-items: center;
 }
 
-.output-area {
-    width: 10in;
-    height: 7in;
-    border-radius: 10px;
-    list-style: none;
-    position: relative;
-}
-
 .output-area img {
     bottom: 0;
     position: absolute;
@@ -207,12 +199,18 @@ label {
 }
 
 .textOutput {
+    width: 10in;
+    height: 7in;
+    border-radius: 10px;
+    list-style: none;
+    position: relative;
     border: 2px solid #17313a;
     background: white;
     color: black(0, 0%, 100%, .9);
     font-size: 21px;
     font-family: "sofia-pro", sans-serif;
     overflow-wrap: break-word;
+    padding-left: 10px;
 }
 
 .current-page {
@@ -220,7 +218,7 @@ label {
 }
 
 .carousel__nav {
-    width: 100%;
+    width: 10in;
     display: flex;
     justify-content: center;
 }
@@ -273,4 +271,8 @@ label {
 
 .alignTextC{
     text-align: center;
+}
+
+.current-page {
+    z-index: 1;
 }

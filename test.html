@@ -1,13 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/marked.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/preview.js"></script>
+    <link rel="stylesheet" href="./style/preview.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Marcellus&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="testCSS.css">
     <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="leftDiv.css">
 </head>
+
 <body>
     <div class="grid" id="container">
+        <!-- <div id="preBox" class="preBox">
+            <div class="preContainer">
+                <span class="close" id="close-modal">&times;</span>
+                <div class="newClass">
+                <button class="carousel__button carousel__button--left is-hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                    </svg>
+                </button>
+                <ul class="preOutput-area" id="preConten">
+                    <li id="prePreview" class="textOutput current-page textOutput img output-area"></li>
+                </ul>
+                <button class="carousel__button carousel__button--right is-hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                    </svg>
+                </button>
+                </div>
+                <div class="carousel__nav">
+                    <button class="carousel__indicator current-dot"></button>
+                </div>
+            </div>
+        </div> -->
         <div id="headerDiv">
             <div id="btn-section">
                 <div class="btnBox">
@@ -35,7 +77,7 @@
         </div>
         <div id="leftTop">
             <div id="input-area">
-                <textarea oninput="autoResize(this)" id="editor"
+                <textarea id="editor"
                     onkeyup="updatePreview()"></textarea>
             </div>
         </div>
@@ -123,7 +165,7 @@
             </div>
         </div>  
         <div class="footer" id="footerDiv"></div>
-      </div>
+    </div>
 </body>
 </html>
 
