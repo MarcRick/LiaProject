@@ -4,11 +4,17 @@
     box-sizing: border-box;
 }
 
-.grid{
+.firstGrid{
     display: grid;
-    grid-template-rows: repeat(8, 1fr);
-    grid-template-columns: repeat(12, 1fr);
-    overflow: auto; 
+    margin-top:30px;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:10px;
+}
+
+.secGrid{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 label {
@@ -25,7 +31,7 @@ label {
 #headerDiv{
     background-color: #0b090a;
     grid-row: 1;
-    grid-column: 1/13;
+    grid-column: 1/4;
     opacity: 0.9; 
     overflow: auto;
     height: 85px;
@@ -43,14 +49,10 @@ label {
     margin: 10px;
 }
 
-#leftTop{
-    grid-row: 2/5;
-    grid-column: 1/9;
-}
 
 #input-area {
-    width: 84.5%;
-    height: 90%;
+    width: 900px;
+    height: 417px;
     margin-left:55px;
 }
 
@@ -67,30 +69,12 @@ label {
     resize: none;
 }
 
-#leftBot{
-    grid-row: 5/9;
-    grid-column: 1/9;
-}
-
 #container {
     width: 100%;
     min-height: 100vh;
     background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
-}
-
-#midBox{
-    grid-column: 8/10;
-    grid-row: 2/5;
-    margin:10px auto;
-}
-
-#rightBox {
-    align-items: center;
-    grid-row: 2/5;
-    grid-column: 10/13;
-    opacity: 0.8;
 }
 
 #extraText {
@@ -108,12 +92,10 @@ label {
     font-family: "sofia-pro", sans-serif;
 }
 
-/* #footerDiv{
-    background-color: #0b090a;
-    height: 50px; 
-    opacity: 0.8;
-    overflow: auto;
-} */
+#contentBox{
+    width: 10in;
+    height: 7in;
+}
 
 .btnBox {
     float:right;
@@ -192,25 +174,38 @@ label {
     align-items: center;
 }
 
-.output-area img {
-    bottom: 0;
-    position: absolute;
-    left: 0;
+.output-area{
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
+
 .textOutput {
-    width: 10in;
-    height: 7in;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: none;
     border-radius: 10px;
     list-style: none;
-    position: relative;
     border: 2px solid #17313a;
     background: white;
     color: black(0, 0%, 100%, .9);
     font-size: 21px;
     font-family: "sofia-pro", sans-serif;
     overflow-wrap: break-word;
-    padding-left: 10px;
+    padding: 10px;
+}
+
+.textOutput img {
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom:0;
+    z-index: 0;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
 .current-page {
@@ -218,6 +213,8 @@ label {
 }
 
 .carousel__nav {
+    margin-left:35px;
+    margin-top: 2px;
     width: 10in;
     display: flex;
     justify-content: center;
@@ -228,14 +225,14 @@ label {
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    background: rgba(0, 0, 0, .3);
+    background: hsla(0, 0%, 100%, 0.566);
     margin: 0 7px;
     cursor: pointer;
     z-index: 10;
 }
 
 .current-dot {
-    background: hsla(0, 0%, 100%, .9);
+    background: hsla(0, 0%, 100%, 0.961);
 }
 
 .arrows {
@@ -274,5 +271,14 @@ label {
 }
 
 .current-page {
-    z-index: 1;
+    display:block;
+}
+
+.is-hidden {
+    display: none;
+}
+
+#rightArrow,
+#leftArrow{
+    width: 35px;
 }

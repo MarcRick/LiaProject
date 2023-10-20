@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const layoutSelect = document.getElementById("layoutSelect");
-    const inputLayout = document.getElementById("content");
+    const inputLayout = document.getElementById("contentBox");
+    const navSize = document.getElementById("carouselBtn")
 
     layoutSelect.addEventListener('change', function () {
         const selectedLayout = layoutSelect.value;
@@ -45,9 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedLayout === 'CB') {
             inputLayout.style.width = "10in";
             inputLayout.style.height = "7in";
+            navSize.style.width = "10in";
         } else if (selectedLayout === 'PB') {
             inputLayout.style.width = "5.8in";
             inputLayout.style.height = "8.3in";
+            navSize.style.width = "5.8in";
         }
         
     });
