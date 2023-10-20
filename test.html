@@ -8,7 +8,6 @@
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/preview.js"></script>
-    <script src="./js/carousel.js"></script>
     <link rel="stylesheet" href="./style/preview.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
@@ -102,13 +101,13 @@
                         <option value='PB'>Pocket book</option>
                     </select>
                 </div>
-                <div class="placement-select">
+                <!-- <div class="placement-select">
                     <label for="picturePlacement">Picture placement:</label>
                     <select id="picturePlacement" class="input" onchange="changeIMGLayout()">
                         <option value='Bottom'>Bottom</option>
                         <option value='Top'>Top</option>
                     </select>
-                </div>
+                </div> -->
                 <div class="previewSelect">
                     <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
                 </div>
@@ -142,25 +141,32 @@
             <div class="mark-section">
                 <div class="outputSection">
                     <div class="newClass">
-                        <button class="carousel__button carousel__button--left is-hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-                            </svg>
-                        </button>
-                        <ul class="output-area" id="content">
-                            <li id="preview" class="textOutput current-page textOutput img output-area"></li>
-                        </ul>
-                        <button class="carousel__button carousel__button--right is-hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                            </svg>
-                        </button>
+                        <div id="leftArrow">
+                            <button class="carousel__button carousel__button--left is-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="contentBox">
+                            <ul class="output-area" id="content">
+                                <li id="preview" class="textOutput current-page textOutput img output-area"></li>
+                            </ul>
+                        </div>
+                        <div id="rightArrow">
+                            <button class="carousel__button carousel__button--right is-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                    <div class="carousel__nav">
+                    <div>
+                    <div id="carouselBtn" class="carousel__nav">
                         <button class="carousel__indicator current-dot"></button>
                     </div>
                 </div>
@@ -170,7 +176,9 @@
             </div>
         </div>  
         <div class="footer" id="footerDiv"></div>
+
     </div>
+    <script src="./js/carousel.js"></script>
 </body>
 </html>
 
