@@ -7,7 +7,8 @@
     <title>Document</title>
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
-    <link rel="stylesheet" href="./style/style.css">
+    <script src="./js/preview.js"></script>
+    <link rel="stylesheet" href="./style/preview.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -16,43 +17,42 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Marcellus&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="testCSS.css">
+    <link rel="stylesheet" href="normalize.css">
 </head>
 
 <body>
-    <div id="container">
-        <div id="headerDiv">
-            <div id="pageDisplay">
-                <div class="font-selector">
-                    <label for="fontSelect">Choose a Font:</label>
-                    <select id="fontSelect">
-                        <option value='poppins'>Poppins (Default)</option>
-                        <option value='butterflyKids'>Butterfly Kids</option>
-                        <option value='heebo'>Heebo</option>
-                        <option value='homemadeApple'>Homemade Apple</option>
-                        <option value='inconsolata'>Inconsolata</option>
-                        <option value='marcellus'>Marcellus</option>
-                        <option value='tenorSans'>Tenor Sans</option>
-                        <option value='theGirlNextDoor'>The Girl Next Door</option>
-                    </select>
+    <div class="grid" id="container">
+        <!-- <div id="preBox" class="preBox">
+            <div class="preContainer">
+                <span class="close" id="close-modal">&times;</span>
+                <div class="newClass">
+                <button class="carousel__button carousel__button--left is-hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                    </svg>
+                </button>
+                <ul class="preOutput-area" id="preConten">
+                    <li id="prePreview" class="textOutput current-page textOutput img output-area"></li>
+                </ul>
+                <button class="carousel__button carousel__button--right is-hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                    </svg>
+                </button>
                 </div>
-                <div class="layout-select">
-                    <label for="layoutSelect">Choose a book layout:</label>
-                    <select id="layoutSelect">
-                        <option value='CB'>Childen's book</option>
-                        <option value='PB'>Pocket book</option>
-                    </select>
-                </div>
-                <div class="placement-select">
-                    <label for="picturePlacement">Picture placement:</label>
-                    <select id="picturePlacement" onchange="changeIMGLayout()">
-                        <option value='Bottom'>Bottom</option>
-                        <option value='Top'>Top</option>
-                    </select>
+                <div class="carousel__nav">
+                    <button class="carousel__indicator current-dot"></button>
                 </div>
             </div>
-
+        </div> -->
+        <div id="headerDiv">
             <div id="btn-section">
-                <div class="btnPosR">
+                <div class="btnBox">
                     <button class="save-btn btnShadow" type="button">Save File</button>
                     <button class="save-btn btnShadow" type="button"
                         onclick="document.getElementById('uploadButton').click();">Choose File</button>
@@ -74,45 +74,50 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <div id="main">
-            <div id="leftDiv">
-                <div class="input-area">
-                    <textarea oninput="autoResize(this)" class="text-input" id="editor"
-                        onkeyup="updatePreview()"></textarea>
+        <div class="firstGrid">
+            <div id="input-area">
+                <textarea id="editor"
+                    onkeyup="updatePreview()"></textarea>
+            </div>
+            <div>
+                <div class="font-selector">
+                    <label for="fontSelect">Font:</label>
+                    <select id="fontSelect" class="input">
+                        <option value='poppins'>Poppins (Default)</option>
+                        <option value='butterflyKids'>Butterfly Kids</option>
+                        <option value='heebo'>Heebo</option>
+                        <option value='homemadeApple'>Homemade Apple</option>
+                        <option value='inconsolata'>Inconsolata</option>
+                        <option value='marcellus'>Marcellus</option>
+                        <option value='tenorSans'>Tenor Sans</option>
+                        <option value='theGirlNextDoor'>The Girl Next Door</option>
+                    </select>
                 </div>
-                <div class="mark-section">
-
-                    <button class="carousel__button carousel__button--left is-hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-                        </svg>
-                    </button>
-                    <ul class="output-area" id="content">
-                        <li id="preview" class="text-output current-page text-output img output-area"></li>
-                    </ul>
-                    <button class="carousel__button carousel__button--right is-hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                        </svg>
-                    </button>
-
-                    <div class="carousel__nav">
-                        <button class="carousel__indicator current-dot"></button>
-                    </div>
+                <div class="layout-select">
+                    <label for="layoutSelect">Layout:</label>
+                    <select id="layoutSelect" class="input">
+                        <option value='CB'>Childen's book</option>
+                        <option value='PB'>Pocket book</option>
+                    </select>
+                </div>
+                <!-- <div class="placement-select">
+                    <label for="picturePlacement">Picture placement:</label>
+                    <select id="picturePlacement" class="input" onchange="changeIMGLayout()">
+                        <option value='Bottom'>Bottom</option>
+                        <option value='Top'>Top</option>
+                    </select>
+                </div> -->
+                <div class="previewSelect">
+                    <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
                 </div>
             </div>
-            <div id="rightDiv">
-                <div>
+            <div>
+                <div class="alignTextC">
                     <button class="openClose-btn btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
                         and tricks</button>
                 </div>
-                <div id="extraText" class="goodToKnow" style="display: none;">
+                <div id="extraText" class="goodToKnow">
                     <section class="syntaxInfo">
                         <h1>Usefull Syntax</h1>
                         <h4>Header</h4>
@@ -122,30 +127,58 @@
                         <hr>
                     </section>
                     <section class="syntaxInfo">
-                        <h4>Table</h4>
-                        <p>| T-Header | T-Header 2 | <br>
-                            | ---- | ---- | <br>
-                            | T-Body | T-Body 2|</p>
-                        </p>
-                        <hr>
-                    </section>
-                    <section class="syntaxInfo">
                         <h4>Other good to know</h4>
                         <p>- List</p>
                         <p>*Italic*</p>
                         <p>**Bold Text**</p>
-                        <p>--- Line</p>
+                        <p>--- new page</p>
                     </section>
                 </div>
             </div>
         </div>
-        <div id=footerDiv>
 
-        </div>
+        <div id="secGrid">
+            <div class="mark-section">
+                <div class="outputSection">
+                    <div class="newClass">
+                        <div id="leftArrow">
+                            <button class="carousel__button carousel__button--left is-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="contentBox">
+                            <ul class="output-area" id="content">
+                                <li id="preview" class="textOutput current-page textOutput img output-area"></li>
+                            </ul>
+                        </div>
+                        <div id="rightArrow">
+                            <button class="carousel__button carousel__button--right is-hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                    <div id="carouselBtn" class="carousel__nav">
+                        <button class="carousel__indicator current-dot"></button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                
+            </div>
+        </div>  
+        <div class="footer" id="footerDiv"></div>
+
     </div>
-
-
     <script src="./js/carousel.js"></script>
 </body>
-
 </html>
+
