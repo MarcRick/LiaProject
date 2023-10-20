@@ -56,7 +56,7 @@ label {
 
 #input-area {
     width: 900px;
-    height: 90%;
+    height: 417px;
     margin-left:55px;
 }
 
@@ -71,11 +71,6 @@ label {
     font-family: "sofia-pro", sans-serif;
     overflow-wrap: break-word;
     resize: none;
-}
-
-#leftBot{
-    grid-row: 3;
-    grid-column: 1;
 }
 
 #container {
@@ -227,14 +222,14 @@ label {
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    background: rgba(0, 0, 0, .3);
+    background: hsla(0, 0%, 100%, 0.566);
     margin: 0 7px;
     cursor: pointer;
     z-index: 10;
 }
 
 .current-dot {
-    background: hsla(0, 0%, 100%, .9);
+    background: hsla(0, 0%, 100%, 0.961);
 }
 
 .arrows {
