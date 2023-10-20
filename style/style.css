@@ -259,7 +259,6 @@ label {
 }
 
 .overlay {
-    display: none;
     position: fixed;
     background: url("NotNinja.jpg");
     background-repeat: repeat;
@@ -269,7 +268,7 @@ label {
     height: 100%;
     z-index: 10000;
     opacity: 50%;
-
+    display: none;
 }
 
 .overlay .popup {
