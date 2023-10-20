@@ -1,11 +1,15 @@
 var textKey = [];
 var textKeyIndex = 0;
 
+const appliedFonts = [];
+let pageIndex = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const fontSelect = document.getElementById("fontSelect");
     const previewElement = document.getElementById("preview");
-    let selectedFontFamily = '';
+    let selectedFontFamily = '';   
+    
 
     fontSelect.addEventListener('change', function () {
         const selectedFont = this.value;
@@ -44,8 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
         }
         previewElement.style.fontFamily = selectedFontFamily;
+        storeAppliedFont(selectedFont);
     });
-
 
     const layoutSelect = document.getElementById("layoutSelect");
     const inputLayout = document.getElementById("content");
@@ -160,8 +164,6 @@ function updatePreview(e) {
     createPages(markedUpHTML);
 }
 
-
-
 function createPages(editorValue) {
 
     let newPages = false;
@@ -175,7 +177,7 @@ function createPages(editorValue) {
         const newLi = document.createElement('li');
         newLi.className = 'text-output';
         track.appendChild(newLi); // adding a new <li> to .output-area in html
-        pages.push(newLi); // Add the new page to the pages array
+        pages.push(newLi); // Add newLi(as a new page) to the pages array
         addCurrentToLast(track);
         newPages = true;
         // dots        
@@ -183,9 +185,11 @@ function createPages(editorValue) {
         // Add an event listener for the fontSelect dropdown's change event
         const fontSelect = document.getElementById('fontSelect');
         fontSelect.addEventListener('change', function () {
-            applyFontStyle(newLi); // Reapply font style when font selection changes
+            moveCursorToNextLine()
+            const selectedFontFamily= applyFontStyle(newLi); // Reapply font style when font selection changes 
+            storeAppliedFont(selectedFontFamily)  
         });
-        
+                      
     }
 
     // Remove extra pages if there are more pages than occurrences
@@ -231,12 +235,12 @@ function createPages(editorValue) {
             leftButton.classList.add('is-hidden');
             const rightButton = document.querySelector('.carousel__button--right');
             rightButton.classList.add('is-hidden');
-        }        
+        }
     }
 
 }
 
-function applyFontStyle(page) {  
+function applyFontStyle(page) {
 
     const selectedFont = document.getElementById('fontSelect').value;
     let selectedFontFamily = '';
@@ -271,7 +275,36 @@ function applyFontStyle(page) {
             break;
     }
 
-    page.style.fontFamily = selectedFontFamily;    
+    page.style.fontFamily = selectedFontFamily;
+    return selectedFontFamily;
+}
+
+function moveCursorToNextLine() {
+    const inputElement = document.getElementById('editor');
+    const cursorPosition = inputElement.selectionStart; // Get the current cursor position
+
+    // Insert a newline character only if the cursor is not already at the beginning of a line
+    const text = inputElement.value;
+    const previousChar = cursorPosition > 0 ? text[cursorPosition - 1] : '';
+    const nextChar = cursorPosition < text.length ? text[cursorPosition] : '';
+
+    if (previousChar !== '\n' && nextChar !== '\n') {
+        // Insert a newline character at the cursor position
+        const newText = text.substring(0, cursorPosition) + '\n' + text.substring(cursorPosition);
+        inputElement.value = newText;
+
+        // Set the new cursor position to the beginning of the next line
+        inputElement.selectionStart = cursorPosition + 1;
+        inputElement.selectionEnd = cursorPosition + 1;
+    }
+
+    // Focus on the textarea to ensure it has focus after the cursor movement
+    inputElement.focus();
+}
+
+function storeAppliedFont(selectedFont) {
+    pageIndex++;
+    appliedFonts.push({ pageIndex, selectedFont });
 }
 
 function findImgMatch(editorValue) {
@@ -316,7 +349,7 @@ function autoResize(textarea) {
     textarea.style.height = (textarea.scrollHeight) + 'px'; // Sätt höjden till scrollhöjden
 }
 
-function Convert_HTML_To_PDF(fileName) {
+/*function Convert_HTML_To_PDF(fileName) {
     const elements = document.querySelectorAll(".output-area li");
 
     // Create an array to store the content for each page
@@ -343,7 +376,45 @@ function Convert_HTML_To_PDF(fileName) {
 
     // Use the html2pdf library to generate the PDF
     html2pdf(htmlContent, opt);
+}*/
+
+function Convert_HTML_To_PDF(fileName) {
+    const elements = document.querySelectorAll(".output-area li");
+
+    // Create an array to store the content for each page
+    const pages = [];
+
+    elements.forEach((element, index) => {
+        // Add a page break before each item except the first one
+        if (index > 0) {
+            pages.push('<div style="page-break-before: always;"></div>');
+        }
+
+        // Extract the font information from the appliedFonts array
+        if (appliedFonts[index]) {
+            const selectedFont = appliedFonts[index];
+            // Add the content of the list item with the specified font
+            pages.push(`<div style="font-family: ${selectedFont};">${element.innerHTML}</div>`);
+        } else {
+            // Fallback to a default font if the font information is missing
+            pages.push(`<div style="font-family: 'Poppins';">${element.innerHTML}</div>`);
+        }
+    });
+
+    // Combine the pages into a single HTML string
+    const htmlContent = pages.join('');
+
+    // Define the PDF generation options
+    const opt = {
+        margin: [10, 5, 10, 5],
+        filename: fileName
+    };
+
+    // Use the html2pdf library to generate the PDF
+    html2pdf(htmlContent, opt);
 }
+
+
 
 
 var isToggled = false;
