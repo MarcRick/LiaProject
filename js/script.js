@@ -119,15 +119,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
-function ChangeImage() {
+
+function changeIMGLayout() {
     const positionSelect = document.getElementById('picturePlacement');
     const selectedPosition = positionSelect.value;
-    const outputContent = document.querySelector(".content")
 
-<<<<<<< HEAD
-    if (selectedPosition === "Top") {
-        outputContent.style.flexDirection = "column-reverse";
-=======
     const styleSheet = document.styleSheets[0];
     const rules = styleSheet.cssRules;
 
@@ -142,12 +138,8 @@ function ChangeImage() {
                 rule.style.removeProperty('Bottom');
             }
         }
->>>>>>> 60417847c1939e75a702e875cb77132482ccaaef
     }
-    else {
-        outputContent.style.flexDirection = "column";
-    }
-}
+};
 
 function updatePreview(e) {
     let previewElement = document.getElementById("preview");
@@ -382,25 +374,3 @@ function chosePage() {
 //newPage.textContent = Page ${totalPages} Content;
 //document.getElementById('pageContainer').appendChild(newPage);
 //}
-
-/*function changeIMGLayout() {
-    const positionSelect = document.getElementById('picturePlacement');
-    const selectedPosition = positionSelect.value;
-    const outputContent = document.querySelector(".content")
-
-    const styleSheet = document.styleSheets[0];
-    const rules = styleSheet.cssRules;
-
-    for (let i = 0; i < rules.length; i++) {
-        if (rules[i].selectorText === '.text-output img') {
-            const rule = rules[i];
-            if (selectedPosition === 'Bottom') {
-                rule.style.bottom = rule.style.top;
-                rule.style.removeProperty('Top');
-            } else {
-                rule.style.top = rule.style.bottom;
-                rule.style.removeProperty('Bottom');
-            }
-        }
-    }
-}; */
