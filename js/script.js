@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const layoutSelect = document.getElementById("layoutSelect");
-    const inputLayout = document.getElementById("content");
+    const inputLayout = document.getElementById("contentBox");
+    const navSize = document.getElementById("carouselBtn")
 
     layoutSelect.addEventListener('change', function () {
         const selectedLayout = layoutSelect.value;
@@ -45,12 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedLayout === 'CB') {
             inputLayout.style.width = "10in";
             inputLayout.style.height = "7in";
+            navSize.style.width = "10in";
         } else if (selectedLayout === 'PB') {
             inputLayout.style.width = "5.8in";
             inputLayout.style.height = "8.3in";
+            navSize.style.width = "5.8in";
         }
-
-
+        
     });
 
 
@@ -122,8 +124,25 @@ function ChangeImage() {
     const selectedPosition = positionSelect.value;
     const outputContent = document.querySelector(".content")
 
+<<<<<<< HEAD
     if (selectedPosition === "Top") {
         outputContent.style.flexDirection = "column-reverse";
+=======
+    const styleSheet = document.styleSheets[0];
+    const rules = styleSheet.cssRules;
+
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].selectorText === '.textOutput img') {
+            const rule = rules[i];
+            if (selectedPosition === 'Bottom') {
+                rule.style.bottom = rule.style.top;
+                rule.style.removeProperty('Top');
+            } else {
+                rule.style.top = rule.style.bottom;
+                rule.style.removeProperty('Bottom');
+            }
+        }
+>>>>>>> 60417847c1939e75a702e875cb77132482ccaaef
     }
     else {
         outputContent.style.flexDirection = "column";
@@ -150,7 +169,7 @@ function createPages(editorValue) {
     // Ensure there are enough pages
     while (occurrences.length > pages.length) {
         const newLi = document.createElement('li');
-        newLi.className = 'text-output';
+        newLi.className = 'textOutput';
         track.appendChild(newLi);
         pages.push(newLi); // Add the new page to the pages array
         addCurrentToLast(track);
@@ -203,9 +222,27 @@ function createPages(editorValue) {
             rightButton.classList.add('is-hidden');
         }
     }
+}
 
+function ChangeIMGLayout() {
+    const positionSelect = document.getElementById('positionSelect');
+    const selectedPosition = positionSelect.value;
 
+    const styleSheet = document.styleSheets[0];
+    const rules = styleSheet.cssRules;
 
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].selectorText === '.textOutput img') {
+            const rule = rules[i];
+            if (selectedPosition === 'bottom') {
+                rule.style.bottom = rule.style.top;
+                rule.style.removeProperty('top');
+            } else {
+                rule.style.top = rule.style.bottom;
+                rule.style.removeProperty('bottom');
+            }
+        }
+    }
 }
 
 function findImgMatch(editorValue) {
@@ -239,15 +276,8 @@ function addCurrentToLast(track) {
         allCurrent.forEach(x => x.classList.remove('current-page'));
     }
 
-    const lastSibling = track.querySelector('.text-output:last-child');
+    const lastSibling = track.querySelector('.textOutput:last-child');
     lastSibling.classList.add('current-page');
-}
-
-
-// Funktion för att ändra höjden på textarea baserat på innehållet
-function autoResize(textarea) {
-    textarea.style.height = 'auto'; // Återställ höjden till auto för att mäta rätt höjd
-    textarea.style.height = (textarea.scrollHeight) + 'px'; // Sätt höjden till scrollhöjden
 }
 
 function Convert_HTML_To_PDF(fileName) {

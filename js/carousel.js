@@ -35,6 +35,7 @@ function hideShowArrows(slides, prevButton, nextButton, targetIndex) {
 
 
 prevButton.addEventListener('click', e => {
+    console.log("hej")
     const currentPage = output.querySelector('.current-page');
     const prevPage = currentPage.previousElementSibling;
     moveToSlide(currentPage, prevPage);
@@ -49,6 +50,7 @@ prevButton.addEventListener('click', e => {
 })
 
 nextButton.addEventListener('click', e => {
+    console.log("då")
     const currentPage = output.querySelector('.current-page');
     const nextPage = currentPage.nextElementSibling;
     moveToSlide(currentPage, nextPage);
