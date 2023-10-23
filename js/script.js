@@ -52,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const layoutSelect = document.getElementById("layoutSelect");
-    const inputLayout = document.getElementById("content");
+    const inputLayout = document.getElementById("contentBox");
+    const navSize = document.getElementById("carouselBtn")
 
     layoutSelect.addEventListener('change', function () {
         const selectedLayout = layoutSelect.value;
@@ -60,12 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedLayout === 'CB') {
             inputLayout.style.width = "10in";
             inputLayout.style.height = "7in";
+            navSize.style.width = "10in";
         } else if (selectedLayout === 'PB') {
             inputLayout.style.width = "5.8in";
             inputLayout.style.height = "8.3in";
+            navSize.style.width = "5.8in";
         }
-
-
+        
     });
 
 
@@ -142,7 +144,7 @@ function changeIMGLayout() {
     const rules = styleSheet.cssRules;
 
     for (let i = 0; i < rules.length; i++) {
-        if (rules[i].selectorText === '.text-output img') {
+        if (rules[i].selectorText === '.textOutput img') {
             const rule = rules[i];
             if (selectedPosition === 'Bottom') {
                 rule.style.bottom = rule.style.top;
@@ -164,6 +166,8 @@ function updatePreview(e) {
     createPages(markedUpHTML);
 }
 
+
+
 function createPages(editorValue) {
 
     let newPages = false;
@@ -175,9 +179,9 @@ function createPages(editorValue) {
     // Ensure there are enough pages
     while (occurrences.length > pages.length) {
         const newLi = document.createElement('li');
-        newLi.className = 'text-output';
-        track.appendChild(newLi); // adding a new <li> to .output-area in html
-        pages.push(newLi); // Add newLi(as a new page) to the pages array
+        newLi.className = 'textOutput';
+        track.appendChild(newLi); 
+        pages.push(newLi); // Add the new page to the pages array
         addCurrentToLast(track);
         newPages = true;
         // dots        
@@ -237,8 +241,9 @@ function createPages(editorValue) {
             rightButton.classList.add('is-hidden');
         }
     }
-
 }
+
+
 
 function applyFontStyle(page) {
 
@@ -307,6 +312,28 @@ function storeAppliedFont(selectedFont) {
     appliedFonts.push({ pageIndex, selectedFont });
 }
 
+
+function ChangeIMGLayout() {
+    const positionSelect = document.getElementById('positionSelect');
+    const selectedPosition = positionSelect.value;
+
+    const styleSheet = document.styleSheets[0];
+    const rules = styleSheet.cssRules;
+
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].selectorText === '.textOutput img') {
+            const rule = rules[i];
+            if (selectedPosition === 'bottom') {
+                rule.style.bottom = rule.style.top;
+                rule.style.removeProperty('top');
+            } else {
+                rule.style.top = rule.style.bottom;
+                rule.style.removeProperty('bottom');
+            }
+        }
+    }
+}
+
 function findImgMatch(editorValue) {
 
     // Hitta alla matchningar av ![](...) i texten
@@ -338,45 +365,9 @@ function addCurrentToLast(track) {
         allCurrent.forEach(x => x.classList.remove('current-page'));
     }
 
-    const lastSibling = track.querySelector('.text-output:last-child');
+    const lastSibling = track.querySelector('.textOutput:last-child');
     lastSibling.classList.add('current-page');
 }
-
-
-// Funktion för att ändra höjden på textarea baserat på innehållet
-function autoResize(textarea) {
-    textarea.style.height = 'auto'; // Återställ höjden till auto för att mäta rätt höjd
-    textarea.style.height = (textarea.scrollHeight) + 'px'; // Sätt höjden till scrollhöjden
-}
-
-/*function Convert_HTML_To_PDF(fileName) {
-    const elements = document.querySelectorAll(".output-area li");
-
-    // Create an array to store the content for each page
-    const pages = [];
-
-    elements.forEach((element, index) => {
-        // Add a page break before each item except the first one
-        if (index > 0) {
-            pages.push('<div style="page-break-before: always;"></div>');
-        }
-
-        // Add the content of the list item
-        pages.push(element.innerHTML);
-    });
-
-    // Combine the pages into a single HTML string
-    const htmlContent = pages.join('');
-
-    // Define the PDF generation options
-    const opt = {
-        margin: [10, 5, 10, 5],
-        filename: fileName
-    };
-
-    // Use the html2pdf library to generate the PDF
-    html2pdf(htmlContent, opt);
-}*/
 
 function Convert_HTML_To_PDF(fileName) {
     const elements = document.querySelectorAll(".output-area li");
@@ -413,8 +404,6 @@ function Convert_HTML_To_PDF(fileName) {
     // Use the html2pdf library to generate the PDF
     html2pdf(htmlContent, opt);
 }
-
-
 
 
 var isToggled = false;
