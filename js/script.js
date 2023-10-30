@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const generateButton = document.getElementById("generateButton");
     const imageContainer = document.getElementById("imageContainer");
+    const getPicture = document.getElementById("promptInput")
 
     generateButton.addEventListener("click", async () => {
         try {
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: JSON.stringify({
                     "key": "8VmbbQP624v2qxel6v5Lzy1GKbeTONX8LOFtiY6QsMDyNbbW6mSwIrtBMNHM",
-                    "prompt": "ultra realistic close up portrait ((beautiful pale cyberpunk female with heavy black eyeliner))",
+                    "prompt": getPicture.value,
                     "negative_prompt": null,
                     "width": "512",
                     "height": "512",
@@ -40,14 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.ok) {
                 const data = await response.json();
                 const imageUrl = data.output[0];
-
                 imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
+
             } else {
                 console.error("API request failed.");
             }
         } catch (error) {
             console.error("An error occurred:", error);
         }
+
     });
 
     const previewBtn = document.getElementById("preButton");

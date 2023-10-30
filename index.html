@@ -133,10 +133,6 @@
                         <p>--- new page</p>
                     </section>
                 </div>
-                <h1>Generate a Portrait</h1>
-                <button id="generateButton">Generate Portrait</button>
-
-                <div id="imageContainer"></div>
             </div>
         </div>
 
@@ -177,7 +173,7 @@
             </div>
             <div class="rightSection">
                 <div class="prompt">
-                    <textarea class="scroll-hide" placeholder="Enter your description here"></textarea>
+                    <textarea id="promptInput" class="scroll-hide" placeholder="Enter your description here"></textarea>
                 </div>
                 <div class="layout-select">
                     <label>Choose Styles:</label>
@@ -288,8 +284,10 @@
                     </select>
                 </div>
                 <div class="generateBtn">
-                    <button class="save-btn btnShadow">Click to Generate</button>
+                    <button id="generateButton" class="save-btn btnShadow">Click to Generate</button>
                 </div>
+                <h1>Generate a Portrait</h1>
+                <div id="imageContainer"></div>
             </div>
         </div>
         <div class="footer" id="footerDiv"></div>
