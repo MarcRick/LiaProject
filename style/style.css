@@ -52,7 +52,7 @@ label {
 
 #input-area {
     width: 10in;
-    height: 470px;
+    height: 430px;
     margin-left:55px;
 }
 
@@ -293,10 +293,10 @@ label {
     width: 35px;
 }
 
-.tips {
+.tips{
     width: 120px;
     height: 24px;
     opacity: .7;
-    background-color: #284b63;
-    color: white;
+    background-color:#284b63;
+    color:white ; 
 }
