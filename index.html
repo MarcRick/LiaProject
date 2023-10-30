@@ -22,6 +22,13 @@
 </head>
 
 <body>
+    <header class="sticky-header" id="title">
+        <div id="logo">
+            <a href="#">
+                <img src="images/drawing2.svg" alt="HOME">
+            </a>
+        </div>
+    </header>
     <div class="grid" id="container">
         <!-- <div id="preBox" class="preBox">
             <div class="preContainer">
@@ -77,8 +84,7 @@
         </div>
         <div class="firstGrid">
             <div id="input-area">
-                <textarea id="editor"
-                    onkeyup="updatePreview()"></textarea>
+                <textarea id="editor" onkeyup="updatePreview()"></textarea>
             </div>
             <div>
                 <div class="font-selector">
@@ -166,18 +172,19 @@
                         </div>
                     </div>
                     <div>
-                    <div id="carouselBtn" class="carousel__nav">
-                        <button class="carousel__indicator current-dot"></button>
+                        <div id="carouselBtn" class="carousel__nav">
+                            <button class="carousel__indicator current-dot"></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                
-            </div>
-        </div>  
-        <div class="footer" id="footerDiv"></div>
+                <div>
 
-    </div>
-    <script src="./js/carousel.js"></script>
+                </div>
+            </div>
+            <div class="footer" id="footerDiv"></div>
+
+        </div>
+        <script src="./js/carousel.js"></script>
 </body>
+
 </html>

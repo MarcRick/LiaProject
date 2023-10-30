@@ -1,17 +1,69 @@
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    background-color: #333333;    /* #333 */
+    padding: 11px;    
+    text-align: center;
+    /* Center-align the content */
+    transition: height 0.3s;
+    /* Smooth transition effect */
+    z-index: 3;
+}
+
+#logo {
+    display: inline-block;
+    /* Make the logo an inline-block element */
+    text-align: left;
+    /* Adjust logo alignment */
+    overflow: hidden;
+    /* Hide any overflowing content within the logo */
+}
+
+#logo img {
+    width: 134px;
+    height: 80px;
+    transition: height 0.3s;
+}
+
+/* Styles for the minimized header*/
+.sticky-header.minimized {
+    height: 35px;
+    padding: 0; /* Remove padding when minimized */
+    padding-bottom: 40px;
+    
+}
+
+.sticky-header.minimized #logo {
+    display: inline-block; /* Ensure the logo is displayed when the header is minimized */    
+    text-align: left; /* Adjust logo alignment when minimized */    
+    padding: 5px 0px 5px 0px; /* Add some padding to the minimized logo */    
+}
+
+.sticky-header.minimized #logo img {
+    height: 30px;
+    width: auto;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.firstGrid{
+.firstGrid {
+    padding-top: 40px;
     display: grid;
-    margin-top:30px;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:10px;
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    z-index: 0;
 }
 
-.secGrid{
+.secGrid {
     display: grid;
     margin-top: 30px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -25,26 +77,33 @@ label {
 
 #container {
     background-color: #161a1d;
-    overflow-y:scroll;
+    overflow-y: scroll;
+    padding: 16px;
 }
 
-#headerDiv{
-    background-color: #0b090a;
-    grid-row: 1;
-    grid-column: 1/4;
-    opacity: 0.9; 
+#headerDiv {
+    position: sticky;/* Change this to either sticky/relative/fixed/ to align with sticky-header */    
+    top: 95px;/* Adjust the top to match the height of title-header */    
+    width: 100%;
+    background-color: #161a1d;
+    opacity: 0.9;
     overflow: auto;
-    height: 85px;
+    z-index: 2;/* Keep this lower than title-header to place it in between */
+    padding-top: 0px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
 }
 
 #btn-section {
     float: left;
-    margin-top:5px;
+    margin-top: 5px;
     font-size: 15px;
     font-family: "sofia-pro", sans-serif;
 }
 
-#leftContainer{
+#leftContainer {
     height: 100%;
     margin: 10px;
 }
@@ -52,14 +111,14 @@ label {
 
 #input-area {
     width: 10in;
-    height: 430px;
-    margin-left:55px;
+    height: 470px;
+    margin-left: 55px;
 }
 
-#editor{
+#editor {
     width: 100%;
     height: 100%;
-    padding:10px;
+    padding: 10px;
     border-radius: 10px;
     background: white;
     color: black(0, 0%, 100%, .9);
@@ -92,13 +151,13 @@ label {
     font-family: "sofia-pro", sans-serif;
 }
 
-#contentBox{
+#contentBox {
     width: 10in;
     height: 7in;
 }
 
 .btnBox {
-    float:right;
+    float: right;
     margin-left: 5px;
     margin-top: 19px;
 }
@@ -121,6 +180,7 @@ label {
     height: 35px;
     font-weight: 700;
     position: relative;
+    width: 200px;
 }
 
 .save-btn {
@@ -134,8 +194,8 @@ label {
     font-weight: 700;
 }
 
-.font-selector{
-    margin-top:50px;
+.font-selector {
+    margin-top: 50px;
 }
 
 
@@ -152,7 +212,7 @@ label {
 }
 
 .mark-section {
-    height:100%;
+    height: 100%;
     width: 100%;
     display: flex;
     position: relative;
@@ -162,28 +222,27 @@ label {
 .outputSection {
     height: 100%;
     width: 95%;
-    margin:10px;
+    margin: 10px;
     padding: 10px;
     position: relative;
     background-color: #161a1d;
 }
 
-.newClass{
-    height:100%;
+.newClass {
+    height: 100%;
     display: flex;
     align-items: center;
 }
 
-.output-area{
+.output-area {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-
 .textOutput {
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: none;
@@ -201,8 +260,8 @@ label {
 .textOutput img {
     width: 100%;
     position: absolute;
-    left:0;
-    bottom:0;
+    left: 0;
+    bottom: 0;
     z-index: 0;
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
@@ -213,7 +272,7 @@ label {
 }
 
 .carousel__nav {
-    margin-left:35px;
+    margin-left: 35px;
     margin-top: 2px;
     width: 10in;
     display: flex;
@@ -240,12 +299,12 @@ label {
     height: 50px;
 }
 
-.layout-select{
-    margin-top:10px;
+.layout-select {
+    margin-top: 10px;
 }
 
-.placement-select{
-    margin-top:10px;
+.placement-select {
+    margin-top: 10px;
 }
 
 .openClose-btn {
@@ -261,17 +320,17 @@ label {
     font-weight: 700;
 }
 
-.previewSelect{
+.previewSelect {
     margin-top: 40px;
     text-align: center;
 }
 
-.alignTextC{
+.alignTextC {
     text-align: center;
 }
 
 .current-page {
-    display:block;
+    display: block;
 }
 
 .is-hidden {
@@ -279,14 +338,14 @@ label {
 }
 
 #rightArrow,
-#leftArrow{
+#leftArrow {
     width: 35px;
 }
 
-.tips{
+.tips {
     width: 120px;
     height: 24px;
     opacity: .7;
-    background-color:#284b63;
-    color:white ; 
+    background-color: #284b63;
+    color: white;
 }
