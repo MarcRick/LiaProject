@@ -249,7 +249,6 @@ function createPages(editorValue) {
             const selectedFontFamily = applyFontStyle(newLi); // Reapply font style when font selection changes 
             storeAppliedFont(selectedFontFamily)
         });
-
     }
 
     // Remove extra pages if there are more pages than occurrences
