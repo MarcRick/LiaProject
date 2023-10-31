@@ -300,3 +300,8 @@ label {
     background-color: #284b63;
     color: white;
 }
+
+.imageContainer > h1{
+    color: white;
+    font-family: sans-serif;
+}

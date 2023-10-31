@@ -6,55 +6,10 @@ let pageIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const generateButton = document.getElementById("generateButton");
-    const imageContainer = document.getElementById("imageContainer");
-    const getPicture = document.getElementById("promptInput");
     const fontSelect = document.getElementById("fontSelect");
     const previewElement = document.getElementById("preview");
     let selectedFontFamily = '';
 
-    generateButton.addEventListener("click", async () => {
-        try {
-            const response = await fetch("https://stablediffusionapi.com/api/v3/text2img", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    "key": "8VmbbQP624v2qxel6v5Lzy1GKbeTONX8LOFtiY6QsMDyNbbW6mSwIrtBMNHM",
-                    "prompt": getPicture.value,
-                    "negative_prompt": null,
-                    "width": "512",
-                    "height": "512",
-                    "samples": "1",
-                    "num_inference_steps": "20",
-                    "seed": null,
-                    "guidance_scale": 7.5,
-                    "safety_checker": "yes",
-                    "multi_lingual": "no",
-                    "panorama": "no",
-                    "self_attention": "no",
-                    "upscale": "no",
-                    "embeddings_model": null,
-                    "webhook": null,
-                    "track_id": null
-                })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                const imageUrl = data.output[0];
-                imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
-
-            } 
-            else {
-                console.error("API request failed.");
-            }
-        } 
-        catch (error) {
-            console.error("An error occurred:", error);
-        }
-    });
 
 
     fontSelect.addEventListener('change', function () {
@@ -113,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
             inputLayout.style.height = "8.3in";
             navSize.style.width = "5.8in";
         }
-
     });
 
     const textarea = document.querySelector("textarea");
