@@ -264,11 +264,10 @@ label {
     bottom: 0;
     z-index: 0;
     border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
+    border-bottom-left-radius: 7px; 
     max-width: 100%;
-    max-height: 80%;
+    max-height: 80%;   
 }
-
 .current-page {
     z-index: 1;
 }
