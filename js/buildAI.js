@@ -1,12 +1,11 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const generateButton = document.getElementById("generateButton");
     const imageContainer = document.getElementById("imageContainer");
     const getPicture = document.getElementById("promptInput");
-    const basePromptStyle = document.getElementById("styleSelect")
-    let promptStyle = "";
-    const TotalPrompt = getPicture.value + promptStyle;
+    const basePromptStyle = document.getElementById("styleSelect");
+    let promptStyle = ", Fantasy";
+
 
     basePromptStyle.addEventListener('change', function () {
         const selectedStyle = this.value;
@@ -37,7 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 promptStyle = ", Oil-Painting";
                 break;
         }
+        selectedStyle = promptStyle;
     });
+
 
     generateButton.addEventListener("click", async () => {
         try {
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: JSON.stringify({
                     "key": "8VmbbQP624v2qxel6v5Lzy1GKbeTONX8LOFtiY6QsMDyNbbW6mSwIrtBMNHM",
-                    "prompt": TotalPrompt,
+                    "prompt": getPicture.value + promptStyle,
                     "negative_prompt": null,
                     "width": "768",
                     "height": "512",
@@ -68,16 +69,16 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                console.log(TotalPrompt);
+                console.log(getPicture.value + promptStyle);
                 const data = await response.json();
                 const imageUrl = data.output[0];
                 imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
 
-            } 
+            }
             else {
                 console.error("API request failed.");
             }
-        } 
+        }
         catch (error) {
             console.error("An error occurred:", error);
         }
