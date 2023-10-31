@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const generateButton = document.getElementById("generateButton");
     const imageContainer = document.getElementById("imageContainer");
-    const getPicture = document.getElementById("promptInput")
+    const getPicture = document.getElementById("promptInput");
+    const fontSelect = document.getElementById("fontSelect");
+    const previewElement = document.getElementById("preview");
+    let selectedFontFamily = '';
 
     generateButton.addEventListener("click", async () => {
         try {
@@ -43,29 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 const imageUrl = data.output[0];
                 imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
 
-            } else {
+            } 
+            else {
                 console.error("API request failed.");
             }
-        } catch (error) {
+        } 
+        catch (error) {
             console.error("An error occurred:", error);
         }
-
     });
-
-    const previewBtn = document.getElementById("preButton");
-    const clickPreview = document.getElementById("overlay");
-
-    previewBtn.addEventListener('click', function () {
-        if (clickPreview.style.display === "none")
-            clickPreview.style.display = "block"; // Change the display property
-        else
-            clickPreview.style.display = "none";
-
-    });
-
-    const fontSelect = document.getElementById("fontSelect");
-    const previewElement = document.getElementById("preview");
-    let selectedFontFamily = '';
 
 
     fontSelect.addEventListener('change', function () {
