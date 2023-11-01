@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;    
-    background-color: #333333;    /* #333 */
+    background-color: #333333;   
     padding: 11px;    
     text-align: center;
     /* Center-align the content */
@@ -55,7 +55,7 @@
 }
 
 .firstGrid {
-    padding-top: 40px;
+    padding-top: 30px;
     display: grid;
     margin-top: 50px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -65,8 +65,8 @@
 
 .secGrid {
     display: grid;
-    margin-top: 30px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
 }
 
 label {
@@ -75,11 +75,7 @@ label {
     font-weight: 600;
 }
 
-#container {
-    background-color: #161a1d;
-    overflow-y: scroll;
-    padding: 16px;
-}
+
 
 #headerDiv {
     position: sticky;/* Change this to either sticky/relative/fixed/ to align with sticky-header */    
@@ -89,9 +85,9 @@ label {
     opacity: 0.9;
     overflow: auto;
     z-index: 2;/* Keep this lower than title-header to place it in between */
-    padding-top: 0px;
+    padding-top: 20px;
     padding-bottom: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 30px;
     box-sizing: border-box;
 }
@@ -111,7 +107,7 @@ label {
 
 #input-area {
     width: 10in;
-    height: 470px;
+    height: 430px;
     margin-left: 55px;
 }
 
@@ -179,8 +175,7 @@ label {
     border: 1.5px solid black;
     height: 35px;
     font-weight: 700;
-    position: relative;
-    width: 200px;
+    position: relative;    
 }
 
 .save-btn {
@@ -241,8 +236,8 @@ label {
 }
 
 .textOutput {
-    top: 0;
-    left: 0;
+    top:  0;
+    left:  0;
     width: 100%;
     height: 100%;
     display: none;
@@ -300,6 +295,14 @@ label {
     height: 50px;
 }
 
+.rightSection {
+    margin-top: 30px;
+}
+
+.generateBtn {
+    margin-top: 40px;
+}
+
 .layout-select {
     margin-top: 10px;
 }
@@ -326,7 +329,7 @@ label {
     text-align: center;
 }
 
-.alignTextC {
+.alignTextC  {
     text-align: center;
 }
 
@@ -343,10 +346,15 @@ label {
     width: 35px;
 }
 
-.tips {
+.tips  {
     width: 120px;
     height: 24px;
     opacity: .7;
     background-color: #284b63;
     color: white;
+}
+
+.imageContainer > h1{
+    color: white;
+    font-family: sans-serif;
 }

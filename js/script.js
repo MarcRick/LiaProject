@@ -110,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
     const textarea = document.querySelector("textarea");
     const selectMenu = document.querySelector('.select-menu select');
     const saveBtn = document.querySelector(".save-btn");
@@ -221,6 +220,7 @@ function createPages(editorValue) {
         const newLi = document.createElement('li');
         newLi.className = 'textOutput';
         track.appendChild(newLi);
+        track.appendChild(newLi);
         pages.push(newLi); // Add the new page to the pages array
         addCurrentToLast(track);
         newPages = true;
@@ -231,9 +231,8 @@ function createPages(editorValue) {
         fontSelect.addEventListener('change', function () {
             moveCursorToNextLine()
             const selectedFontFamily = applyFontStyle(newLi); // Reapply font style when font selection changes 
-            storeAppliedFont(selectedFontFamily)
-        });
-
+            storeAppliedFont(selectedFontFamily)            
+        });                      
     }
 
     // Remove extra pages if there are more pages than occurrences
@@ -282,8 +281,6 @@ function createPages(editorValue) {
         }
     }
 }
-
-
 
 function applyFontStyle(page) {
 
@@ -444,6 +441,32 @@ function Convert_HTML_To_PDF(fileName) {
     // Use the html2pdf library to generate the PDF
     html2pdf(htmlContent, opt);
 }
+/*function Create_Preview() {
+    const elements = document.querySelectorAll(".output-area li");
+    const previewContainer = document.getElementById("preview-container");
+
+    // Hide the output area
+    const outputArea = document.querySelector(".output-area");
+    outputArea.style.display = "none";
+
+    elements.forEach((element, index) => {
+        const prePageDiv = document.createElement("preview");
+        prePageDiv.classList.add("page-preview");
+
+        prePageDiv.innerHTML = element.innerHTML;
+
+        previewContainer.appendChild(prePageDiv);
+
+        if (index < elements.length - 1) {
+            const pageBreak = document.createElement("div");
+            pageBreak.style.pageBreakBefore = "always";
+            previewContainer.appendChild(pageBreak);
+        }
+    });
+}*/
+
+// Call Create_Preview to generate and display the preview
+/*Create_Preview();*/
 
 
 var isToggled = false;
@@ -508,13 +531,5 @@ function chosePage() {
     document.getElementById("editor").value = Text.value;
 }
 
-//function addPage() {
-//  console.log(totalPages);
-// totalPages++;
-//console.log(totalPages);
-//const newPage = document.createElement('div');
-//newPage.id = page${totalPages};
-//newPage.className = 'page';
-//newPage.textContent = Page ${totalPages} Content;
-//document.getElementById('pageContainer').appendChild(newPage);
-//}
+
+

@@ -8,6 +8,7 @@
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/preview.js"></script>
+    <script src="./js/buildAI.js"></script>
     <link rel="stylesheet" href="./style/preview.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
@@ -30,33 +31,6 @@
         </div>
     </header>
     <div class="grid" id="container">
-        <!-- <div id="preBox" class="preBox">
-            <div class="preContainer">
-                <span class="close" id="close-modal">&times;</span>
-                <div class="newClass">
-                <button class="carousel__button carousel__button--left is-hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-                    </svg>
-                </button>
-                <ul class="preOutput-area" id="preConten">
-                    <li id="prePreview" class="textOutput current-page textOutput img output-area"></li>
-                </ul>
-                <button class="carousel__button carousel__button--right is-hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                    </svg>
-                </button>
-                </div>
-                <div class="carousel__nav">
-                    <button class="carousel__indicator current-dot"></button>
-                </div>
-            </div>
-        </div> -->
         <div id="headerDiv">
             <div id="btn-section">
                 <div class="btnBox">
@@ -84,7 +58,7 @@
         </div>
         <div class="firstGrid">
             <div id="input-area">
-                <textarea id="editor" onkeyup="updatePreview()"></textarea>
+                <textarea id="editor" onkeyup="updatePreview()"></textarea>                
             </div>
             <div>
                 <div class="font-selector">
@@ -143,7 +117,7 @@
             </div>
         </div>
 
-        <div id="secGrid">
+        <div class="secGrid">
             <div class="mark-section">
                 <div class="outputSection">
                     <div class="newClass">
@@ -177,11 +151,33 @@
                         </div>
                     </div>
                 </div>
-                <div>
-
+            </div>
+            <div class="rightSection">
+                <div class="prompt">
+                    <textarea id="promptInput" class="scroll-hide" placeholder="Enter your description here"></textarea>
+                </div>
+                <div class="layout-select">
+                    <label>Choose Styles:</label>
+                    <select id="styleSelect" class="input">
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Dark-fantasy">Dark-fantasy</option>
+                        <option value="Childish-fantasy">Childish fantasy</option>
+                        <option value="Sci-fi">Sci-fi</option>
+                        <option value="Pixel-art">Pixel-art</option>
+                        <option value="Oil-painting">Oil-painting</option>
+                        <option value="Gore">Gore</option>
+                    </select>
+                </div>
+                <div class="generateBtn">
+                    <button id="totalPrompt" class="save-btn btnShadow">Click me!</button>
+                    <button id="generateButton" class="save-btn btnShadow">Click to Generate</button>
+                    <div class="imageContainer" id="imageContainer">
+                        <h1>Generate a Portrait</h1>
+                    </div>
                 </div>
             </div>
-            <div class="footer" id="footerDiv"></div>
+        </div>
+        <div class="footer" id="footerDiv"></div>
 
         </div>
         <script src="./js/carousel.js"></script>
