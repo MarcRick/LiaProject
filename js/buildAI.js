@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     basePromptStyle.addEventListener('change', function () {
-        const selectedStyle = this.value;
+        let selectedStyle = this.value;
 
         switch (selectedStyle) {
             case 'Pixel-art':
