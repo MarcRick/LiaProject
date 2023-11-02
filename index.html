@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Marcellus&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Lato:wght@300&family=Marcellus&family=Montserrat&family=Overpass:wght@200&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <link rel="stylesheet" href="normalize.css">
@@ -29,8 +29,6 @@
                 <img src="images/drawing2.svg" alt="HOME">
             </a>
         </div>
-    </header>
-    <div class="grid" id="container">
         <div id="headerDiv">
             <div id="btn-section">
                 <div class="btnBox">
@@ -56,9 +54,11 @@
                 </div>
             </div>
         </div>
+    </header>
+    <div class="grid" id="container">
         <div class="firstGrid">
             <div id="input-area">
-                <textarea id="editor" onkeyup="updatePreview()"></textarea>                
+                <textarea id="editor" onkeyup="updatePreview()"></textarea>
             </div>
             <div>
                 <div class="font-selector">
@@ -168,7 +168,7 @@
                         <option value="Gore">Gore</option>
                     </select>
                 </div>
-                <div class="generateBtn">                    
+                <div class="generateBtn">
                     <button id="generateButton" class="save-btn btnShadow">Click to Generate</button>
                     <div class="imageContainer" id="imageContainer">
                         <h1>Generate a Portrait</h1>
@@ -178,8 +178,8 @@
         </div>
         <div class="footer" id="footerDiv"></div>
 
-        </div>
-        <script src="./js/carousel.js"></script>
+    </div>
+    <script src="./js/carousel.js"></script>
 </body>
 
 </html>

@@ -21,31 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         currentScrollTop = st;
     });
-
-    /*  The position of #headerDiv update itself following the sticky-header, based on logo size or sticky-header height*/
-    /*function updateHeaderDivPosition() {
-        const logo = document.getElementById('logo');
-        const stickyHeader = document.getElementById('title');
-
-        // Get the current height of the logo and title-header
-        const logoHeight = logo.clientHeight;
-        const stickyHeaderHeight = stickyHeader.clientHeight;
-
-        // Calculate the new top position for #headerDiv
-        const newTop = logoHeight + stickyHeaderHeight;
-
-        // Apply the new position to #headerDiv
-        const headerDiv = document.getElementById('headerDiv');
-        headerDiv.style.top = newTop + 'px';
-    }
-
-    // Initial positioning
-    updateHeaderDivPosition();
-
-    // Listen for changes in logo size or title-header height (e.g., due to user interactions)
-    window.addEventListener('resize', updateHeaderDivPosition);
-
-
+    
     /* Font selection dropdown */
     const fontSelect = document.getElementById("fontSelect");
     const previewElement = document.getElementById("preview");
@@ -231,8 +207,8 @@ function createPages(editorValue) {
         fontSelect.addEventListener('change', function () {
             moveCursorToNextLine()
             const selectedFontFamily = applyFontStyle(newLi); // Reapply font style when font selection changes 
-            storeAppliedFont(selectedFontFamily)            
-        });                      
+            storeAppliedFont(selectedFontFamily)
+        });
     }
 
     // Remove extra pages if there are more pages than occurrences
