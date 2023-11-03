@@ -305,3 +305,8 @@ label {
     width: 240px;
     height: 80px;
 }
+
+.imageContainer img{
+    width: 584px;
+    height: 396px;
+}
