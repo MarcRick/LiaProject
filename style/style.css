@@ -354,7 +354,12 @@ label {
     color: white;
 }
 
-.imageContainer > h1{
-    color: white;
-    font-family: sans-serif;
+.scroll-hide{
+    width: 240px;
+    height: 80px;
+}
+
+.imageContainer img{
+    width: 584px;
+    height: 396px;
 }
