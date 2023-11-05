@@ -1,30 +1,60 @@
-.preBox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+.modal {
+    margin: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer/Edge */
+    scrollbar-color: transparent transparent; /* For Firefox */
+    transition: tr;
+}
+
+.modal::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.modal-pages {
+    white-space: nowrap;
+    padding: 50px;
+    max-width: 1350px;
+    transition: transform 250ms ease-in;
+    user-select: none;
+}
+
+.modal-page {
+    display: inline-block;
+    border: 2px solid black;
+    list-style: none;
+    width: 600px;
+    height: 800px;
+    margin-right: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-left, .modal-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1;
 }
 
-.preContainer {
-    position: relative;
-    display: block;
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    height: 500px;
-    width: fit-content;
+.modal-left {
+    left: 0;
 }
 
-.close {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 20px;
-    cursor: pointer;
+.modal-right {
+    right: 0;
 }
+
+.modal-page h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-page img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+

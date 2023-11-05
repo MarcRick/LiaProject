@@ -404,6 +404,10 @@ function addCurrentToLast(track) {
 
     const lastSibling = track.querySelector('.textOutput:last-child');
     lastSibling.classList.add('current-page');
+
+    // qick fix
+    const rButton = document.querySelector('.carousel__button--right');
+    rButton.classList.add('is-hidden');
 }
 
 function Convert_HTML_To_PDF(fileName) {
