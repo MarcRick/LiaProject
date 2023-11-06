@@ -26,17 +26,11 @@
     <header class="sticky-header" id="title">
         <div id="logo">
             <a href="#">
-                <img src="images/drawing2.svg" alt="HOME">
+                <img src="images/logo3.svg" alt="HOME">
             </a>
         </div>
         <div id="headerDiv">
-            <div id="btn-section">
-                <div class="btnBox">
-                    <button class="save-btn btnShadow" type="button">Save File</button>
-                    <button class="save-btn btnShadow" type="button"
-                        onclick="document.getElementById('uploadButton').click();">Insert Image</button>
-                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
-                </div>
+            <div id="btn-section">                
                 <div class="option">
                     <label>File Name:</label>
                     <input class="input" type="text" spellcheck="false" placeholder="Insert text">
@@ -52,6 +46,12 @@
                         </select>
                     </div>
                 </div>
+                <div class="btnBox">
+                    <button class="save-btn btnShadow" type="button">Save File</button>
+                    <button class="save-btn btnShadow" type="button"
+                        onclick="document.getElementById('uploadButton').click();">Insert Image</button>
+                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
+                </div>
             </div>
         </div>
     </header>
@@ -61,7 +61,7 @@
                 <textarea id="editor" onkeyup="updatePreview()"></textarea>
             </div>
             <div>
-                <div class="font-selector">
+                <div class="layout-select">
                     <label for="fontSelect">Font:</label>
                     <select id="fontSelect" class="input">
                         <option value='poppins'>Poppins (Default)</option>
@@ -169,7 +169,7 @@
                     </select>
                 </div>
                 <div class="generateBtn">
-                    <button id="generateButton" class="save-btn btnShadow">Click to Generate</button>
+                    <button id="generateButton" class="openClose-btn btnShadow">Click to Generate</button>
                     <div class="imageContainer" id="imageContainer">
                         <h1>Generate a Portrait</h1>
                     </div>

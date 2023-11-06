@@ -7,6 +7,7 @@ let pageIndex = 0;
 document.addEventListener("DOMContentLoaded", function () {
 
     /* Fixed title header minimized on scroll */
+/*
     const stickyHeader = document.getElementById('title');
     let currentScrollTop = 0;
 
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         currentScrollTop = st;
-    });
+    });*/
     
     /* Font selection dropdown */
     const fontSelect = document.getElementById("fontSelect");
