@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const getPicture = document.getElementById("promptInput");
     const basePromptStyle = document.getElementById("styleSelect");
     let promptStyle = ", Fantasy";
+    const saveButton = document.getElementById("saveGeneratedIMG")
+    let fetchedIMG = "";
+
 
 
     basePromptStyle.addEventListener('change', function () {
@@ -73,6 +76,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 const data = await response.json();
                 const imageUrl = data.output[0];
                 imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
+                fetchedIMG = imageUrl;
+
+
+                let matches = fetchedIMG.match(/!\[([^\]]*)\]\((.*?)\)/g);
+                fetchedIMG = fetchedIMG.replace(/!\[([^\]]*)\]\((.*?)\)/g);
+                console.log(matches);
+
+                // Replace matches with imgDataUrl from localStorage
 
             }
             else {
@@ -83,4 +94,30 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("An error occurred:", error);
         }
     });
+    saveButton.addEventListener("click", function () {
+        const fileName = imageContainer.files[0].name;
+        console.log(fileName);
+        var a = document.createElement("a");
+        a.href = imageContainer.src;
+
+        a.download = `${fileName}.jpg`;
+        a.click();
+        ///reader.readAsDataURL();
+
+
+        ///const inputImg = document.querySelector('.img-input');
+
+        ///inputImg.addEventListener('change', saveImg);
+    });
+
 });
+
+/*reader.addEventListener('load', () => {
+    const fileName = inputImg.files[0].name;
+    localStorage.setItem(fileName, reader.result);
+    const allText = editText.value;
+    const newText = `![](${fileName})`;
+    const updatedText = allText + newText;
+    editText.value = updatedText;
+    updatePreview();
+});*/
