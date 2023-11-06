@@ -130,6 +130,7 @@ label {
     background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
+    overflow-x: auto;
 }
 
 #extraText {
