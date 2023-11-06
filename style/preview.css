@@ -11,6 +11,11 @@
     height: 0;
 }
 
+.modal::backdrop {
+    background: rgb(0, 0, 0);
+    opacity: .7;
+}
+
 .modal-pages {
     white-space: nowrap;
     padding: 50px;
@@ -56,5 +61,13 @@
     left: 0;
     width: 100%;
 }
+
+.close-modal {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
 
 

@@ -1,6 +1,6 @@
-// const modal = document.querySelector('.modal');
 const openModal = document.querySelector('#previewBtn');
 let modalPages = modal.querySelector('.modal-pages');
+const closeModal = modal.querySelector('.close-modal');
 
 function modalOpen() {
     modal.showModal();
@@ -28,5 +28,10 @@ function modalOpen() {
     }
 }
 
+function modalClose() {
+    modal.close();
+}
+
 
 openModal.addEventListener('click', modalOpen);
+closeModal.addEventListener('click', modalClose)
