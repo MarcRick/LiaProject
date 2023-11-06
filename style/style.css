@@ -10,7 +10,7 @@
     left: 0;
     width: 100%;
     background-color: #333333;
-    padding: 20px 11px 1px 11px;
+    padding: 15px 11px 1px 11px;
     text-align: center;
     /* Center-align the content */
     /*transition: height 0.3s;*/
@@ -25,7 +25,7 @@
     z-index: 3;
     /*margin-left: -500px; /* Adjust the value to move the logo to desired position */
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 10px;    
     position: fixed;
     top: 0;
     left: 50%;    
@@ -74,24 +74,25 @@
     flex-wrap: wrap;
     align-items: center;
     float: left;
+    padding-top: 8px;
     padding-left: 40px;
     margin-top: 30px;
 }
 
 #btn-section button {
-    font-size: 13px;
+    font-size: 12px;
     height: 30px;
     font-family: 'Open Sans', sans-serif;
 }
 
 #btn-section label {
-    font-size: 13px;
+    font-size: 11px;
 }
 
 #btn-section .input::placeholder,
 #btn-section select,
 #btn-section option {
-    font-size: 13px;
+    font-size: 12px;
     font-family: 'Open Sans', sans-serif;
 }
 
