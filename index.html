@@ -7,7 +7,6 @@
     <title>Document</title>
     <script src="./js/marked.js"></script>
     <script src="./js/script.js"></script>
-    <script src="./js/preview.js"></script>
     <script src="./js/buildAI.js"></script>
     <link rel="stylesheet" href="./style/preview.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
@@ -90,7 +89,7 @@
                     <button class="tips" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
                         and tricks</button>
                 </div>
-                <div id="extraText" class="goodToKnow">
+                <div id="extraText" class="goodToKnow" hidden="hidden">
                     <section class="syntaxInfo">
                         <h1>Usefull Syntax</h1>
                         <h4>Header</h4>
@@ -162,20 +161,16 @@
                     </select>
                 </div>
                 <div class="generateBtn">
-                    <div>
-                        <button id="generateButton" class="save-btn btnShadow">Click to Generate</button>
-                        <button id="saveGeneratedIMG" class="save-btn btnShadow" type="file">Save image</button>
-                    </div>
-                    <div class="imageContainer" id="imageContainer">
-                        <h1>Generate a Portrait</h1>
-                    </div>
+                    <button id="generateButton" class="save-btn btnShadow">Click to Generate</button>
                 </div>
+                <div class="imageContainer" id="imageContainer"></div>
             </div>
         </div>
         <div class="footer" id="footerDiv"></div>
 
     </div>
     <script src="./js/carousel.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
