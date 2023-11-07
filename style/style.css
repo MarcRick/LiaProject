@@ -252,6 +252,7 @@ label {
 
 .layout-select {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .placement-select {
@@ -269,11 +270,6 @@ label {
     padding-inline: 5px;
     cursor: pointer;
     font-weight: 700;
-}
-
-.previewSelect {
-    margin-top: 40px;
-    text-align: center;
 }
 
 .alignTextC {

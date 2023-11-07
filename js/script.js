@@ -165,6 +165,14 @@ function updatePreview(e) {
     createPages(markedUpHTML);
 }
 
+function creatNewPage() {
+    const pageBtn = document.getElementById("newPage");
+    
+
+    pageBtn.addEventListener('click'), function () {
+
+    }
+}
 
 
 function createPages(editorValue) {
