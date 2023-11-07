@@ -1,3 +1,53 @@
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    background-color: #333333;   
+    padding: 11px;    
+    text-align: center;
+    /* Center-align the content */
+    transition: height 0.3s;
+    /* Smooth transition effect */
+    z-index: 3;
+}
+
+#logo {
+    display: inline-block;
+    /* Make the logo an inline-block element */
+    text-align: left;
+    /* Adjust logo alignment */
+    overflow: hidden;
+    /* Hide any overflowing content within the logo */
+}
+
+#logo img {
+    width: 134px;
+    height: 80px;
+    transition: height 0.3s;
+}
+
+/* Styles for the minimized header*/
+.sticky-header.minimized {
+    height: 35px;
+    padding: 0; /* Remove padding when minimized */
+    padding-bottom: 40px;
+    
+}
+
+.sticky-header.minimized #logo {
+    display: inline-block; /* Ensure the logo is displayed when the header is minimized */    
+    text-align: left; /* Adjust logo alignment when minimized */    
+    padding: 5px 0px 5px 0px; /* Add some padding to the minimized logo */    
+}
+
+.sticky-header.minimized #logo img {
+    height: 30px;
+    width: auto;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +55,12 @@
 }
 
 .firstGrid {
+    padding-top: 30px;
     display: grid;
-    margin-top: 30px;
+    margin-top: 50px;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+    z-index: 0;
 }
 
 .secGrid {
@@ -23,18 +75,21 @@ label {
     font-weight: 600;
 }
 
-#container {
-    background-color: #161a1d;
-    overflow-y: scroll;
-}
+
 
 #headerDiv {
-    background-color: #0b090a;
-    grid-row: 1;
-    grid-column: 1/4;
+    position: sticky;/* Change this to either sticky/relative/fixed/ to align with sticky-header */    
+    top: 95px;/* Adjust the top to match the height of title-header */    
+    width: 100%;
+    background-color: #161a1d;
     opacity: 0.9;
     overflow: auto;
-    height: 85px;
+    z-index: 2;/* Keep this lower than title-header to place it in between */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
 }
 
 #btn-section {
@@ -75,6 +130,7 @@ label {
     background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
+    overflow-x: auto;
 }
 
 #extraText {
@@ -120,7 +176,7 @@ label {
     border: 1.5px solid black;
     height: 35px;
     font-weight: 700;
-    position: relative;
+    position: relative;    
 }
 
 .save-btn {
@@ -180,10 +236,9 @@ label {
     position: relative;
 }
 
-
 .textOutput {
-    top: 0;
-    left: 0;
+    top:  0;
+    left:  0;
     width: 100%;
     height: 100%;
     display: none;
@@ -205,11 +260,10 @@ label {
     bottom: 0;
     z-index: 0;
     border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
+    border-bottom-left-radius: 7px; 
     max-width: 100%;
-    max-height: 80%;
+    max-height: 80%;   
 }
-
 .current-page {
     z-index: 1;
 }
@@ -276,7 +330,7 @@ label {
     text-align: center;
 }
 
-.alignTextC {
+.alignTextC  {
     text-align: center;
 }
 
@@ -293,7 +347,7 @@ label {
     width: 35px;
 }
 
-.tips {
+.tips  {
     width: 120px;
     height: 24px;
     opacity: .7;
@@ -301,7 +355,12 @@ label {
     color: white;
 }
 
-.imageContainer > h1{
-    color: white;
-    font-family: sans-serif;
+.scroll-hide{
+    width: 240px;
+    height: 80px;
+}
+
+.imageContainer img{
+    width: 584px;
+    height: 396px;
 }

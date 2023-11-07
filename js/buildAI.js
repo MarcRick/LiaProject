@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    const textEditor = document.querySelector('#editor');
     const generateButton = document.getElementById("generateButton");
     const imageContainer = document.getElementById("imageContainer");
     const getPicture = document.getElementById("promptInput");
@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(getPicture.value + promptStyle);
                 const data = await response.json();
                 const imageUrl = data.output[0];
+<<<<<<< HEAD
                 imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
                 fetchedIMG = imageUrl;
 
@@ -85,6 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Replace matches with imgDataUrl from localStorage
 
+=======
+                localStorage.setItem(getPicture.value, imageUrl);
+                //imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
+                const newText = `![](${getPicture.value})`;
+                textEditor.value += newText;
+                updatePreview();
+                
+>>>>>>> c1e8ad30d84133ca3e8d6777b39f09b58b5e8c94
             }
             else {
                 console.error("API request failed.");
