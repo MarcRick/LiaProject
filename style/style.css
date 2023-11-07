@@ -306,6 +306,7 @@ label {
 
 .layout-select {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .placement-select {
@@ -325,12 +326,7 @@ label {
     font-weight: 700;
 }
 
-.previewSelect {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.alignTextC  {
+.alignTextC {
     text-align: center;
 }
 
