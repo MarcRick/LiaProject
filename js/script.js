@@ -204,7 +204,14 @@ function updatePreview(e) {
     let markedUpHTML = marked(findImgMatch(editorValue));
     createPages(markedUpHTML);
 }
+function creatNewPage() {
+    const inputElement = document.getElementById('editor');
+    const text = inputElement.value;
+    const newText = text + "\n \n --- \n";
+    inputElement.value = newText;
 
+    updatePreview();
+}
 
 
 function createPages(editorValue) {
