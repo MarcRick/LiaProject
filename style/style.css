@@ -10,7 +10,7 @@
     left: 0;
     width: 100%;
     background-color: #333333;
-    padding: 15px 11px 1px 11px;
+    padding: 5px 10px 0px 10px;
     text-align: center;
     /* Center-align the content */
     /*transition: height 0.3s;*/
@@ -24,8 +24,8 @@
     overflow: hidden;    
     z-index: 3;
     /*margin-left: -500px; /* Adjust the value to move the logo to desired position */
-    padding-top: 10px;
-    padding-bottom: 10px;    
+    padding-top: 7px;
+    padding-bottom: 5px;    
     position: fixed;
     top: 0;
     left: 50%;    
@@ -35,8 +35,8 @@
 #logo img {
     /*width: 134px;
     height: 80px;*/
-    width: 160px;
-    height: 40px;
+    width: 99.3px;
+    height: 53px;
     /*transition: height 0.3s;*/
     z-index: 3;
 }
@@ -73,10 +73,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    float: left;
+    float: left;    
     padding-top: 8px;
+    padding-bottom: 4px;
     padding-left: 40px;
-    margin-top: 30px;
+    padding-right: 30px;
+    margin-top: 0px;
 }
 
 #btn-section button {
@@ -92,9 +94,18 @@
 #btn-section .input::placeholder,
 #btn-section select,
 #btn-section option {
-    font-size: 12px;
+    font-size: 11px;
     font-family: 'Open Sans', sans-serif;
 }
+
+#logo.above #btn-section .input,
+#logo.above #btn-section select,
+#logo.above #btn-section option,
+#logo.above #btn-section button {
+    margin-top: 3px; 
+    padding: 3px; 
+}
+
 
 .firstGrid {
     padding-top: 30px;
@@ -185,6 +196,7 @@ label {
     flex-direction: column;
     gap: 3px;
     align-items: flex-start;
+    /*box-shadow: 0.5px 1px 0px #99bbff7b;*/
 }
 
 .input {
@@ -194,20 +206,22 @@ label {
     padding-inline: 5px;
     border: 1.5px solid black;
     height: 35px;
-    font-weight: 700;
+    font-weight: 500;
     position: relative;
 }
 
 .save-btn {
-    border-radius: 3px;
+    border-radius: 4px;
+    border: none;
     background: #17313a;
     color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
-    height: 35px;
+    height: 30px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
 }
 
 .layout-select {
@@ -226,15 +240,14 @@ label {
 }
 
 .btnShadow:hover {
-    border-radius: 3px;
+    border-radius: 2px;
     border: none;
     color: hsla(0, 0%, 100%, .9);
-    /*font-size: 15px;*/
-    height: 35px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff;
+    /*box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.19), 0 17px 50px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 .mark-section {
@@ -340,7 +353,8 @@ label {
 }
 
 .openClose-btn {
-    border-radius: 3px;
+    border-radius: 4px;
+    border: none;
     margin-bottom: 25px;
     width: 200px;
     background: #17313a;
@@ -349,7 +363,8 @@ label {
     height: 35px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
 }
 
 .previewSelect {

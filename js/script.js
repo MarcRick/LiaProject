@@ -7,22 +7,44 @@ let pageIndex = 0;
 document.addEventListener("DOMContentLoaded", function () {
 
     /* Fixed title header minimized on scroll */
-/*
-    const stickyHeader = document.getElementById('title');
-    let currentScrollTop = 0;
-
-    window.addEventListener('scroll', () => {
-        const st = window.scrollY || document.documentElement.scrollTop;
-
-        if (st > currentScrollTop) {
-            stickyHeader.classList.add('minimized'); // Scroll down, hide the header
-        } else {
-            stickyHeader.classList.remove('minimized'); // Scroll up, reveal the header
-        }
-
-        currentScrollTop = st;
-    });*/
+    /*
+        const stickyHeader = document.getElementById('title');
+        let currentScrollTop = 0;
     
+        window.addEventListener('scroll', () => {
+            const st = window.scrollY || document.documentElement.scrollTop;
+    
+            if (st > currentScrollTop) {
+                stickyHeader.classList.add('minimized'); // Scroll down, hide the header
+            } else {
+                stickyHeader.classList.remove('minimized'); // Scroll up, reveal the header
+            }
+    
+            currentScrollTop = st;
+        });*/
+     
+    window.addEventListener('resize', function () {
+        const logo = document.getElementById('logo');
+        const btnSection = document.getElementById('btn-section');
+        
+        const btnSectionRightEdge = btnSection.getBoundingClientRect().right;
+        
+        const logoPosition = logo.getBoundingClientRect();
+        
+        if (logoPosition.left >= btnSectionRightEdge) {            
+            logo.classList.add('above');
+            logo.style.position = 'absolute'; // Position the logo above the btn-section
+            logo.style.top = '0';
+            logo.style.left = '50%';
+            logo.style.transform = 'translateX(-50%)';
+        } else {
+            // Reset the logo's position to its default
+            logo.style.position = 'initial';
+            logo.classList.remove('above');
+        }
+    });
+
+
     /* Font selection dropdown */
     const fontSelect = document.getElementById("fontSelect");
     const previewElement = document.getElementById("preview");
@@ -30,13 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fontSelect.addEventListener('change', function () {
         const selectedFont = this.value;
-        //const selectedFontFamily = getFontFamily(selectedFont);
-
-        // Apply the selected font family to all pages
-        /*const pages = document.querySelectorAll('.text-output');
-        pages.forEach(page => {
-            page.style.fontFamily = selectedFontFamily;
-        });*/
 
         switch (selectedFont) {
             case 'poppins':
