@@ -75,25 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(getPicture.value + promptStyle);
                 const data = await response.json();
                 const imageUrl = data.output[0];
-<<<<<<< HEAD
-                imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
-                fetchedIMG = imageUrl;
-
-
-                let matches = fetchedIMG.match(/!\[([^\]]*)\]\((.*?)\)/g);
-                fetchedIMG = fetchedIMG.replace(/!\[([^\]]*)\]\((.*?)\)/g);
-                console.log(matches);
-
-                // Replace matches with imgDataUrl from localStorage
-
-=======
                 localStorage.setItem(getPicture.value, imageUrl);
                 //imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
                 const newText = `![](${getPicture.value})`;
                 textEditor.value += newText;
                 updatePreview();
-                
->>>>>>> c1e8ad30d84133ca3e8d6777b39f09b58b5e8c94
+
             }
             else {
                 console.error("API request failed.");
