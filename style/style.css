@@ -150,7 +150,7 @@
 
 .firstGrid {
     display: grid;
-    margin-top: 90px;
+    margin-top: 95px;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     z-index: 0;
@@ -158,9 +158,7 @@
 
 .secGrid {
     display: grid;
-    margin-top: 20px;
     grid-template-columns: 1fr 1fr;
-    margin-left:15px;
 }
 
 label {
@@ -174,12 +172,6 @@ label {
 #leftContainer {
     height: 100%;
     margin: 10px;
-}
-
-
-#input-area {
-    height: 430px;
-    margin-left: 15px;
 }
 
 #editor {
@@ -201,11 +193,6 @@ label {
     background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
-}
-
-#contentBox {
-    width: 10in;
-    height: 7in;
 }
 
 .btnBox {
@@ -277,7 +264,6 @@ label {
 }
 
 .mark-section {
-    height: 100%;
     width: 100%;
     display: flex;
     position: relative;
@@ -285,8 +271,6 @@ label {
 }
 
 .outputSection {
-    height: 100%;
-    width: 95%;
     position: relative;
     background-color: #161a1d;
 }
@@ -294,7 +278,7 @@ label {
 .newClass {
     height: 100%;
     display: flex;
-    position: relative;
+    align-items: center;
 }
 
 .output-area {
@@ -337,7 +321,7 @@ label {
 }
 
 .carousel__nav {
-    width: 100%;
+    margin-top: 2px;
     display: flex;
     justify-content: center;
 }
@@ -408,27 +392,14 @@ label {
 
 #rightArrow,
 #leftArrow {
-    position: absolute;
     width: 35px;
-    top: 50%;
-    z-index: 10;
 }
-#leftArrow{
-    left:0;
-}
-#rightArrow{
-    right:0;
-}
+
 
 
 .scroll-hide{
     width: 240px;
     height: 80px;
-}
-
-.imageContainer img{
-    width: 584px;
-    height: 396px;
 }
 @media (max-width: 480px) { 
     #editor { 
@@ -459,43 +430,67 @@ label {
 
 
 @media (min-width: 1281px) { 
+
+    .gridCont {         
+        display: flex;     
+    }
+
     .firstGrid {
         grid-template-columns: 50% 1fr;
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 49%;
     }
+
     .secGrid {
-        margin-top: 90px;
-        margin-left: 10px;
         grid-template-columns: 50% 1fr;
+        margin-top: 95px;
         display: flex;         
         flex-direction: column;         
-        width: 50%;     
-    }      
-    .gridCont {         
-        display: flex;     
+        width: 51%;     
     }
+    #input-area{
+        padding-left:15px;
+        padding-right:15px;
+    }      
+
+    #editor {
+        width: 100%;
+        height: 440px;
+        background-color: pink; 
+    } 
     .outputSection{
-        margin: 0;
-        padding: 0;
+        width: 100%;
     }
 
     .newClass{
-        align-items: baseline;
+        height: 440px;
+        width: 100%;
     }
-    #rightArrow,
-    #leftArrow {
-        align-self:  center;
-    }
-    .textOutput{
-        min-width: 565px;
-    }
+
     #contentBox{
-        height: 430px;
+        width: 95%;
+        height: 440px;
     }
-    #editor { 
-        min-width: 565px;
-        background-color: pink; 
-    } 
+    .rightSection{
+        display: flex;
+        margin-top: 0px;
+    }
+    .prompt{
+        margin-left: 35px;
+    }
+    .layout-select{
+        margin-left: 10px;
+    }
+    .generateBtn{
+        margin-left: 10px;
+    }
+    .layoutClass{
+        display:flex;
+    }
+    .newPageBtn,.previewSelect{
+        margin-bottom: 0px;
+        margin-top: 40px;
+        margin-left: 10px;
+    }
 }
