@@ -59,8 +59,7 @@
     width: auto;
 }*/
 
-#headerDiv {
-        
+#headerDiv {        
     background-color: #333333;
     opacity: 0.9;
     overflow: auto;
@@ -102,10 +101,51 @@
 #logo.above #btn-section select,
 #logo.above #btn-section option,
 #logo.above #btn-section button {
-    margin-top: 3px; 
-    padding: 3px; 
+    margin-top: 0px; 
+    padding: 0px; 
 }
 
+#headerRight {
+    position: relative;
+}
+
+.tips {
+    position: relative;    
+    border-radius: 4px;
+    border: none;
+    background-color: #17313a;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding-inline: 5px;
+    bottom: 5px;
+    width: 120px;
+    height: 30px;
+    right: 50px;
+    opacity: .7;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
+    z-index: 5;
+}
+
+#extraText {
+    display: none;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    width: fit-content;    
+    border: 2px solid #17313a;
+    background: white;
+    color: black(0, 0%, 100%, .9);
+    font-size: 21px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-family: "sofia-pro", sans-serif;
+    z-index: 4;
+}
 
 .firstGrid {
     padding-top: 30px;
@@ -163,21 +203,6 @@ label {
     overflow: hidden;
 }
 
-#extraText {
-    height: fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid #17313a;
-    background: white;
-    color: black(0, 0%, 100%, .9);
-    font-size: 21px;
-    padding: 20px;
-    padding-top: 10px;
-    border-radius: 10px;
-    font-family: "sofia-pro", sans-serif;
-}
-
 #contentBox {
     width: 10in;
     height: 7in;
@@ -200,7 +225,7 @@ label {
 }
 
 .input {
-    color: hsla(0, 0%, 100%, .9);
+    color: white;
     font-size: 14px;
     background: #284b63;
     padding-inline: 5px;
@@ -214,7 +239,7 @@ label {
     border-radius: 4px;
     border: none;
     background: #17313a;
-    color: hsla(0, 0%, 100%, .9);
+    color: white;
     font-size: 12px;
     text-align: center;
     height: 30px;
@@ -388,13 +413,7 @@ label {
     width: 35px;
 }
 
-.tips {
-    width: 120px;
-    height: 24px;
-    opacity: .7;
-    background-color: #284b63;
-    color: white;
-}
+
 
 .imageContainer>h1 {
     color: white;
