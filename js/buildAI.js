@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+    const textEditor = document.querySelector('#editor');
     const generateButton = document.getElementById("generateButton");
     const imageContainer = document.getElementById("imageContainer");
     const getPicture = document.getElementById("promptInput");
@@ -72,8 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(getPicture.value + promptStyle);
                 const data = await response.json();
                 const imageUrl = data.output[0];
-                imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
-
+                localStorage.setItem(getPicture.value, imageUrl);
+                //imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
+                const newText = `![](${getPicture.value})`;
+                textEditor.value += newText;
+                updatePreview();
+                
             }
             else {
                 console.error("API request failed.");

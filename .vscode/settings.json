@@ -1,5 +1,6 @@
 {
     "markdown.marp.themes": [
         "./theme.css"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

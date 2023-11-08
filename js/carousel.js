@@ -3,6 +3,13 @@ const nextButton = document.querySelector('.carousel__button--right');
 const prevButton = document.querySelector('.carousel__button--left');
 const dotsNavs = document.querySelector('.carousel__nav');
 
+const modal = document.querySelector('.modal');
+const modalNextButton = modal.querySelector('.modal-right');
+const modalPrevButton = modal.querySelector('.modal-left');
+
+let translateXAmount = 0;
+
+
 function moveToSlide(currentPage, targetPage) {
     currentPage.classList.remove('current-page');
     targetPage.classList.add('current-page');
@@ -35,7 +42,6 @@ function hideShowArrows(slides, prevButton, nextButton, targetIndex) {
 
 
 prevButton.addEventListener('click', e => {
-    console.log("hej")
     const currentPage = output.querySelector('.current-page');
     const prevPage = currentPage.previousElementSibling;
     moveToSlide(currentPage, prevPage);
@@ -49,8 +55,46 @@ prevButton.addEventListener('click', e => {
     hideShowArrows(pages, prevButton, nextButton, prevIndex);
 })
 
+modalNextButton.addEventListener('click', e => {
+    const currentSlide = modal.querySelector('.model-current-page');
+    const nextSlide = currentSlide.nextElementSibling;
+    const displayPage = nextSlide.nextElementSibling;
+
+    const amountToMove = (currentSlide.offsetLeft - displayPage.offsetLeft) + translateXAmount;
+    translateXAmount = amountToMove;
+    modalPages.style.transform = `translateX(${amountToMove}px)`;
+
+    currentSlide.classList.remove('model-current-page');
+    displayPage.classList.add('model-current-page');
+
+    const pages = Array.from(modalPages.children);
+    const prevIndex = pages.findIndex(slide => slide === displayPage);
+    if (pages.length % 2 === 0) {
+        pages.pop();
+    }
+    hideShowArrows(pages, modalPrevButton, modalNextButton, prevIndex);
+})
+
+modalPrevButton.addEventListener('click', e => {
+    const currentSlide = modal.querySelector('.model-current-page');
+    const nextSlide = currentSlide.previousElementSibling;
+    const displayPage = nextSlide.previousElementSibling;
+    
+
+    const amountToMove = (currentSlide.offsetLeft - displayPage.offsetLeft) + translateXAmount;
+    translateXAmount = amountToMove;
+    modalPages.style.transform = `translateX(${amountToMove}px)`;
+
+    currentSlide.classList.remove('model-current-page');
+    displayPage.classList.add('model-current-page');
+
+    const pages = Array.from(modalPages.children);
+    const prevIndex = pages.findIndex(slide => slide === displayPage);
+    hideShowArrows(pages, modalPrevButton, modalNextButton, prevIndex);
+})
+
+
 nextButton.addEventListener('click', e => {
-    console.log("då")
     const currentPage = output.querySelector('.current-page');
     const nextPage = currentPage.nextElementSibling;
     moveToSlide(currentPage, nextPage);

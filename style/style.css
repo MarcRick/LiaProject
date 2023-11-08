@@ -373,6 +373,11 @@ label {
     margin-top: 40px;
 }
 
+.layout-select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .placement-select {
     margin-top: 10px;
 }
@@ -390,10 +395,6 @@ label {
     cursor: pointer;
     font-weight: 600;
     box-shadow: 1px 0.5px 0.5px #99bbff7b;
-}
-
-.previewSelect {
-    margin-top: 40px;    
 }
 
 .alignTextC {
@@ -415,7 +416,12 @@ label {
 
 
 
-.imageContainer>h1 {
-    color: white;
-    font-family: sans-serif;
+.scroll-hide{
+    width: 240px;
+    height: 80px;
+}
+
+.imageContainer img{
+    width: 584px;
+    height: 396px;
 }

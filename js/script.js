@@ -196,7 +196,14 @@ function updatePreview(e) {
     let markedUpHTML = marked(findImgMatch(editorValue));
     createPages(markedUpHTML);
 }
+function creatNewPage() {
+    const inputElement = document.getElementById('editor');
+    const text = inputElement.value;
+    const newText = text + "\n \n --- \n";
+    inputElement.value = newText;
 
+    updatePreview();
+}
 
 
 function createPages(editorValue) {
@@ -396,6 +403,10 @@ function addCurrentToLast(track) {
 
     const lastSibling = track.querySelector('.textOutput:last-child');
     lastSibling.classList.add('current-page');
+
+    // qick fix
+    const rButton = document.querySelector('.carousel__button--right');
+    rButton.classList.add('is-hidden');
 }
 
 function Convert_HTML_To_PDF(fileName) {
