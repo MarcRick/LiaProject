@@ -103,7 +103,8 @@
     </dialog>
         
     <div class="grid" id="container">
-        <div class="firstGrid">
+        <div class="gridCont">
+            <div class="firstGrid">
             <div id="input-area">
                 <textarea id="editor" onkeyup="updatePreview()"></textarea>
             </div>
@@ -143,9 +144,9 @@
                 </div>
             </div>
             
-        </div>
+            </div>
 
-        <div class="secGrid">
+            <div class="secGrid">
             <div class="mark-section">
                 <div class="outputSection">
                     <div class="newClass">
@@ -173,10 +174,8 @@
                             </button>
                         </div>
                     </div>
-                    <div>
-                        <div id="carouselBtn" class="carousel__nav">
-                            <button class="carousel__indicator current-dot"></button>
-                        </div>
+                    <div id="carouselBtn" class="carousel__nav">
+                        <button class="carousel__indicator current-dot"></button>
                     </div>
                 </div>
             </div>
@@ -200,6 +199,7 @@
                     <button id="generateButton" class="openClose-btn btnShadow">Click to Generate</button>
                 </div>
                 <div class="imageContainer" id="imageContainer"></div>
+            </div>
             </div>
         </div>
         <div class="footer" id="footerDiv"></div>

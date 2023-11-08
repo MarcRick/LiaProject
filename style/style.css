@@ -149,10 +149,9 @@
 }
 
 .firstGrid {
-    padding-top: 30px;
     display: grid;
-    margin-top: 100px;
-    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 90px;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     z-index: 0;
 }
@@ -161,6 +160,7 @@
     display: grid;
     margin-top: 20px;
     grid-template-columns: 1fr 1fr;
+    margin-left:15px;
 }
 
 label {
@@ -178,9 +178,8 @@ label {
 
 
 #input-area {
-    width: 10in;
     height: 430px;
-    margin-left: 55px;
+    margin-left: 15px;
 }
 
 #editor {
@@ -288,8 +287,6 @@ label {
 .outputSection {
     height: 100%;
     width: 95%;
-    margin: 10px;
-    padding: 10px;
     position: relative;
     background-color: #161a1d;
 }
@@ -297,7 +294,7 @@ label {
 .newClass {
     height: 100%;
     display: flex;
-    align-items: center;
+    position: relative;
 }
 
 .output-area {
@@ -340,9 +337,7 @@ label {
 }
 
 .carousel__nav {
-    margin-left: 35px;
-    margin-top: 2px;
-    width: 10in;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -413,9 +408,17 @@ label {
 
 #rightArrow,
 #leftArrow {
+    position: absolute;
     width: 35px;
+    top: 50%;
+    z-index: 10;
 }
-
+#leftArrow{
+    left:0;
+}
+#rightArrow{
+    right:0;
+}
 
 
 .scroll-hide{
@@ -426,4 +429,73 @@ label {
 .imageContainer img{
     width: 584px;
     height: 396px;
+}
+@media (max-width: 480px) { 
+    #editor { 
+        background-color: red; 
+    } 
+} 
+
+
+@media (min-width: 481px) and (max-width: 767px) { 
+    #editor { 
+        background-color: yellow; 
+    } 
+} 
+
+
+@media (min-width: 768px) and (max-width: 1024px){ 
+    #editor { 
+        background-color: blue; 
+    } 
+} 
+
+
+@media (min-width: 1025px) and (max-width: 1280px){ 
+    #editor { 
+        background-color: green; 
+    } 
+} 
+
+
+@media (min-width: 1281px) { 
+    .firstGrid {
+        grid-template-columns: 50% 1fr;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    .secGrid {
+        margin-top: 90px;
+        margin-left: 10px;
+        grid-template-columns: 50% 1fr;
+        display: flex;         
+        flex-direction: column;         
+        width: 50%;     
+    }      
+    .gridCont {         
+        display: flex;     
+    }
+    .outputSection{
+        margin: 0;
+        padding: 0;
+    }
+
+    .newClass{
+        align-items: baseline;
+    }
+    #rightArrow,
+    #leftArrow {
+        align-self:  center;
+    }
+    .textOutput{
+        min-width: 565px;
+    }
+    #contentBox{
+        height: 430px;
+    }
+    #editor { 
+        min-width: 565px;
+        background-color: pink; 
+    } 
 }
