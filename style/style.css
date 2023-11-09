@@ -420,24 +420,19 @@ label {
 } 
 
 
-@media (min-width: 1025px) and (max-width: 1280px){ 
-    #editor { 
-        background-color: green; 
-    } 
-} 
 
 
-@media (min-width: 1281px) { 
 
-    .gridCont {         
-        display: flex;     
-    }
+@media (min-width: 1025px) { 
+
 
     .firstGrid {
         grid-template-columns: 50% 1fr;
         display: flex;
         flex-direction: column;
         width: 49%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .secGrid {
@@ -445,9 +440,12 @@ label {
         margin-top: 95px;
         display: flex;         
         flex-direction: column;         
-        width: 51%;     
+        width: 51%;    
+        margin-left: auto;
+        margin-right: auto; 
     }
     #input-area{
+        max-width: 800px;
         padding-left:15px;
         padding-right:15px;
     }      
