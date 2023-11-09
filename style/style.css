@@ -110,15 +110,13 @@
 }
 
 .tips {
-    position: relative;
-    top: 30px;
-    right: 50px;    
+    margin-right:auto;
+    margin-left:auto;
     border-radius: 4px;
     border: none;
     background-color: #17313a;
     color: white;
     font-size: 12px;
-    text-align: center;
     padding-inline: 5px;
     bottom: 5px;
     width: 120px;
@@ -378,8 +376,8 @@ label {
     box-shadow: 1px 0.5px 0.5px #99bbff7b;
 }
 
-.alignTextC {
-    text-align: center;
+.alignTextC{
+    margin-right:auto;
 }
 
 .current-page {
@@ -492,5 +490,8 @@ label {
         margin-bottom: 0px;
         margin-top: 40px;
         margin-left: 10px;
+    }
+    .tips{
+        margin-top: 27px;
     }
 }
