@@ -9,7 +9,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #333333;
+    background-image: linear-gradient(to right bottom, #8d038b, #a03fa2, #b365b9, #c688cf, #daaae4, #d2bbf2, #cecbfa, #ced9ff, #a9daff, #77ddff, #3bdff1, #07ded1);
+    box-shadow: 5px 10px 18px #98f5ef;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
     padding: 5px 10px 0px 10px;
     text-align: center;
     /* Center-align the content */
@@ -19,16 +22,16 @@
 }
 
 #logo {
-    display: inline-block;    
-    text-align: left;    
-    overflow: hidden;    
+    display: inline-block;
+    text-align: left;
+    overflow: hidden;
     z-index: 3;
     /*margin-left: -500px; /* Adjust the value to move the logo to desired position */
     padding-top: 7px;
-    padding-bottom: 5px;    
+    padding-bottom: 5px;
     position: fixed;
     top: 0;
-    left: 50%;    
+    left: 50%;
     transform: translateX(-50%);
 }
 
@@ -59,19 +62,19 @@
     width: auto;
 }*/
 
-#headerLeft {        
+#headerLeft {
     opacity: 0.9;
     overflow: auto;
     z-index: 2;
     /*padding-top: 20px;
-    padding-bottom: 20px;*/    
+    padding-bottom: 20px;*/
 }
 
 #btn-section {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    float: left;    
+    float: left;
     padding-top: 8px;
     padding-bottom: 4px;
     padding-left: 40px;
@@ -100,8 +103,8 @@
 #logo.above #btn-section select,
 #logo.above #btn-section option,
 #logo.above #btn-section button {
-    margin-top: 0px; 
-    padding: 0px; 
+    margin-top: 0px;
+    padding: 0px;
 }
 
 #headerRight {
@@ -109,8 +112,8 @@
 }
 
 .tips {
-    margin-right:auto;
-    margin-left:auto;
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 4px;
     border: none;
     background-color: #17313a;
@@ -119,7 +122,7 @@
     padding-inline: 5px;
     bottom: 5px;
     width: 120px;
-    height: 30px;    
+    height: 30px;
     opacity: .7;
     cursor: pointer;
     font-weight: 600;
@@ -133,7 +136,7 @@
     margin-left: auto;
     margin-right: auto;
     height: fit-content;
-    width: fit-content;    
+    width: fit-content;
     border: 2px solid #17313a;
     background: white;
     color: black(0, 0%, 100%, .9);
@@ -146,21 +149,21 @@
 }
 
 .firstGrid {
-        grid-template-columns: 1fr;
-        display: flex;
-        flex-direction: column;
-        margin-top: 100px;
-        margin-left: auto;
-        margin-right: auto;
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.secGrid{
+.secGrid {
     grid-template-columns: 1fr;
 
 
 }
 
-.thirdGrid{
+.thirdGrid {
     grid-template-columns: 1fr;
     margin-top: 10px;
     display: flex;
@@ -193,7 +196,7 @@ label {
 #container {
     width: 100%;
     min-height: 100vh;
-    background-color: #161a1d;
+    background-image: linear-gradient(to right, #fee9f5, #f6edff, #ebf2ff, #e4f7ff, #e1fbff, #dbf9fe, #d6f7fe, #d0f5fd, #c7edfd, #c1e4fd, #c1dafb, #c4cff6);
     flex-direction: column;
     overflow: hidden;
 }
@@ -251,14 +254,16 @@ label {
 .generateBtn button,
 #promptInput::placeholder {
     font-family: 'Open Sans', sans-serif;
-    font-size: 13px;    
+    font-size: 13px;
 }
-.previewSelect{
+
+.previewSelect {
     display: flex;
     margin-left: auto;
     margin-right: auto;
 }
-.preview{
+
+.preview {
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -283,7 +288,7 @@ label {
 .outputSection {
     position: relative;
     width: 100%;
-    background-color: #161a1d;
+
 }
 
 .newClass {
@@ -365,13 +370,14 @@ label {
     margin-top: 30px;
 }
 
-.layoutClass{
+.layoutClass {
     display: flex;
 }
+
 .layout-select {
     display: flex;
     align-items: center;
-    gap:500px;
+    gap: 500px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
@@ -396,8 +402,8 @@ label {
     box-shadow: 1px 0.5px 0.5px #99bbff7b;
 }
 
-.alignTextC{
-    margin-right:auto;
+.alignTextC {
+    margin-right: auto;
 }
 
 .current-page {
@@ -412,7 +418,8 @@ label {
 #leftArrow {
     width: 35px;
 }
-.inOutSize{
+
+.inOutSize {
     display: flex;
     width: 100vh;
     height: 440px;
@@ -420,12 +427,14 @@ label {
     margin-left: auto;
     margin-right: auto;
 }
-#input-area{
+
+#input-area {
     width: 100%;
     height: 100%;
 }
-.prompt{
-    display:flex;
+
+.prompt {
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -434,14 +443,17 @@ label {
     max-width: 1150px;
     height: 100px;
 }
-.promptInput{
+
+.promptInput {
     width: 100%;
     height: 100%;
 }
-.AlignC{
+
+.AlignC {
     margin-left: auto;
     margin-right: auto;
 }
+
 /* @media (max-width: 55px) { 
     #editor { 
         background-color: red; 
