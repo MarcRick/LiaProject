@@ -147,16 +147,24 @@
 }
 
 .firstGrid {
-    display: grid;
-    margin-top: 95px;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    z-index: 0;
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
 }
 
-.secGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.secGrid{
+    grid-template-columns: 1fr;
+
+
+}
+
+.thirdGrid{
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+    display: flex;
 }
 
 label {
@@ -173,8 +181,6 @@ label {
 }
 
 #editor {
-    width: 100%;
-    height: 100%;
     padding: 10px;
     border-radius: 10px;
     background: white;
@@ -236,7 +242,6 @@ label {
 
 .layout-select {
     margin-top: 10px;
-    display: inline-grid;
 }
 
 .layout-select select,
@@ -248,6 +253,16 @@ label {
 #promptInput::placeholder {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;    
+}
+.previewSelect{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.preview{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btnShadow:hover {
@@ -263,19 +278,22 @@ label {
 
 .mark-section {
     width: 100%;
-    display: flex;
     position: relative;
-    flex-direction: column;
 }
 
 .outputSection {
     position: relative;
+    width: 100%;
     background-color: #161a1d;
 }
 
 .newClass {
+    width: 100%;
+    max-width: 1220px;
     height: 100%;
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
 }
 
@@ -348,13 +366,17 @@ label {
     margin-top: 30px;
 }
 
-.generateBtn {
-    margin-top: 40px;
+.layoutClass{
+    display: flex;
 }
-
 .layout-select {
+    display: flex;
+    align-items: center;
+    gap:500px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .placement-select {
@@ -364,7 +386,6 @@ label {
 .openClose-btn {
     border-radius: 4px;
     border: none;
-    margin-bottom: 25px;
     width: 200px;
     background: #17313a;
     color: hsla(0, 0%, 100%, .9);
@@ -392,103 +413,38 @@ label {
 #leftArrow {
     width: 35px;
 }
-
-
-
-.scroll-hide{
-    width: 240px;
-    height: 80px;
+.inOutSize{
+    display: flex;
+    width: 100vh;
+    height: 440px;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
 }
-@media (max-width: 480px) { 
+#input-area{
+    width: 100%;
+    height: 100%;
+}
+.prompt{
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 1150px;
+    height: 100px;
+}
+.promptInput{
+    width: 100%;
+    height: 100%;
+}
+.AlignC{
+    margin-left: auto;
+    margin-right: auto;
+}
+/* @media (max-width: 55px) { 
     #editor { 
         background-color: red; 
-    } 
-} 
-
-
-@media (min-width: 481px) and (max-width: 767px) { 
-    #editor { 
-        background-color: yellow; 
-    } 
-} 
-
-
-@media (min-width: 768px) and (max-width: 1024px){ 
-    #editor { 
-        background-color: blue; 
-    } 
-} 
-
-
-
-
-
-@media (min-width: 1025px) { 
-
-
-    .firstGrid {
-        grid-template-columns: 50% 1fr;
-        display: flex;
-        flex-direction: column;
-        width: 49%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .secGrid {
-        grid-template-columns: 50% 1fr;
-        margin-top: 95px;
-        display: flex;         
-        flex-direction: column;         
-        width: 51%;    
-        margin-left: auto;
-        margin-right: auto; 
-    }
-    #input-area{
-        max-width: 800px;
-        padding-left:15px;
-        padding-right:15px;
-    }      
-
-    #editor {
-        width: 100%;
-        height: 440px;
-    } 
-    .outputSection{
-        width: 100%;
-    }
-
-    .newClass{
-        height: 440px;
-        width: 100%;
-    }
-
-    #contentBox{
-        width: 95%;
-        height: 440px;
-    }
-    .rightSection{
-        display: flex;
-        margin-top: 0px;
-    }
-    .prompt{
-        margin-left: 35px;
-    }
-    .layout-select{
-        margin-left: 10px;
-    }
-    .generateBtn{
-        margin-left: 10px;
-    }
-    .layoutClass{
-        display:flex;
-    }
-    .newPageBtn,.previewSelect{
-        margin-bottom: 0px;
-        margin-top: 40px;
-        margin-left: 10px;
-    }
-    .tips{
-        margin-top: 27px;
-    }
-}
+    }  */
+/* }  */
