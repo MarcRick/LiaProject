@@ -51,6 +51,11 @@
                         onclick="document.getElementById('uploadButton').click();">Insert Image</button>
                     <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
                 </div>
+                <label for="layoutSelect">Layout:</label>
+                <select id="layoutSelect" class="input">
+                    <option value='CB'>Childen's book</option>
+                    <option value='PB'>Pocket book</option>
+                </select>
             </div>
         </div>
         <div id="headerRight">
@@ -105,11 +110,15 @@
     <div class="grid" id="container">
         <div class="firstGrid">
             <div id="input-area">
-                <textarea id="editor" onkeyup="updatePreview()"></textarea>
+                <textarea id="editor" class="inOutSize" onkeyup="updatePreview()"></textarea>
             </div>
-            <div>
+        </div>
+        <div class="secGrid">
+            <div class="layoutClass">
                 <div class="layout-select">
-                    <label for="fontSelect">Font:</label>
+                    <div class="newPageBtn">
+                        <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New Page</button>
+                    </div>
                     <select id="fontSelect" class="input">
                         <option value='poppins'>Poppins (Default)</option>
                         <option value='butterflyKids'>Butterfly Kids</option>
@@ -121,31 +130,9 @@
                         <option value='theGirlNextDoor'>The Girl Next Door</option>
                     </select>
                 </div>
-                <div class="layout-select">
-                    <label for="layoutSelect">Layout:</label>
-                    <select id="layoutSelect" class="input">
-                        <option value='CB'>Childen's book</option>
-                        <option value='PB'>Pocket book</option>
-                    </select>
-                </div>
-                <!-- <div class="placement-select">
-                    <label for="picturePlacement">Picture placement:</label>
-                    <select id="picturePlacement" class="input" onchange="changeIMGLayout()">
-                        <option value='Bottom'>Bottom</option>
-                        <option value='Top'>Top</option>
-                    </select>
-                </div> -->
-                <div class="newPageBtn">
-                    <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New Page</button>
-                </div>
-                <div class="previewSelect">
-                    <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
-                </div>
             </div>
-            
         </div>
-
-        <div class="secGrid">
+        <div class="thirdGrid">
             <div class="mark-section">
                 <div class="outputSection">
                     <div class="newClass">
@@ -158,7 +145,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div id="contentBox">
+                        <div id="contentBox" class="inOutSize">
                             <ul class="output-area" id="content">
                                 <li id="preview" class="current-page textOutput img output-area"></li>
                             </ul>
@@ -173,19 +160,21 @@
                             </button>
                         </div>
                     </div>
-                    <div>
-                        <div id="carouselBtn" class="carousel__nav">
-                            <button class="carousel__indicator current-dot"></button>
-                        </div>
+                    <div id="carouselBtn" class="carousel__nav">
+                        <button class="carousel__indicator current-dot"></button>
                     </div>
                 </div>
             </div>
-            <div class="rightSection">
-                <div class="prompt">
-                    <textarea id="promptInput" class="scroll-hide" placeholder="Enter your description here"></textarea>
-                </div>
+        </div>
+        <div class="forthGrid">
+            <div class="prompt">
+                <textarea id="promptInput" class="promptInput" placeholder="Prompt:"></textarea>
+            </div>
+            <div class="previewSelect">
                 <div class="layout-select">
-                    <label>Choose Styles:</label>
+                    <div class="generateBtn">
+                        <button id="generateButton" class="openClose-btn btnShadow">Click to Generate</button>
+                    </div>
                     <select id="styleSelect" class="input">
                         <option value="Fantasy">Fantasy</option>
                         <option value="Dark-fantasy">Dark-fantasy</option>
@@ -196,17 +185,15 @@
                         <option value="Gore">Gore</option>
                     </select>
                 </div>
-                <div class="generateBtn">
-                    <button id="generateButton" class="openClose-btn btnShadow">Click to Generate</button>
-                </div>
-                <div class="imageContainer" id="imageContainer"></div>
+            </div>
+            <div class="preview">
+                <button id="previewBtn" class="AlignC openClose-btn btnShadow">Preview</button>                </div>
             </div>
         </div>
-        <div class="footer" id="footerDiv"></div>
-
-        </div>
-        <script src="./js/carousel.js"></script>
-        <script src="./js/modal.js"></script>
+    </div>
+    <div class="footer" id="footerDiv"></div>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
