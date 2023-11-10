@@ -17,70 +17,71 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Lato:wght@300&family=Marcellus&family=Montserrat&family=Overpass:wght@200&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="normalize.css">
 </head>
 
 <body>
     <header class="sticky-header" id="title">
-        <div id="logo">
-            <a href="#">
+        <nav class="navbar">
+            <a href="#" id="logo">
                 <img src="images/logo.svg" alt="HOME">
             </a>
-        </div>
-        <div id="headerDiv">
-            <div id="btn-section">
-                <div class="option">
-                    <label>File Name:</label>
-                    <input class="input" type="text" spellcheck="false" placeholder="Insert text">
-                </div>
-                <div class="option">
-                    <label>Save As:</label>
-                    <div class="select-menu">
+            <a href="#"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <label>File Name:</label>
+                        <input class="input" type="text" spellcheck="false" placeholder="Insert text">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <select class="input">
                             <option value="text/plain">Text File (.txt)</option>
                             <option value="application/pdf">PDF (.pdf)</option>
                             <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
                                 Word (.docx)</option>
                         </select>
-                    </div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <button class="save-btn btnShadow" type="button">Save File</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <button class="save-btn btnShadow" type="button"
+                            onclick="document.getElementById('uploadButton').click();">Insert
+                            Image</button>
+                        <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <label for="layoutSelect">Layout:</label>
+                        <select id="layoutSelect" class="input">
+                            <option value='CB'>Childen's book</option>
+                            <option value='PB'>Pocket book</option>
+                        </select>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <button class="tips btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
+                            and tricks</button>
+                    </a>
+                </li>
+            </ul>
+            <div class="test">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
-                <div class="btnBox">
-                    <button class="save-btn btnShadow" type="button">Save File</button>
-                    <button class="save-btn btnShadow" type="button"
-                        onclick="document.getElementById('uploadButton').click();">Insert Image</button>
-                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
-                </div>
-                <label for="layoutSelect">Layout:</label>
-                <select id="layoutSelect" class="input">
-                    <option value='CB'>Childen's book</option>
-                    <option value='PB'>Pocket book</option>
-                </select>
             </div>
-        </div>
-        <div id="headerRight">
-            <div class="alignTextC">
-                <button class="tips btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
-                    and tricks</button>
-            </div>
-            <div id="extraText" class="goodToKnow">
-                <section class="syntaxInfo">
-                    <h1>Usefull Syntax</h1>
-                    <h4>Header</h4>
-                    <p># Header1</p>
-                    <p>## Header2</p>
-                    <p>### Header3</p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Other good to know</h4>
-                    <p>- List</p>
-                    <p>*Italic*</p>
-                    <p>**Bold Text**</p>
-                    <p>--- new page</p>
-                </section>
-            </div>
-        </div>
+        </nav>
     </header>
 
     <dialog class="modal">
@@ -200,6 +201,7 @@
     <div class="footer" id="footerDiv"></div>
     <script src="./js/carousel.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/hamburger.js"></script>
 </body>
 
 </html>
