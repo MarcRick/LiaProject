@@ -1,119 +1,185 @@
-.sticky-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;    
-    background-color: #333333;   
-    padding: 11px;    
-    text-align: center;
-    /* Center-align the content */
-    transition: height 0.3s;
-    /* Smooth transition effect */
-    z-index: 3;
-}
-
-#logo {
-    display: inline-block;
-    /* Make the logo an inline-block element */
-    text-align: left;
-    /* Adjust logo alignment */
-    overflow: hidden;
-    /* Hide any overflowing content within the logo */
-}
-
-#logo img {
-    width: 134px;
-    height: 80px;
-    transition: height 0.3s;
-}
-
-/* Styles for the minimized header*/
-.sticky-header.minimized {
-    height: 35px;
-    padding: 0; /* Remove padding when minimized */
-    padding-bottom: 40px;
-    
-}
-
-.sticky-header.minimized #logo {
-    display: inline-block; /* Ensure the logo is displayed when the header is minimized */    
-    text-align: left; /* Adjust logo alignment when minimized */    
-    padding: 5px 0px 5px 0px; /* Add some padding to the minimized logo */    
-}
-
-.sticky-header.minimized #logo img {
-    height: 30px;
-    width: auto;
-}
-
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.firstGrid {
-    padding-top: 30px;
-    display: grid;
-    margin-top: 50px;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    z-index: 0;
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333333;
+    padding: 5px 10px 0px 10px;
+    text-align: center;
+    /* Center-align the content */
+    /*transition: height 0.3s;*/
+    /* Smooth transition effect */
+    z-index: 5;
 }
 
-.secGrid {
-    display: grid;
-    margin-top: 20px;
-    grid-template-columns: 1fr 1fr;
+#logo {
+    display: inline-block;    
+    text-align: left;    
+    overflow: hidden;    
+    z-index: 3;
+    /*margin-left: -500px; /* Adjust the value to move the logo to desired position */
+    padding-top: 7px;
+    padding-bottom: 5px;    
+    position: fixed;
+    top: 0;
+    left: 50%;    
+    transform: translateX(-50%);
+}
+
+#logo img {
+    /*width: 134px;
+    height: 80px;*/
+    width: 99.3px;
+    height: 53px;
+    /*transition: height 0.3s;*/
+    z-index: 3;
+}
+
+/* Styles for the minimized header*/
+/*
+.sticky-header.minimized {
+    height: 55px;
+    padding: 11px 11px 60px 50px;
+}
+
+.sticky-header.minimized #logo {
+    display: inline-block;    
+    text-align: left;    
+    padding: 5px 0px 5px 0px;    
+}
+
+.sticky-header.minimized #logo img {
+    height: 50px;
+    width: auto;
+}*/
+
+#headerLeft {        
+    opacity: 0.9;
+    overflow: auto;
+    z-index: 2;
+    /*padding-top: 20px;
+    padding-bottom: 20px;*/    
+}
+
+#btn-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    float: left;    
+    padding-top: 8px;
+    padding-bottom: 4px;
+    padding-left: 40px;
+    padding-right: 30px;
+    margin-top: 0px;
+}
+
+#btn-section button {
+    font-size: 12px;
+    height: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#btn-section label {
+    font-size: 11px;
+}
+
+#btn-section .input::placeholder,
+#btn-section select,
+#btn-section option {
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#logo.above #btn-section .input,
+#logo.above #btn-section select,
+#logo.above #btn-section option,
+#logo.above #btn-section button {
+    margin-top: 0px; 
+    padding: 0px; 
+}
+
+#headerRight {
+    position: relative;
+}
+
+.tips {
+    margin-right:auto;
+    margin-left:auto;
+    border-radius: 4px;
+    border: none;
+    background-color: #17313a;
+    color: white;
+    font-size: 12px;
+    padding-inline: 5px;
+    bottom: 5px;
+    width: 120px;
+    height: 30px;    
+    opacity: .7;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
+    z-index: 5;
+}
+
+#extraText {
+    display: none;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    width: fit-content;    
+    border: 2px solid #17313a;
+    background: white;
+    color: black(0, 0%, 100%, .9);
+    font-size: 21px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-family: "sofia-pro", sans-serif;
+    z-index: 4;
+}
+
+.firstGrid {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.secGrid{
+    grid-template-columns: 1fr;
+
+
+}
+
+.thirdGrid{
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+    display: flex;
 }
 
 label {
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 14px;
 }
 
-
-
-#headerDiv {
-    position: sticky;/* Change this to either sticky/relative/fixed/ to align with sticky-header */    
-    top: 95px;/* Adjust the top to match the height of title-header */    
-    width: 100%;
-    background-color: #161a1d;
-    opacity: 0.9;
-    overflow: auto;
-    z-index: 2;/* Keep this lower than title-header to place it in between */
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    box-sizing: border-box;
-}
-
-#btn-section {
-    float: left;
-    margin-top: 5px;
-    font-size: 15px;
-    font-family: "sofia-pro", sans-serif;
-}
 
 #leftContainer {
     height: 100%;
     margin: 10px;
 }
 
-
-#input-area {
-    width: 10in;
-    height: 430px;
-    margin-left: 55px;
-}
-
 #editor {
-    width: 100%;
-    height: 100%;
     padding: 10px;
     border-radius: 10px;
     background: white;
@@ -130,27 +196,6 @@ label {
     background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
-    overflow-x: auto;
-}
-
-#extraText {
-    height: fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid #17313a;
-    background: white;
-    color: black(0, 0%, 100%, .9);
-    font-size: 21px;
-    padding: 20px;
-    padding-top: 10px;
-    border-radius: 10px;
-    font-family: "sofia-pro", sans-serif;
-}
-
-#contentBox {
-    width: 10in;
-    height: 7in;
 }
 
 .btnBox {
@@ -166,67 +211,88 @@ label {
     flex-direction: column;
     gap: 3px;
     align-items: flex-start;
+    /*box-shadow: 0.5px 1px 0px #99bbff7b;*/
 }
 
 .input {
-    color: hsla(0, 0%, 100%, .9);
+    color: white;
     font-size: 14px;
     background: #284b63;
     padding-inline: 5px;
     border: 1.5px solid black;
     height: 35px;
-    font-weight: 700;
-    position: relative;    
+    font-weight: 500;
+    position: relative;
 }
 
 .save-btn {
-    border-radius: 3px;
+    border-radius: 4px;
+    border: none;
     background: #17313a;
-    color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
-    height: 35px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    height: 30px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
 }
 
-.font-selector {
-    margin-top: 50px;
+.layout-select {
+    margin-top: 10px;
 }
 
+.layout-select select,
+.layout-select option,
+.newPageBtn button,
+.previewSelect button,
+.alignTextC button,
+.generateBtn button,
+#promptInput::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;    
+}
+.previewSelect{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.preview{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .btnShadow:hover {
-    border-radius: 3px;
+    border-radius: 2px;
     border: none;
     color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
-    height: 35px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff;
+    /*box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.19), 0 17px 50px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 .mark-section {
-    height: 100%;
     width: 100%;
-    display: flex;
     position: relative;
-    flex-direction: column;
 }
 
 .outputSection {
-    height: 100%;
-    width: 95%;
-    margin: 10px;
-    padding: 10px;
     position: relative;
+    width: 100%;
     background-color: #161a1d;
 }
 
 .newClass {
+    width: 100%;
+    max-width: 1220px;
     height: 100%;
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
 }
 
@@ -237,8 +303,8 @@ label {
 }
 
 .textOutput {
-    top:  0;
-    left:  0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: none;
@@ -260,18 +326,17 @@ label {
     bottom: 0;
     z-index: 0;
     border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px; 
+    border-bottom-left-radius: 7px;
     max-width: 100%;
-    max-height: 80%;   
+    max-height: 80%;
 }
+
 .current-page {
     z-index: 1;
 }
 
 .carousel__nav {
-    margin-left: 35px;
     margin-top: 2px;
-    width: 10in;
     display: flex;
     justify-content: center;
 }
@@ -300,13 +365,17 @@ label {
     margin-top: 30px;
 }
 
-.generateBtn {
-    margin-top: 40px;
+.layoutClass{
+    display: flex;
 }
-
 .layout-select {
+    display: flex;
+    align-items: center;
+    gap:500px;
     margin-top: 10px;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .placement-select {
@@ -314,20 +383,21 @@ label {
 }
 
 .openClose-btn {
-    border-radius: 3px;
-    margin-bottom: 25px;
+    border-radius: 4px;
+    border: none;
     width: 200px;
     background: #17313a;
     color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
+    /*font-size: 15px;*/
     height: 35px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
 }
 
-.alignTextC {
-    text-align: center;
+.alignTextC{
+    margin-right:auto;
 }
 
 .current-page {
@@ -342,21 +412,38 @@ label {
 #leftArrow {
     width: 35px;
 }
-
-.tips  {
-    width: 120px;
-    height: 24px;
-    opacity: .7;
-    background-color: #284b63;
-    color: white;
+.inOutSize{
+    display: flex;
+    width: 100vh;
+    height: 440px;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.scroll-hide{
-    width: 240px;
-    height: 80px;
+#input-area{
+    width: 100%;
+    height: 100%;
 }
-
-.imageContainer img{
-    width: 584px;
-    height: 396px;
+.prompt{
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 1150px;
+    height: 100px;
 }
+.promptInput{
+    width: 100%;
+    height: 100%;
+}
+.AlignC{
+    margin-left: auto;
+    margin-right: auto;
+}
+/* @media (max-width: 55px) { 
+    #editor { 
+        background-color: red; 
+    }  */
+/* }  */

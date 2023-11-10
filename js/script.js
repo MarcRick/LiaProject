@@ -7,43 +7,42 @@ let pageIndex = 0;
 document.addEventListener("DOMContentLoaded", function () {
 
     /* Fixed title header minimized on scroll */
-    const stickyHeader = document.getElementById('title');
-    let currentScrollTop = 0;
-
-    window.addEventListener('scroll', () => {
-        const st = window.scrollY || document.documentElement.scrollTop;
-
-        if (st > currentScrollTop) {
-            stickyHeader.classList.add('minimized'); // Scroll down, hide the header
-        } else {
-            stickyHeader.classList.remove('minimized'); // Scroll up, reveal the header
-        }
-
-        currentScrollTop = st;
-    });
-
-    /*  The position of #headerDiv update itself following the sticky-header, based on logo size or sticky-header height*/
-    /*function updateHeaderDivPosition() {
-        const logo = document.getElementById('logo');
+    /*
         const stickyHeader = document.getElementById('title');
-
-        // Get the current height of the logo and title-header
-        const logoHeight = logo.clientHeight;
-        const stickyHeaderHeight = stickyHeader.clientHeight;
-
-        // Calculate the new top position for #headerDiv
-        const newTop = logoHeight + stickyHeaderHeight;
-
-        // Apply the new position to #headerDiv
-        const headerDiv = document.getElementById('headerDiv');
-        headerDiv.style.top = newTop + 'px';
-    }
-
-    // Initial positioning
-    updateHeaderDivPosition();
-
-    // Listen for changes in logo size or title-header height (e.g., due to user interactions)
-    window.addEventListener('resize', updateHeaderDivPosition);
+        let currentScrollTop = 0;
+    
+        window.addEventListener('scroll', () => {
+            const st = window.scrollY || document.documentElement.scrollTop;
+    
+            if (st > currentScrollTop) {
+                stickyHeader.classList.add('minimized'); // Scroll down, hide the header
+            } else {
+                stickyHeader.classList.remove('minimized'); // Scroll up, reveal the header
+            }
+    
+            currentScrollTop = st;
+        });*/
+     
+    window.addEventListener('resize', function () {
+        const logo = document.getElementById('logo');
+        const btnSection = document.getElementById('btn-section');
+        
+        const btnSectionRightEdge = btnSection.getBoundingClientRect().right;
+        
+        const logoPosition = logo.getBoundingClientRect();
+        
+        if (logoPosition.left >= btnSectionRightEdge) {            
+            logo.classList.add('above');
+            logo.style.position = 'absolute'; // Position the logo above the btn-section
+            logo.style.top = '0';
+            logo.style.left = '50%';
+            logo.style.transform = 'translateX(-50%)';
+        } else {
+            // Reset the logo's position to its default
+            logo.style.position = 'initial';
+            logo.classList.remove('above');
+        }
+    });
 
 
     /* Font selection dropdown */
@@ -53,13 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fontSelect.addEventListener('change', function () {
         const selectedFont = this.value;
-        //const selectedFontFamily = getFontFamily(selectedFont);
-
-        // Apply the selected font family to all pages
-        /*const pages = document.querySelectorAll('.text-output');
-        pages.forEach(page => {
-            page.style.fontFamily = selectedFontFamily;
-        });*/
 
         switch (selectedFont) {
             case 'poppins':
@@ -238,8 +230,8 @@ function createPages(editorValue) {
         fontSelect.addEventListener('change', function () {
             moveCursorToNextLine()
             const selectedFontFamily = applyFontStyle(newLi); // Reapply font style when font selection changes 
-            storeAppliedFont(selectedFontFamily)            
-        });                      
+            storeAppliedFont(selectedFontFamily)
+        });
     }
 
     // Remove extra pages if there are more pages than occurrences
