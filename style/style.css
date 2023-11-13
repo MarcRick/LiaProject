@@ -16,7 +16,12 @@
     /*background:#d6e2e9;*/
     /*background-color: #845EC2;*/
     /*box-shadow: 5px 7px 10px #845EC2;*/
-    background-image: linear-gradient(to left, #d6e2e9, #d1e0e8, #ccdde8, #c7dbe7, #c2d8e7, #c2d8e7, #c2d8e7, #c2d8e7, #c7dbe7, #ccdde8, #d1e0e8, #d6e2e9);
+    /*BLUE VERSION*/
+    /*background-image: linear-gradient(to left, #d6e2e9, #d1e0e8, #ccdde8, #c7dbe7, #c2d8e7, #c2d8e7, #c2d8e7, #c2d8e7, #c7dbe7, #ccdde8, #d1e0e8, #d6e2e9);*/
+    /*nice beige*/
+    /*background: #F5EDE0;*/
+    /*background: #FEEDE7;*/
+    background: #F0FF42;    
     padding: 5px 10px 0px 10px;
     text-align: center;
     /* Center-align the content */
@@ -130,9 +135,9 @@
 .input {
     color: #4A55A2;
     font-size: 14px;
-    /*background: #284b63;*/
-    /*background: #abc4ff;*/
-    background: #f3fcff;
+    background: #00CAF2;/*#284b63, #abc4ff, #f3fcff ,pale pink #FFE1E1*/  
+
+
     padding-inline: 5px;
     border: 0.0px solid #818FB4;
     border-radius: 4px;
@@ -154,8 +159,8 @@
     padding-inline: 10px;
     /*background: #80B3FF;*/
     /*background: #00FFCA;*/
-    background: #5b64a6;
-    color: #c2d8e7;
+    background: #D2DE32;
+    color: #A61F69;
     font-size: 12px;
     text-align: center;
     height: 30px;
@@ -201,8 +206,8 @@
     /*background-color: #17313a;*/
     /*background: #80B3FF;*/
     /*background: #00FFCA;*/
-    background: #5b64a6;
-    color: #c2d8e7;
+    background: #FF5FFF;
+    color: #A61F69;
     font-size: 12px;
     text-align: center;
     padding-inline: 10px;
@@ -305,7 +310,12 @@ label {
     /*background: #FDF5DF;*/
     /*background-image: linear-gradient(to bottom, #d6e2e9, #d6e4e8, #d7e5e7, #d9e6e5, #dbe7e4);*/
     /*background-image: linear-gradient(to right, #d6e2e9, #d8e5e8, #dde8e6, #e3eae6, #e9ece7, #e9ece7, #e9ece7, #e9ece7, #e3eae6, #dde8e6, #d8e5e8, #d6e2e9);*/
-    background-image: linear-gradient(to left, #bcd4e6, #c3dbe8, #cbe2ea, #d5e9ed, #e0eff0, #e0eff0, #e0eff0, #e0eff0, #d5e9ed, #cbe2ea, #c3dbe8, #bcd4e6);
+    /*background-image: linear-gradient(to left, #bcd4e6, #c3dbe8, #cbe2ea, #d5e9ed, #e0eff0, #e0eff0, #e0eff0, #e0eff0, #d5e9ed, #cbe2ea, #c3dbe8, #bcd4e6);*/
+    /*background: #F5EDE0;*/
+    background-image: linear-gradient(to right, #f4f0e9, #f4f0e7, #f4efe5, #f5efe4, #f5eee2, #f5eee2, #f5eee2, #f5eee2, #f5efe4, #f4efe5, #f4f0e7, #f4f0e9);
+    /*background:#FFF8E6;*/
+    /*background: #ffceca;*/
+    background:#FFE1E1;
     flex-direction: column;
     overflow: hidden;
 }
@@ -445,7 +455,7 @@ label {
     width: 200px;
     /*background: #80B3FF;*/
     background-image: linear-gradient(to right, #8093f1, #80a0f6, #83adfa, #89b9fc, #92c4fe, #8aceff, #86d7ff, #86dfff, #76e8fe, #6df1f7, #70f9eb, #80ffdb);
-    color: #E0EFF0;
+    color: #E0EFF0;    
     /*font-size: 15px;*/
     height: 35px;
     padding-inline: 5px;
