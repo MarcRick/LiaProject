@@ -22,13 +22,13 @@
 </head>
 
 <body>
-    <header class="sticky-header" id="title">
+    <header class="headerSection" id="title">
         <div id="logo">
             <a href="#">
                 <img src="images/logo.svg" alt="HOME">
             </a>
         </div>
-        <div id="headerDiv">
+        <div id="headerLeft">
             <div id="btn-section">
                 <div class="option">
                     <label>File Name:</label>
@@ -54,9 +54,11 @@
             </div>
         </div>
         <div id="headerRight">
-            <div class="alignTextC">
-                <button class="tips btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
-                    and tricks</button>
+            <div id="nav-section">
+                <div class="btnBox-right">
+                    <button class="tips btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
+                        and tricks</button>
+                </div>
             </div>
             <div id="extraText" class="goodToKnow">
                 <section class="syntaxInfo">
@@ -77,31 +79,35 @@
             </div>
         </div>
     </header>
-    
+
     <dialog class="modal">
         <div class="close-modal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" style="width: 30px; height: 30px;">
-                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
+                viewBox="0 0 16 16" style="width: 30px; height: 30px;">
+                <path
+                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
             </svg>
         </div>
 
         <button class="modal-left">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
             </svg>
         </button>
-    
+
         <ul class="modal-pages"></ul>
 
         <button class="modal-right">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
             </svg>
         </button>
     </dialog>
-        
+
     <div class="grid" id="container">
         <div class="firstGrid">
             <div id="input-area">
@@ -136,13 +142,14 @@
                     </select>
                 </div> -->
                 <div class="newPageBtn">
-                    <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New Page</button>
+                    <button id="newPageBtn" class="openClose-btn btnShadowMain" onclick="creatNewPage()">New
+                        Page</button>
                 </div>
                 <div class="previewSelect">
-                    <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
+                    <button id="previewBtn" class="openClose-btn btnShadowMain">Preview</button>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="secGrid">
@@ -204,9 +211,9 @@
         </div>
         <div class="footer" id="footerDiv"></div>
 
-        </div>
-        <script src="./js/carousel.js"></script>
-        <script src="./js/modal.js"></script>
+    </div>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
