@@ -4,63 +4,173 @@
     box-sizing: border-box;
 }
 
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333333;
+    padding: 5px 10px 0px 10px;
+    text-align: center;
+    /* Center-align the content */
+    /*transition: height 0.3s;*/
+    /* Smooth transition effect */
+    z-index: 5;
+}
+
+#logo {
+    display: inline-block;
+    text-align: left;
+    z-index: 5;
+    /*margin-left: -500px; /* Adjust the value to move the logo to desired position */
+    padding-top: 7px;
+    padding-bottom: 5px;
+    margin-left: 50px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#logo img {
+    /*width: 134px;
+    height: 80px;*/
+    width: 99.3px;
+    height: 53px;
+    /*transition: height 0.3s;*/
+    z-index: 3;
+}
+
+/* Styles for the minimized header*/
+/*
+.sticky-header.minimized {
+    height: 55px;
+    padding: 11px 11px 60px 50px;
+}
+
+.sticky-header.minimized #logo {
+    display: inline-block;    
+    text-align: left;    
+    padding: 5px 0px 5px 0px;    
+}
+
+.sticky-header.minimized #logo img {
+    height: 50px;
+    width: auto;
+}*/
+
+#headerLeft {
+    background: #333333;
+    opacity: 0.9;
+    overflow: auto;
+    z-index: 2;
+    /*padding-top: 20px;
+    padding-bottom: 20px;*/
+}
+
+#btn-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    float: left;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    padding-left: 40px;
+    padding-right: 30px;
+    margin-top: 0px;
+}
+
+#btn-section button {
+    font-size: 12px;
+    height: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#btn-section label {
+    font-size: 11px;
+}
+
+#btn-section .input::placeholder,
+#btn-section select,
+#btn-section option {
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#logo.above #btn-section .input,
+#logo.above #btn-section select,
+#logo.above #btn-section option,
+#logo.above #btn-section button {
+    margin-top: 0px;
+    padding: 0px;
+}
+
+#headerRight {
+    position: relative;
+}
+
+.tips {
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 4px;
+    border: none;
+    background-color: #17313a;
+    color: white;
+    font-size: 12px;
+    padding-inline: 5px;
+    bottom: 5px;
+    width: 120px;
+    height: 30px;
+    opacity: .7;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
+    z-index: 5;
+}
+
 .firstGrid {
-    display: grid;
-    margin-top: 30px;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    display: flex;
+    margin-top: 100px;
+    padding-left: 35px;
+    padding-right: 35px;
+    justify-content: center;
 }
 
 .secGrid {
-    display: grid;
-    margin-top: 20px;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.thirdGrid {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.forthGrid{
+    margin-top: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 label {
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 14px;
 }
 
-#container {
-    background-color: #161a1d;
-    overflow-y: scroll;
-}
-
-#headerDiv {
-    background-color: #0b090a;
-    grid-row: 1;
-    grid-column: 1/4;
-    opacity: 0.9;
-    overflow: auto;
-    height: 85px;
-}
-
-#btn-section {
-    float: left;
-    margin-top: 5px;
-    font-size: 15px;
-    font-family: "sofia-pro", sans-serif;
-}
 
 #leftContainer {
     height: 100%;
     margin: 10px;
 }
 
-
-#input-area {
-    width: 10in;
-    height: 470px;
-    margin-left:55px;
-}
-
 #editor {
-    width: 100%;
-    height: 100%;
     padding: 10px;
     border-radius: 10px;
+    border: 2px solid #17313a;
     background: white;
     color: black(0, 0%, 100%, .9);
     font-size: 21px;
@@ -71,30 +181,9 @@ label {
 
 #container {
     width: 100%;
-    min-height: 100vh;
     background-color: #161a1d;
     flex-direction: column;
     overflow: hidden;
-}
-
-#extraText {
-    height: fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    border: 2px solid #17313a;
-    background: white;
-    color: black(0, 0%, 100%, .9);
-    font-size: 21px;
-    padding: 20px;
-    padding-top: 10px;
-    border-radius: 10px;
-    font-family: "sofia-pro", sans-serif;
-}
-
-#contentBox {
-    width: 10in;
-    height: 7in;
 }
 
 .btnBox {
@@ -110,82 +199,100 @@ label {
     flex-direction: column;
     gap: 3px;
     align-items: flex-start;
+    /*box-shadow: 0.5px 1px 0px #99bbff7b;*/
 }
 
 .input {
-    color: hsla(0, 0%, 100%, .9);
+    color: white;
     font-size: 14px;
     background: #284b63;
     padding-inline: 5px;
     border: 1.5px solid black;
     height: 35px;
-    font-weight: 700;
+    font-weight: 500;
     position: relative;
 }
 
 .save-btn {
-    border-radius: 3px;
+    border-radius: 4px;
+    border: none;
     background: #17313a;
-    color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
-    height: 35px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    height: 30px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
 }
 
-.font-selector {
-    margin-top: 50px;
+.layout-select {
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
 }
 
+.layout-select select,
+.layout-select option,
+.newPageBtn button,
+.previewSelect button,
+.alignTextC button,
+.generateBtn button,
+#promptInput::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
 
+.previewSelect {
+    display: flex;
+    justify-content: center;
+}
+.preview{
+    display: flex;
+    width: 100%;
+    margin-top:10px;
+    justify-content: center;
+}
 .btnShadow:hover {
-    border-radius: 3px;
+    border-radius: 2px;
     border: none;
     color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
-    height: 35px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff;
+    /*box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.19), 0 17px 50px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 .mark-section {
-    height: 100%;
     width: 100%;
-    display: flex;
     position: relative;
-    flex-direction: column;
 }
 
 .outputSection {
-    height: 100%;
-    width: 95%;
-    margin: 10px;
-    padding: 10px;
     position: relative;
+    width: 100%;
     background-color: #161a1d;
+    display: flex;
+    justify-content: center;
 }
 
 .newClass {
+    grid-template-columns: 35px 1fr 35px;
+    max-width: 1220px;
     height: 100%;
-    display: flex;
+    display: grid;
     align-items: center;
 }
 
-.output-area {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-
 .textOutput {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    /* top: 0;
+    left: 0; */
+    /* width: 100%; */
+    min-height: 100%;
     display: none;
     border-radius: 10px;
     list-style: none;
@@ -215,9 +322,7 @@ label {
 }
 
 .carousel__nav {
-    margin-left: 35px;
     margin-top: 2px;
-    width: 10in;
     display: flex;
     justify-content: center;
 }
@@ -246,38 +351,26 @@ label {
     margin-top: 30px;
 }
 
-.generateBtn {
-    margin-top: 40px;
-}
-
-.layout-select {
-    margin-top: 10px;
-}
-
 .placement-select {
     margin-top: 10px;
 }
 
 .openClose-btn {
-    border-radius: 3px;
-    margin-bottom: 25px;
+    border-radius: 4px;
+    border: none;
     width: 200px;
     background: #17313a;
     color: hsla(0, 0%, 100%, .9);
-    font-size: 15px;
+    /*font-size: 15px;*/
     height: 35px;
     padding-inline: 5px;
     cursor: pointer;
-    font-weight: 700;
-}
-
-.previewSelect {
-    margin-top: 40px;
-    text-align: center;
+    font-weight: 600;
+    box-shadow: 1px 0.5px 0.5px #99bbff7b;
 }
 
 .alignTextC {
-    text-align: center;
+    margin-right: auto;
 }
 
 .current-page {
@@ -290,13 +383,125 @@ label {
 
 #rightArrow,
 #leftArrow {
+    min-width: 35px;
+}
+
+#rightArrow > button,
+#leftArrow > button{
     width: 35px;
 }
 
-.tips {
-    width: 120px;
-    height: 24px;
-    opacity: .7;
-    background-color: #284b63;
+.inOutSize {
+    width: 100%;
+    height: 440px;
+    max-width: 1150px;
+}
+.inOutSize > ul{
+    height: 100%;
+}
+
+.prompt {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 100px;
+}
+
+.promptInput {
+    width: 100%;
+    max-width: 1150px;
+    height: 100%;
+}
+
+
+header {
+    background-color: #262626;
+}
+
+li {
+    list-style: none;
+}
+
+a {
     color: white;
+    text-decoration: none;
+}
+
+.test {
+    margin-left: auto;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.nav-link {
+    transition: 0.7 ease;
+}
+
+.nav-link:hover {
+    color: dodgerblue;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+@media(max-width:920px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: 100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: #262626;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
 }
