@@ -111,9 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     saveBtn.addEventListener("click", () => {
-        console.log("hej du klickar på mig")
         const selectedFormat = selectMenu.options[selectMenu.selectedIndex].text;
-        console.log(selectedFormat);
         const fileNameInput = document.getElementById("fileName");
         if (selectedFormat === "Text File (.txt)") {
             const blob = new Blob([textarea.value], { type: selectMenu.value });
@@ -161,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
         reader.readAsDataURL(this.files[0]);
     }
 
-    const inputImg = document.querySelector('.img-input');
+    const inputImg = document.getElementById('uploadButton');
 
     inputImg.addEventListener('change', saveImg);
 
