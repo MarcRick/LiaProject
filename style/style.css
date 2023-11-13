@@ -138,8 +138,8 @@
 .secGrid {
     display: flex;
     justify-content: center;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 .thirdGrid {
@@ -147,6 +147,11 @@
     margin-top: 100px;
     justify-content: center;
     align-items: center;
+}
+.forthGrid{
+    margin-top: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 label {
@@ -225,8 +230,8 @@ label {
 .layout-select {
     width: 100%;
     max-width: 1150px;
-    margin-top: 10px;
     display: flex;
+    margin-top: 10px;
     justify-content: space-between;
 }
 
@@ -243,10 +248,14 @@ label {
 
 .previewSelect {
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
 }
-
+.preview{
+    display: flex;
+    width: 100%;
+    margin-top:10px;
+    justify-content: center;
+}
 .btnShadow:hover {
     border-radius: 2px;
     border: none;
@@ -393,24 +402,17 @@ label {
 
 .prompt {
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    align-items: center;
     width: 100%;
-    max-width: 1150px;
+    justify-content: center;
     height: 100px;
 }
 
 .promptInput {
     width: 100%;
+    max-width: 1150px;
     height: 100%;
 }
 
-.AlignC {
-    margin-left: auto;
-    margin-right: auto;
-}
 
 header {
     background-color: #262626;
