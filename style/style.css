@@ -9,10 +9,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(to right bottom, #8d038b, #a03fa2, #b365b9, #c688cf, #daaae4, #d2bbf2, #cecbfa, #ced9ff, #a9daff, #77ddff, #3bdff1, #07ded1);
+    background-image: linear-gradient(to right bottom, #07ded1, #2cddde, #4adce9, #65dbef, #7dd9f3, #7dd9f3, #7dd9f3, #7dd9f3, #65dbef, #4adce9, #2cddde, #07ded1);
     box-shadow: 5px 10px 18px #98f5ef;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
     padding: 5px 10px 0px 10px;
     text-align: center;
     /* Center-align the content */
@@ -43,23 +43,6 @@
     z-index: 3;
 }
 
-/* Styles for the minimized header*/
-/*
-.sticky-header.minimized {
-    height: 55px;
-    padding: 11px 11px 60px 50px;
-}
-
-.sticky-header.minimized #logo {
-    display: inline-block;    
-    text-align: left;    
-    padding: 5px 0px 5px 0px;    
-}
-
-.sticky-header.minimized #logo img {
-    height: 50px;
-    width: auto;
-}*/
 
 #headerLeft {
     opacity: 0.9;
@@ -142,6 +125,8 @@
     justify-content: center;
     padding-left: 35px;
     padding-right: 35px;
+    margin-right: 80px;
+    margin-left: 20px;
 }
 
 .thirdGrid {
@@ -186,7 +171,7 @@ label {
     width: 100%;
     background-color: #161a1d;
     min-height: 100vh;
-    background-image: linear-gradient(to right, #fee9f5, #f6edff, #ebf2ff, #e4f7ff, #e1fbff, #dbf9fe, #d6f7fe, #d0f5fd, #c7edfd, #c1e4fd, #c1dafb, #c4cff6);
+    background-image: linear-gradient(to right, #b0fffa, #b5fdfd, #bbfaff, #c1f8ff, #c8f5ff, #c7f4ff, #c6f4ff, #c5f3ff, #bbf4fe, #b2f5fc, #a9f6f8, #a1f7f2);
     flex-direction: column;
     overflow: hidden;
 }
@@ -207,17 +192,6 @@ label {
     /*box-shadow: 0.5px 1px 0px #99bbff7b;*/
 }
 
-.input {
-    color: white;
-    font-size: 14px;
-    background: #284b63;
-    padding-inline: 5px;
-    border: 1.5px solid black;
-    height: 35px;
-    font-weight: 500;
-    position: relative;
-}
-
 .save-btn {
     border-radius: 4px;
     border: none;
@@ -233,11 +207,17 @@ label {
 }
 
 .layout-select {
-    width: 100%;
+    width: 55%;
     max-width: 1150px;
     display: flex;
     margin-top: 10px;
-    justify-content: space-between;
+    gap: 15px;
+
+}
+
+.newPageBtn {
+    margin-left: 50px;
+    margin-top: 10px;
 }
 
 .layout-select select,
@@ -246,29 +226,33 @@ label {
 .previewSelect button,
 .alignTextC button,
 .generateBtn button,
-.previewBtn {
+.previewBtn,
+.input {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
-    align-items: center;
-    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
-    border: 0;
+    background-image: linear-gradient(144deg, #5B42F3, #5B42F3 50%, #00DDEB);
+    color: white;
     border-radius: 8px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
-    color: #FFFFFF;
     display: flex;
     justify-content: center;
-    line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
-    padding: 19px 24px;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
+    align-items: center;
+    padding: 0 10px;
     cursor: pointer;
+    height: 35px;
+    width: 130px;
+    position: relative;
+}
 
+.layout-select option {
+    background-color: #284b63;
+    color: white;
+
+}
+
+.layout-select select {
+    color: white;
 }
 
 .previewSelect {
@@ -316,9 +300,6 @@ label {
 }
 
 .textOutput {
-    /* top: 0;
-    left: 0; */
-    /* width: 100%; */
     min-height: 100%;
     display: none;
     border-radius: 10px;
@@ -382,19 +363,18 @@ label {
     margin-top: 10px;
 }
 
-.openClose-btn {
+/*.openClose-btn {
     border-radius: 4px;
     border: none;
     width: 200px;
     background: #17313a;
     color: hsla(0, 0%, 100%, .9);
-    /*font-size: 15px;*/
     height: 35px;
     padding-inline: 5px;
     cursor: pointer;
     font-weight: 600;
     box-shadow: 1px 0.5px 0.5px #99bbff7b;
-}
+}*/
 
 .alignTextC {
     margin-right: auto;
@@ -531,5 +511,22 @@ a {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    @media screen and (max-width: 920px) {
+
+        /* Adjust styles for smaller screens */
+        .layout-select select,
+        .layout-select option,
+        .newPageBtn button,
+        .previewSelect button,
+        .alignTextC button,
+        .generateBtn button,
+        .previewBtn,
+        .input {
+            /* Adjust styles for smaller screens */
+            height: 30px;
+            width: 100%;
+        }
     }
 }

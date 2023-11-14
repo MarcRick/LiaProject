@@ -47,24 +47,12 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <button class="save-btn btnShadow" type="button">Save File</button>
+                        <button class="save-btn btnShadow input" type="button">Save File</button>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <button class="save-btn btnShadow" type="button"
-                            onclick="document.getElementById('uploadButton').click();">Insert
-                            Image</button>
-                        <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <label for="layoutSelect">Layout:</label>
-                        <select id="layoutSelect" class="input">
-                            <option value='CB'>Childen's book</option>
-                            <option value='PB'>Pocket book</option>
-                        </select>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -118,21 +106,36 @@
         </div>
         <div class="secGrid">
             <div class="layout-select">
-                <div class="newPageBtn">
-                    <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New
-                        Page</button>
-                </div>
-                <select id="fontSelect" class="input">
-                    <option value='poppins'>Poppins (Default)</option>
-                    <option value='butterflyKids'>Butterfly Kids</option>
-                    <option value='heebo'>Heebo</option>
-                    <option value='homemadeApple'>Homemade Apple</option>
-                    <option value='inconsolata'>Inconsolata</option>
-                    <option value='marcellus'>Marcellus</option>
-                    <option value='tenorSans'>Tenor Sans</option>
-                    <option value='theGirlNextDoor'>The Girl Next Door</option>
+                <label for="layoutSelect">Layout:</label>
+                <select id="layoutSelect" class="input">
+                    <option value='CB'>Childen's book</option>
+                    <option value='PB'>Pocket book</option>
                 </select>
+
+                <div class="fontSelect">
+                    <select id="fontSelect" class="input">
+                        <option value='poppins'>Poppins (Default)</option>
+                        <option value='butterflyKids'>Butterfly Kids</option>
+                        <option value='heebo'>Heebo</option>
+                        <option value='homemadeApple'>Homemade Apple</option>
+                        <option value='inconsolata'>Inconsolata</option>
+                        <option value='marcellus'>Marcellus</option>
+                        <option value='tenorSans'>Tenor Sans</option>
+                        <option value='theGirlNextDoor'>The Girl Next Door</option>
+                    </select>
+                </div>
+                <a href="#" class="nav-link">
+                    <button class="input previewBtn .select-menu select" type="button"
+                        onclick="document.getElementById('uploadButton').click();">Insert
+                        Image</button>
+                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
+                </a>
             </div>
+            <div class="newPageBtn">
+                <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New
+                    Page</button>
+            </div>
+
         </div>
         <div class="thirdGrid">
             <div id="leftArrow">
@@ -183,7 +186,7 @@
                 </div>
             </div>
             <div class="preview">
-                <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
+                <button id="previewBtn" class="openClose-btn btnShadow input">Preview</button>
             </div>
         </div>
     </div>
