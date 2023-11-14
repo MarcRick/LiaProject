@@ -84,20 +84,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const layoutSelect = document.getElementById("layoutSelect");
-    const inputLayout = document.getElementById("contentBox");
-    const navSize = document.getElementById("carouselBtn")
+    const body = document.querySelector('body');
+
 
     layoutSelect.addEventListener('change', function () {
         const selectedLayout = layoutSelect.value;
-
-        if (selectedLayout === 'CB') {
-            inputLayout.style.width = "10in";
-            inputLayout.style.height = "7in";
-            navSize.style.width = "10in";
-        } else if (selectedLayout === 'PB') {
-            inputLayout.style.width = "5.8in";
-            inputLayout.style.height = "8.3in";
-            navSize.style.width = "5.8in";
+        if (selectedLayout === 'PB') {
+            body.classList.add('PB');
+        }
+        else {
+            body.classList.remove('PB');
         }
 
     });

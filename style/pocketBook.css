@@ -1,0 +1,40 @@
+.PB #container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr 300px;
+    
+}
+
+.PB .firstGrid {
+    margin-top: 0;
+    grid-column: 1/2;
+    grid-row-start: 2;
+}
+
+.PB .secGrid {
+    grid-row-start: 3;
+    grid-column: 1/2;
+}
+
+.PB .output-arrows-dots {
+    grid-row-start: 2;
+    grid-column: 2/3;
+}
+
+.PB .forthGrid {
+    grid-row-start: 3;
+    grid-column: 2/3;
+}
+
+.PB .thirdGrid {
+    margin-top: 0;
+}
+
+.PB .inOutSize {
+    height: 700px;
+}
+
+.PB .textOutput {
+    height: 700px;
+}
