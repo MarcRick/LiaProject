@@ -84,20 +84,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const layoutSelect = document.getElementById("layoutSelect");
-    const inputLayout = document.getElementById("contentBox");
-    const navSize = document.getElementById("carouselBtn")
+    const body = document.querySelector('body');
+
 
     layoutSelect.addEventListener('change', function () {
         const selectedLayout = layoutSelect.value;
-
-        if (selectedLayout === 'CB') {
-            inputLayout.style.width = "10in";
-            inputLayout.style.height = "7in";
-            navSize.style.width = "10in";
-        } else if (selectedLayout === 'PB') {
-            inputLayout.style.width = "5.8in";
-            inputLayout.style.height = "8.3in";
-            navSize.style.width = "5.8in";
+        if (selectedLayout === 'PB') {
+            body.classList.add('PB');
+        }
+        else {
+            body.classList.remove('PB');
         }
 
     });
@@ -112,8 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     saveBtn.addEventListener("click", () => {
         const selectedFormat = selectMenu.options[selectMenu.selectedIndex].text;
-        console.log(selectedFormat);
-        const fileNameInput = document.querySelector(".option input");
+        const fileNameInput = document.getElementById("fileName");
         if (selectedFormat === "Text File (.txt)") {
             const blob = new Blob([textarea.value], { type: selectMenu.value });
             const fileUrl = URL.createObjectURL(blob);
@@ -143,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function saveImg() {
-        const reader = new FileReader()
+        const reader = new FileReader();
         const editText = document.getElementById('editor');
 
         reader.addEventListener('load', () => {
@@ -160,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
         reader.readAsDataURL(this.files[0]);
     }
 
-    const inputImg = document.querySelector('.img-input');
+    const inputImg = document.getElementById('uploadButton');
 
     inputImg.addEventListener('change', saveImg);
 
