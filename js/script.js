@@ -22,16 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
     
             currentScrollTop = st;
         });*/
-     
+
     window.addEventListener('resize', function () {
         const logo = document.getElementById('logo');
         const btnSection = document.getElementById('btn-section');
-        
+
         const btnSectionRightEdge = btnSection.getBoundingClientRect().right;
-        
+
         const logoPosition = logo.getBoundingClientRect();
-        
-        if (logoPosition.left >= btnSectionRightEdge) {            
+
+        if (logoPosition.left >= btnSectionRightEdge) {
             logo.classList.add('above');
             logo.style.position = 'absolute'; // Position the logo above the btn-section
             logo.style.top = '0';
@@ -103,8 +103,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const textarea = document.querySelector("textarea");
-    const selectMenu = document.querySelector('.select-menu select');
-    const saveBtn = document.querySelector(".save-btn");
+    const selectMenu = document.getElementById('fileType');
+    const saveBtn = document.getElementById("saveBtn");
     selectMenu.addEventListener("change", () => {
         const selectedFormat = selectMenu.options[selectMenu.selectedIndex].text;
 
@@ -143,8 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function saveImg() {
-        const reader = new FileReader();
-        const editText = document.querySelector('#editor');
+        const reader = new FileReader()
+        const editText = document.getElementById('editor');
 
         reader.addEventListener('load', () => {
             const fileName = inputImg.files[0].name;

@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(to right bottom, #07ded1, #2cddde, #4adce9, #65dbef, #7dd9f3, #7dd9f3, #7dd9f3, #7dd9f3, #65dbef, #4adce9, #2cddde, #07ded1);
+    background-image: linear-gradient(to right bottom, #860088, #9144a1, #9d6cb6, #ad91c7, #c0b4d5, #c3bfdc, #c8cae2, #cfd4e7, #b8cbeb, #9ac4ef, #6fbeef, #1db9ed);
     box-shadow: 5px 10px 18px #98f5ef;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -171,7 +171,7 @@ label {
     width: 100%;
     background-color: #161a1d;
     min-height: 100vh;
-    background-image: linear-gradient(to right, #b0fffa, #b5fdfd, #bbfaff, #c1f8ff, #c8f5ff, #c7f4ff, #c6f4ff, #c5f3ff, #bbf4fe, #b2f5fc, #a9f6f8, #a1f7f2);
+    background-image: linear-gradient(to right, #f0fbff, #e9f8ff, #e3f5ff, #ddf2ff, #d8efff, #d4edff, #cfebff, #cbe9ff, #c5e8ff, #bfe6fe, #b9e5fe, #b3e4fd);
     flex-direction: column;
     overflow: hidden;
 }
@@ -300,6 +300,7 @@ label {
 }
 
 .textOutput {
+    position: relative;
     min-height: 100%;
     display: none;
     border-radius: 10px;
