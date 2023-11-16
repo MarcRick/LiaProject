@@ -10,13 +10,12 @@
     left: 0;
     width: 100%;
     /*background: #333333;*/ /*dark grey*/ 
-    /*background: #58657c;*/
-    /* BLUE~PURPLE background-image: linear-gradient(to top, #b7f0fe, #79d4ff, #4db4ff, #5b8efa, #875dde);*/
-    /*background:#d6e2e9;*/    
-    /*box-shadow: 5px 7px 10px #845EC2;*/
+    /*background: #58657c;*/  
+        
     /*BLUE VERSION*/
+    background: #d6e2e9;
     /*background-image: linear-gradient(to left, #d6e2e9, #d1e0e8, #ccdde8, #c7dbe7, #c2d8e7, #c2d8e7, #c2d8e7, #c2d8e7, #c7dbe7, #ccdde8, #d1e0e8, #d6e2e9);*/
-    background-image: linear-gradient(to right, #d6e2e9, #d8e5e8, #dde8e6, #e3eae6, #e9ece7, #e9ece7, #e9ece7, #e9ece7, #e3eae6, #dde8e6, #d8e5e8, #d6e2e9);
+    /*background-image: linear-gradient(to right, #d6e2e9, #d8e5e8, #dde8e6, #e3eae6, #e9ece7, #e9ece7, #e9ece7, #e9ece7, #e3eae6, #dde8e6, #d8e5e8, #d6e2e9);*/
     /*nice beige*/
     /*background: #F5EDE0;*/
     /*PALE PINKbackground: #FEEDE7;*/
@@ -48,6 +47,7 @@
     box-shadow:#83adfa 1px;
     /*transition: height 0.3s;*/
     z-index: 3;
+
 }
 
 /* Styles for the minimized header*/
@@ -388,7 +388,6 @@ label {
     max-height: 331px;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-
 }
 
 .current-page {
