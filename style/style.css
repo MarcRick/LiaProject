@@ -9,8 +9,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-image: linear-gradient(to right bottom, #860088, #9144a1, #9d6cb6, #ad91c7, #c0b4d5, #c3bfdc, #c8cae2, #cfd4e7, #b8cbeb, #9ac4ef, #6fbeef, #1db9ed);
-    box-shadow: 5px 10px 18px #98f5ef;
+    background: #e7f0e0;
+    box-shadow: 5px 10px 18px #e7f0e0;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     padding: 5px 10px 0px 10px;
@@ -98,7 +98,7 @@
     margin-left: auto;
     border-radius: 4px;
     border: none;
-    background-color: #17313a;
+    background-color: #2196F3;
     color: white;
     font-size: 12px;
     padding-inline: 5px;
@@ -108,7 +108,7 @@
     opacity: .7;
     cursor: pointer;
     font-weight: 600;
-    box-shadow: 1px 0.5px 0.5px #99bbff7b;
+    box-shadow: 1px 0.5px 0.5px #2196F3;
     z-index: 5;
 }
 
@@ -169,11 +169,12 @@ label {
 
 #container {
     width: 100%;
-    background-color: #161a1d;
+    background-image: url("/winWin.png");
+    background-size: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(to right, #f0fbff, #e9f8ff, #e3f5ff, #ddf2ff, #d8efff, #d4edff, #cfebff, #cbe9ff, #c5e8ff, #bfe6fe, #b9e5fe, #b3e4fd);
     flex-direction: column;
     overflow: hidden;
+    opacity: 90%;
 }
 
 .btnBox {
@@ -207,16 +208,16 @@ label {
 }
 
 .layout-select {
-    width: 55%;
+    width: 50%;
     max-width: 1150px;
     display: flex;
     margin-top: 10px;
-    gap: 15px;
+    gap: 10px;
 
 }
 
 .newPageBtn {
-    margin-left: 50px;
+    margin-left: 20px;
     margin-top: 10px;
 }
 
@@ -227,10 +228,11 @@ label {
 .alignTextC button,
 .generateBtn button,
 .previewBtn,
-.input {
+.input,
+.tips {
     font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
-    background-image: linear-gradient(144deg, #5B42F3, #5B42F3 50%, #00DDEB);
+    font-size: 15px;
+    background-color: #2196F3;
     color: white;
     border-radius: 8px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
