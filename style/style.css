@@ -297,11 +297,6 @@ label {
     overflow: hidden;
 }
 
-#contentBox {
-    width: 10in;
-    height: 7in;
-}
-
 /*DELETE LATER, THERES NO BTNBOX*/
 .btnBox {
     float: right;
@@ -368,23 +363,19 @@ label {
 }
 
 .textOutput {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    height:440px;
     display: none;
     border-radius: 10px;
     list-style: none;
-    border: 0.1px solid lightgrey;  
+    border: 2px solid #17313a;
     background: white;
     color: black(0, 0%, 100%, .9);
     font-size: 21px;
     font-family: "sofia-pro", sans-serif;
     overflow-wrap: break-word;
     padding-left: 5px;
-    padding-right: 5px;        
-    box-shadow: 2px 2px #95adbe;
-    
+    padding-right: 5px; 
 }
 
 .textOutput img {
