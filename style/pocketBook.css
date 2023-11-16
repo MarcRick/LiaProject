@@ -2,8 +2,7 @@
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 1fr 300px;
-    
+    grid-template-rows: 100px 1fr 60px 220px;
 }
 
 .PB .firstGrid {
@@ -23,12 +22,13 @@
 }
 
 .PB .forthGrid {
-    grid-row-start: 3;
-    grid-column: 2/3;
+    grid-row-start: 4;
+    grid-column: 1/3;
 }
 
 .PB .thirdGrid {
     margin-top: 0;
+    grid-column: 1/3;
 }
 
 .PB .inOutSize {
@@ -37,4 +37,48 @@
 
 .PB .textOutput {
     height: 700px;
+}
+@media(max-width: 860px){
+    .PB #container {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: 90px 700px 60px 700px 1fr;
+        grid-template-columns: 1fr;
+    }
+    
+    .PB .firstGrid {
+        margin-top: 0px;
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+    
+    .PB .secGrid {
+        grid-row-start: 3;
+        grid-column-start: 1;
+    }
+    
+    .PB .output-arrows-dots {
+        grid-row-start: 4;
+        grid-column: 1;
+    }
+
+    .PB .thirdGrid {
+        grid-row-start: 4;
+        grid-column-start: 1;
+    }
+
+    .PB .forthGrid {
+        margin-top:30px;
+        grid-row-start: 5;
+        grid-column-start: 1;
+    }
+    
+
+    .PB .inOutSize {
+        height: 700px;
+    }
+    
+    .PB .textOutput {
+        height: 700px;
+    } 
 }
