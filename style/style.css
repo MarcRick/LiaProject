@@ -483,4 +483,17 @@ a {
     .nav-menu.active {
         left: 0;
     }
+    @media(max-width: 415px) {
+        .layout-select{
+            flex-direction: column;
+        }
+        .generateBtn{
+            display: flex;
+            justify-content: center;
+        }
+        .newPageBtn{
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
