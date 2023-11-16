@@ -15,9 +15,7 @@
     border-bottom-right-radius: 4px;
     padding: 5px 10px 0px 10px;
     text-align: center;
-    /* Center-align the content */
-    /*transition: height 0.3s;*/
-    /* Smooth transition effect */
+    opacity: 90%;
     z-index: 5;
 }
 
