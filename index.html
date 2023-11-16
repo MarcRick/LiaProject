@@ -17,67 +17,71 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Lato:wght@300&family=Marcellus&family=Montserrat&family=Overpass:wght@200&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="normalize.css">
 </head>
 
 <body>
     <header class="headerSection" id="title">
-        <div id="logo">
-            <a href="#">
+        <nav class="navbar">
+            <a href="#" id="logo">
                 <img src="images/logo.svg" alt="HOME">
             </a>
-        </div>
-        <div id="headerLeft">
-            <div id="btn-section">
-                <div class="option">
-                    <label>File Name:</label>
-                    <input class="input" type="text" spellcheck="false" placeholder="Insert text">
-                </div>
-                <div class="option">
-                    <label>Save As:</label>
-                    <div class="select-menu">
-                        <select class="input">
+            <a href="#"></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <label for="fileName">File Name:</label>
+                        <input id="fileName" class="input" type="text" spellcheck="false" placeholder="File Name">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <select id="fileType" class="input select-menu">
                             <option value="text/plain">Text File (.txt)</option>
                             <option value="application/pdf">PDF (.pdf)</option>
                             <option value="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
                                 Word (.docx)</option>
                         </select>
-                    </div>
-                </div>
-                <div class="btnBox">
-                    <button class="save-btn btnShadow" type="button">Save File</button>
-                    <button class="save-btn btnShadow" type="button"
-                        onclick="document.getElementById('uploadButton').click();">Insert Image</button>
-                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <button id="saveBtn" class="save-btn btnShadow" type="button">Save File</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <button class="save-btn btnShadow" type="button"
+                            onclick="document.getElementById('uploadButton').click();">Insert
+                            Image</button>
+                        <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <label for="layoutSelect">Layout:</label>
+                        <select id="layoutSelect" class="input">
+                            <option value='CB'>Childen's book</option>
+                            <option value='PB'>Pocket book</option>
+                        </select>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" class="nav-link">
+                        <button class="tips btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
+                            and tricks</button>
+                    </a>
+                </li>
+            </ul>
+            <div class="test">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </div>
-        </div>
-        <div id="headerRight">
-            <div id="nav-section">
-                <div class="btnBox-right">
-                    <button class="tips btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
-                        and tricks</button>
-                </div>
-            </div>
-            <div id="extraText" class="goodToKnow">
-                <section class="syntaxInfo">
-                    <h1>Usefull Syntax</h1>
-                    <h4>Header</h4>
-                    <p># Header1</p>
-                    <p>## Header2</p>
-                    <p>### Header3</p>
-                    <hr>
-                </section>
-                <section class="syntaxInfo">
-                    <h4>Other good to know</h4>
-                    <p>- List</p>
-                    <p>*Italic*</p>
-                    <p>**Bold Text**</p>
-                    <p>--- new page</p>
-                </section>
-            </div>
-        </div>
+        </nav>
     </header>
 
     <dialog class="modal">
@@ -108,112 +112,97 @@
         </button>
     </dialog>
 
-    <div class="grid" id="container">
-        <div class="firstGrid">
-            <div id="input-area">
-                <textarea id="editor" onkeyup="updatePreview()"></textarea>
+    <main>
+        <div class="grid" id="container">
+            <div class="firstGrid">
+                <textarea id="editor" class="inOutSize" placeholder="Write your story in markdown style" onkeyup="updatePreview()"></textarea>
             </div>
-            <div>
+            <div class="secGrid">
                 <div class="layout-select">
-                    <label for="fontSelect">Font:</label>
-                    <select id="fontSelect" class="input">
-                        <option value='poppins'>Poppins (Default)</option>
-                        <option value='butterflyKids'>Butterfly Kids</option>
-                        <option value='heebo'>Heebo</option>
-                        <option value='homemadeApple'>Homemade Apple</option>
-                        <option value='inconsolata'>Inconsolata</option>
-                        <option value='marcellus'>Marcellus</option>
-                        <option value='tenorSans'>Tenor Sans</option>
-                        <option value='theGirlNextDoor'>The Girl Next Door</option>
-                    </select>
+                    <div class="left-content">
+                        <div class="newPageBtn">
+                            <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New
+                                Page</button>
+                        </div>
+                    </div>
+                    <div class="right-content">
+                        <label for="fontSelect">Fonts: </label>
+                        <select id="fontSelect" class="input">
+                            <option value='poppins'>Poppins (Default)</option>
+                            <option value='butterflyKids'>Butterfly Kids</option>
+                            <option value='heebo'>Heebo</option>
+                            <option value='homemadeApple'>Homemade Apple</option>
+                            <option value='inconsolata'>Inconsolata</option>
+                            <option value='marcellus'>Marcellus</option>
+                            <option value='tenorSans'>Tenor Sans</option>
+                            <option value='theGirlNextDoor'>The Girl Next Door</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="layout-select">
-                    <label for="layoutSelect">Layout:</label>
-                    <select id="layoutSelect" class="input">
-                        <option value='CB'>Childen's book</option>
-                        <option value='PB'>Pocket book</option>
-                    </select>
+            </div>
+            <div class="thirdGrid">
+                <div id="leftArrow">
+                    <button class="carousel__button carousel__button--left is-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                        </svg>
+                    </button>
                 </div>
-                <!-- <div class="placement-select">
-                    <label for="picturePlacement">Picture placement:</label>
-                    <select id="picturePlacement" class="input" onchange="changeIMGLayout()">
-                        <option value='Bottom'>Bottom</option>
-                        <option value='Top'>Top</option>
-                    </select>
-                </div> -->
-                <div class="newPageBtn">
-                    <button id="newPageBtn" class="openClose-btn btnShadowMain" onclick="creatNewPage()">New
-                        Page</button>
+                <div id="contentBox" class="inOutSize">
+                    <ul class="output-area" id="content">
+                        <li id="preview" class="current-page textOutput img output-area"></li>
+                    </ul>
+                </div>
+                <div id="rightArrow">
+                    <button class="carousel__button carousel__button--right is-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="carouselBtn" class="carousel__nav">
+                <button class="carousel__indicator current-dot"></button>
+            </div>
+            <div class="forthGrid">
+                <div class="prompt">
+                    <textarea id="promptInput" class="promptInput" placeholder="Prompt:"></textarea>
                 </div>
                 <div class="previewSelect">
-                    <button id="previewBtn" class="openClose-btn btnShadowMain">Preview</button>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="secGrid">
-            <div class="mark-section">
-                <div class="outputSection">
-                    <div class="newClass">
-                        <div id="leftArrow">
-                            <button class="carousel__button carousel__button--left is-hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-                                </svg>
-                            </button>
+                    <div class="layout-select">
+                        <div class="generateBtn">
+                            <button id="generateButton" class="openClose-btn btnShadow">Click to Generate</button>
                         </div>
-                        <div id="contentBox">
-                            <ul class="output-area" id="content">
-                                <li id="preview" class="current-page textOutput img output-area"></li>
-                            </ul>
-                        </div>
-                        <div id="rightArrow">
-                            <button class="carousel__button carousel__button--right is-hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <div id="carouselBtn" class="carousel__nav">
-                            <button class="carousel__indicator current-dot"></button>
-                        </div>
+                        <select id="styleSelect" class="input">
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Dark-fantasy">Dark-fantasy</option>
+                            <option value="Childish-fantasy">Childish fantasy</option>
+                            <option value="Sci-fi">Sci-fi</option>
+                            <option value="Pixel-art">Pixel-art</option>
+                            <option value="Oil-painting">Oil-painting</option>
+                            <option value="Gore">Gore</option>
+                        </select>
                     </div>
                 </div>
-            </div>
-            <div class="rightSection">
-                <div class="prompt">
-                    <textarea id="promptInput" class="scroll-hide" placeholder="Enter your description here"></textarea>
+                <div class="preview">
+                    <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
                 </div>
-                <div class="layout-select">
-                    <label>Choose Styles:</label>
-                    <select id="styleSelect" class="input">
-                        <option value="Fantasy">Fantasy</option>
-                        <option value="Dark-fantasy">Dark-fantasy</option>
-                        <option value="Childish-fantasy">Childish fantasy</option>
-                        <option value="Sci-fi">Sci-fi</option>
-                        <option value="Pixel-art">Pixel-art</option>
-                        <option value="Oil-painting">Oil-painting</option>
-                        <option value="Gore">Gore</option>
-                    </select>
-                </div>
-                <div class="generateBtn">
-                    <button id="generateButton" class="openClose-btn btnShadow">Click to Generate</button>
-                </div>
-                <div class="imageContainer" id="imageContainer"></div>
             </div>
         </div>
+    </main>
+
+    <footer>
         <div class="footer" id="footerDiv"></div>
+    </footer>
 
-    </div>
     <script src="./js/carousel.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/hamburger.js"></script>
+
 </body>
 
 </html>
