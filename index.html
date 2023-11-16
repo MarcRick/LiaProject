@@ -9,6 +9,7 @@
     <script src="./js/script.js"></script>
     <script src="./js/buildAI.js"></script>
     <link rel="stylesheet" href="./style/preview.css">
+    <link rel="stylesheet" href="./style/pocketBook.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -22,7 +23,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <header class="headerSection" id="title">
+=======
+    <header class="sticky-header" id="tilayoutSelecttle">
+>>>>>>> 84b3a8fa1124d585b48df16327ba32bc9b561049
         <nav class="navbar">
             <a href="#" id="logo">
                 <img src="images/logo.svg" alt="HOME">
@@ -112,34 +117,29 @@
         </button>
     </dialog>
 
-    <main>
-        <div class="grid" id="container">
-            <div class="firstGrid">
-                <textarea id="editor" class="inOutSize" placeholder="Write your story in markdown style" onkeyup="updatePreview()"></textarea>
-            </div>
-            <div class="secGrid">
-                <div class="layout-select">
-                    <div class="left-content">
-                        <div class="newPageBtn">
-                            <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New
-                                Page</button>
-                        </div>
-                    </div>
-                    <div class="right-content">
-                        <label for="fontSelect">Fonts: </label>
-                        <select id="fontSelect" class="input">
-                            <option value='poppins'>Poppins (Default)</option>
-                            <option value='butterflyKids'>Butterfly Kids</option>
-                            <option value='heebo'>Heebo</option>
-                            <option value='homemadeApple'>Homemade Apple</option>
-                            <option value='inconsolata'>Inconsolata</option>
-                            <option value='marcellus'>Marcellus</option>
-                            <option value='tenorSans'>Tenor Sans</option>
-                            <option value='theGirlNextDoor'>The Girl Next Door</option>
-                        </select>
-                    </div>
+    <div class="grid" id="container">
+        <div class="firstGrid">
+            <textarea id="editor" class="inOutSize" onkeyup="updatePreview()"></textarea>
+        </div>
+        <div class="secGrid">
+            <div class="layout-select">
+                <div class="newPageBtn">
+                    <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New
+                        Page</button>
                 </div>
+                <select id="fontSelect" class="input">
+                    <option value='poppins'>Poppins (Default)</option>
+                    <option value='butterflyKids'>Butterfly Kids</option>
+                    <option value='heebo'>Heebo</option>
+                    <option value='homemadeApple'>Homemade Apple</option>
+                    <option value='inconsolata'>Inconsolata</option>
+                    <option value='marcellus'>Marcellus</option>
+                    <option value='tenorSans'>Tenor Sans</option>
+                    <option value='theGirlNextDoor'>The Girl Next Door</option>
+                </select>
             </div>
+        </div>
+        <div class="output-arrows-dots">        
             <div class="thirdGrid">
                 <div id="leftArrow">
                     <button class="carousel__button carousel__button--left is-hidden">
@@ -167,6 +167,12 @@
             </div>
             <div id="carouselBtn" class="carousel__nav">
                 <button class="carousel__indicator current-dot"></button>
+            </div>
+        </div>
+
+        <div class="forthGrid">
+            <div class="prompt">
+                <textarea id="promptInput" class="promptInput" placeholder="Prompt:"></textarea>
             </div>
             <div class="forthGrid">
                 <div class="prompt">

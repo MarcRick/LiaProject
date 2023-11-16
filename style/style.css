@@ -302,7 +302,7 @@ label {
 
 .layout-select {
     width: 100%;
-    max-width: 1150px;
+    max-width: 1024px;
     display: flex;
     margin-top: 10px;
     justify-content: space-between;
@@ -384,7 +384,7 @@ label {
 
 .textOutput img {
     position: absolute;
-    width: 1150px;
+    width: 1024px;
     left:0;
     bottom: 0;
     z-index: 0;
@@ -485,7 +485,7 @@ label {
 .inOutSize {
     width: 100%;
     height: 440px;
-    max-width: 1150px;
+    max-width: 1024px;
 }
 .inOutSize > ul{
     height: 100%;
