@@ -192,11 +192,12 @@ function updatePreview(e) {
     createPages(markedUpHTML);
 }
 function creatNewPage() {
+    const carouselIndicator = document.getElementById("carouselBtn");
     const inputElement = document.getElementById('editor');
     const text = inputElement.value;
     const newText = text + "\n \n --- \n";
     inputElement.value = newText;
-
+    carouselIndicator.classList.remove("is-hidden");
     updatePreview();
 }
 

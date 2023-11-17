@@ -132,32 +132,12 @@
     margin-top: 15px;
     justify-content: center;
     align-items: center;
-    padding-left: 35px;
-    padding-right: 35px;
 }
 
 .forthGrid {
-    margin-top: 25px;
+    margin-top: 10px;
     padding-left: 35px;
     padding-right: 35px;
-}
-
-.content-grid {
-    display: grid;
-    grid-template-columns: 35px 954px 35px;
-    position: absolute;
-}
-
-.outputRelative {
-    position: relative;
-    height: 500px;
-    width: 1024px;
-}
-
-.setFlex {
-    display: flex;
-    justify-content: center;
-    height: 500px;
 }
 
 label {
@@ -183,6 +163,7 @@ label {
     font-family: "sofia-pro", sans-serif;
     overflow-wrap: break-word;
     resize: none;
+    margin-right: 10px;
 }
 
 #container {
@@ -231,7 +212,14 @@ label {
     display: flex;
     margin-top: 10px;
     gap: 10px;
+}
 
+.editLayout {
+    width: 100%;
+    max-width: 1420px;
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
 }
 
 .layout-select select,
@@ -295,7 +283,7 @@ label {
 
 .textOutput {
     position: relative;
-    height: 500px;
+    height: 100%;
     display: none;
     border-radius: 10px;
     list-style: none;
@@ -385,9 +373,28 @@ label {
     display: none;
 }
 
+.content-grid {
+    display: grid;
+    grid-template-columns: 35px 630px 35px;
+    position: absolute;
+}
+
+.outputRelative {
+    margin-left: 10px;
+    position: relative;
+    height: 900px;
+    width: 700px;
+}
+
+.setFlex {
+    display: flex;
+    justify-content: center;
+    height: 900px;
+}
+
 #rightArrow,
 #leftArrow {
-    min-width: 35px;
+    width: 35px;
     z-index: 3;
     align-self: center;
 }
@@ -398,9 +405,8 @@ label {
 }
 
 .inOutSize {
-    width: 100%;
-    height: 500px;
-    max-width: 1024px;
+    width: 700px;
+    height: 900px;
 }
 
 .inOutSize>ul {
@@ -527,5 +533,42 @@ a {
             height: 30px;
             width: 100%;
         }
+    }
+}
+
+@media(max-width: 1560px) {
+    .inOutSize {
+        width: 500px;
+        height: 700px;
+    }
+
+    .setFlex {
+        height: 700px;
+    }
+
+    .content-grid {
+        grid-template-columns: 35px 430px 35px;
+    }
+
+    .outputRelative {
+        height: 700px;
+        width: 500px;
+    }
+}
+
+@media(max-width: 1160px) {
+    .firstGrid {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    #editor {
+        margin-right: 0px;
+    }
+
+    .outputRelative {
+        margin-left: 0px;
     }
 }
