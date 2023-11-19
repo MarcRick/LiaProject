@@ -471,7 +471,7 @@ a {
     background-color: white;
 }
 
-@media(max-width:960px) {
+@media(max-width: 960px) {
     .hamburger {
         display: block;
     }
@@ -507,23 +507,6 @@ a {
     .nav-menu.active {
         left: 0;
     }
-
-    @media screen and (max-width: 920px) {
-
-        /* Adjust styles for smaller screens */
-        .layout-select select,
-        .layout-select option,
-        .newPageBtn button,
-        .previewSelect button,
-        .alignTextC button,
-        .generateBtn button,
-        .previewBtn,
-        .input {
-            /* Adjust styles for smaller screens */
-            height: 30px;
-            width: 100%;
-        }
-    }
 }
 
 @media(max-width: 1115px) {
@@ -551,5 +534,130 @@ a {
 
     .promptInput {
         width: 824px;
+    }
+
+    .content-grid {
+        grid-template-columns: 35px 754px 35px;
+    }
+}
+
+@media(max-width: 1000px) {
+    .inOutSize {
+        height: 312px;
+        width: 624px;
+    }
+
+    .outputRelative {
+        height: 312px;
+        width: 624px;
+    }
+
+    .setFlex {
+        height: 312px;
+    }
+
+    .textOutput {
+        height: 312px;
+    }
+
+    .layout-select {
+        width: 624px;
+    }
+
+    .promptInput {
+        width: 624px;
+    }
+
+    .content-grid {
+        grid-template-columns: 35px 554px 35px;
+    }
+
+    .layout-select select,
+    .layout-select option,
+    .newPageBtn button,
+    .previewSelect button,
+    .alignTextC button,
+    .generateBtn button,
+    .previewBtn,
+    .input {
+        /* Adjust styles for smaller screens */
+        height: 30px;
+        width: 100%;
+    }
+
+    #previewBtn {
+        width: 625px;
+    }
+}
+
+@media(max-width:730px) {
+    .inOutSize {
+        height: 212px;
+        width: 424px;
+    }
+
+    .outputRelative {
+        height: 212px;
+        width: 424px;
+    }
+
+    .setFlex {
+        height: 212px;
+    }
+
+    .textOutput {
+        height: 212px;
+    }
+
+    .layout-select {
+        width: 424px;
+    }
+
+    .promptInput {
+        width: 424px;
+    }
+
+    .content-grid {
+        grid-template-columns: 35px 354px 35px;
+    }
+
+    #previewBtn {
+        width: 425px;
+    }
+}
+
+@media(max-width:550px) {
+    .inOutSize {
+        height: 162px;
+        width: 374px;
+    }
+
+    .outputRelative {
+        height: 162px;
+        width: 374px;
+    }
+
+    .setFlex {
+        height: 162px;
+    }
+
+    .textOutput {
+        height: 162px;
+    }
+
+    .layout-select {
+        width: 374px;
+    }
+
+    .promptInput {
+        width: 374px;
+    }
+
+    .content-grid {
+        grid-template-columns: 35px 304px 35px;
+    }
+
+    #previewBtn {
+        width: 375px;
     }
 }
