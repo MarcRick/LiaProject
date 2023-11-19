@@ -630,6 +630,8 @@ a {
     .inOutSize {
         height: 162px;
         width: 374px;
+        min-width: 374px;
+        min-height: 162px;
     }
 
     .outputRelative {
