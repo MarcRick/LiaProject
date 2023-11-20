@@ -298,7 +298,7 @@ label {
     border-radius: 10px;
     list-style: none;
     border: 2px solid #17313a;
-    background: white;
+    background: white; 
     color: black(0, 0%, 100%, .9);
     font-size: 21px;
     font-family: "sofia-pro", sans-serif;
@@ -321,6 +321,7 @@ label {
 }
 
 .current-page {
+    display: block;
     z-index: 1;
 }
 
@@ -373,10 +374,6 @@ label {
 
 .alignTextC {
     margin-right: auto;
-}
-
-.current-page {
-    display: block;
 }
 
 .is-hidden {
