@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./js/marked.js"></script>
-    <script src="./js/script.js"></script>
     <script src="./js/buildAI.js"></script>
+    <script src="./js/confirmation.js"></script>
     <link rel="stylesheet" href="./style/preview.css">
     <link rel="stylesheet" href="./style/pocketBook.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
@@ -16,14 +16,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Dongle:wght@300&family=Heebo:wght@200;400&family=Homemade+Apple&family=Imperial+Script&family=Inconsolata:wght@200;400&family=Lato:wght@300&family=Lavishly+Yours&family=Marcellus&family=Montserrat&family=Neonderthaw&family=Overpass:wght@300&family=Poppins:wght@300&family=Righteous&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
-        rel="stylesheet">"
+        href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Lato:wght@300&family=Marcellus&family=Montserrat&family=Overpass:wght@200&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="normalize.css">
 </head>
 
 <body>
-    <header class="headerSection" id="title">
+
+    <header class="sticky-header" id="tilayoutSelecttle">
         <nav class="navbar">
             <a href="#" id="logo">
                 <img src="images/logo.svg" alt="HOME">
@@ -31,9 +32,13 @@
             <a href="#"></a>
             <ul class="nav-menu">
                 <li class="nav-item">
+                    <a href="Standing.html">
+                        <button type="button" id="nav-btn" class="save-btn btnShadow input">Go to standing</button>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <label for="fileName">File Name:</label>
-                        <input id="fileName" class="input" type="text" spellcheck="false" placeholder="File Name">
+                        <input id="fileName" class="input" type="text" spellcheck="false" placeholder="File Name:">
                     </a>
                 </li>
                 <li class="nav-item">
@@ -48,32 +53,19 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <button id="saveBtn" class="save-btn btnShadow" type="button">Save File</button>
+                        <button id="saveBtn" class="save-btn btnShadow input" type="button">Save
+                            File</button>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <button class="save-btn btnShadow" type="button"
-                            onclick="document.getElementById('uploadButton').click();">Insert
-                            Image</button>
-                        <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <label for="layoutSelect">Layout:</label>
-                        <select id="layoutSelect" class="input">
-                            <option value='CB'>Childen's book</option>
-                            <option value='PB'>Pocket book</option>
-                        </select>
+                    <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" class="nav-link">
+                        <button class="tips btnShadow" type="button" id="toggleBtn" onclick="toggleInfo();">Tips
+                            and tricks</button>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <div>
-                        <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" class="nav-link">
-                            Tips & Tricks
-                        </a>
-                    </div>
                 </li>
             </ul>
             <div class="test">
@@ -120,59 +112,79 @@
         </div>
         <div class="secGrid">
             <div class="layout-select">
+                <div class="fontSelect">
+                    <select id="fontSelect" class="input select-menu">
+                        <option value='poppins'>Poppins (Default)</option>
+                        <option value='butterflyKids'>Butterfly Kids</option>
+                        <option value='heebo'>Heebo</option>
+                        <option value='homemadeApple'>Homemade Apple</option>
+                        <option value='inconsolata'>Inconsolata</option>
+                        <option value='marcellus'>Marcellus</option>
+                        <option value='tenorSans'>Tenor Sans</option>
+                        <option value='theGirlNextDoor'>The Girl Next Door</option>
+                    </select>
+                </div>
+                <li class="nav-item"></li>
+                <a href="#" class="nav-link">
+                    <button class="input previewBtn select-menu select" type="button"
+                        onclick="document.getElementById('uploadButton').click();">Insert
+                        Image</button>
+                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
+                </a>
+                </li>
                 <div class="newPageBtn">
                     <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New
                         Page</button>
                 </div>
-                <select id="fontSelect" class="input">
-                    <option value='poppins'>Poppins (Default)</option>
-                    <option value='butterflyKids'>Butterfly Kids</option>
-                    <option value='heebo'>Heebo</option>
-                    <option value='homemadeApple'>Homemade Apple</option>
-                    <option value='inconsolata'>Inconsolata</option>
-                    <option value='marcellus'>Marcellus</option>
-                    <option value='tenorSans'>Tenor Sans</option>
-                    <option value='theGirlNextDoor'>The Girl Next Door</option>
-                </select>
+
             </div>
         </div>
         <div class="output-arrows-dots">
             <div class="thirdGrid">
-                <div id="leftArrow">
-                    <button class="carousel__button carousel__button--left is-hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-left-short arrows" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
-                        </svg>
-                    </button>
+                <div class="outputRelative">
+                    <div id="contentBox" class="inOutSize">
+                        <div class="content-grid">
+                            <div class="setFlex">
+                                <div id="leftArrow">
+                                    <button class="carousel__button carousel__button--left is-hidden">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-left-short arrows"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="empty">
+                            </div>
+                            <div class="setFlex">
+                                <div id="rightArrow">
+                                    <button class="carousel__button carousel__button--right is-hidden">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-arrow-right-short arrows"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="output-area" id="content">
+                            <li id="preview" class="current-page textOutput img output-area"></li>
+                        </ul>
+                        <div id="carouselBtn" class="carousel__nav is-hidden">
+                            <button class="carousel__indicator current-dot"></button>
+                        </div>
+                    </div>
                 </div>
-                <div id="contentBox" class="inOutSize">
-                    <ul class="output-area" id="content">
-                        <li id="preview" class="current-page textOutput img output-area"></li>
-                    </ul>
-                </div>
-                <div id="rightArrow">
-                    <button class="carousel__button carousel__button--right is-hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-arrow-right-short arrows" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div id="carouselBtn" class="carousel__nav">
-                <button class="carousel__indicator current-dot"></button>
             </div>
         </div>
-
         <div class="forthGrid">
             <div class="prompt">
-                <textarea id="promptInput" class="promptInput"
-                    placeholder="Describe illustration in texts:"></textarea>
+                <textarea id="promptInput" class="promptInput" placeholder="Prompt:"></textarea>
             </div>
-
             <div class="previewSelect">
                 <div class="layout-select">
                     <div class="generateBtn">
@@ -190,20 +202,16 @@
                 </div>
             </div>
             <div class="preview">
-                <button id="previewBtn" class="openClose-btn btnShadow">Preview</button>
+                <button id="previewBtn" class="openClose-btn btnShadow input">Preview</button>
             </div>
         </div>
     </div>
-    </main>
-
-    <footer>
-        <div class="footer" id="footerDiv"></div>
-    </footer>
-
+    </div>
+    <div class="footer" id="footerDiv"></div>
     <script src="./js/carousel.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/hamburger.js"></script>
-
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
