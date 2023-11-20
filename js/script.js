@@ -6,32 +6,15 @@ let pageIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* Fixed title header minimized on scroll */
-    /*
-        const stickyHeader = document.getElementById('title');
-        let currentScrollTop = 0;
-    
-        window.addEventListener('scroll', () => {
-            const st = window.scrollY || document.documentElement.scrollTop;
-    
-            if (st > currentScrollTop) {
-                stickyHeader.classList.add('minimized'); // Scroll down, hide the header
-            } else {
-                stickyHeader.classList.remove('minimized'); // Scroll up, reveal the header
-            }
-    
-            currentScrollTop = st;
-        });*/
-     
     window.addEventListener('resize', function () {
         const logo = document.getElementById('logo');
         const btnSection = document.getElementById('btn-section');
-        
+
         const btnSectionRightEdge = btnSection.getBoundingClientRect().right;
-        
+
         const logoPosition = logo.getBoundingClientRect();
-        
-        if (logoPosition.left >= btnSectionRightEdge) {            
+
+        if (logoPosition.left >= btnSectionRightEdge) {
             logo.classList.add('above');
             logo.style.position = 'absolute'; // Position the logo above the btn-section
             logo.style.top = '0';
@@ -81,21 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         previewElement.style.fontFamily = selectedFontFamily;
         storeAppliedFont(selectedFont);
-    });
-
-    const layoutSelect = document.getElementById("layoutSelect");
-    const body = document.querySelector('body');
-
-
-    layoutSelect.addEventListener('change', function () {
-        const selectedLayout = layoutSelect.value;
-        if (selectedLayout === 'PB') {
-            body.classList.add('PB');
-        }
-        else {
-            body.classList.remove('PB');
-        }
-
     });
 
     const textarea = document.querySelector("textarea");
@@ -192,11 +160,12 @@ function updatePreview(e) {
     createPages(markedUpHTML);
 }
 function creatNewPage() {
+    const carouselIndicator = document.getElementById("carouselBtn");
     const inputElement = document.getElementById('editor');
     const text = inputElement.value;
     const newText = text + "\n \n --- \n";
     inputElement.value = newText;
-
+    carouselIndicator.classList.remove("is-hidden");
     updatePreview();
 }
 
