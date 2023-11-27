@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./js/marked.js"></script>
+    <script src="./js/script.js"></script>
     <script src="./js/buildAI.js"></script>
     <script src="./js/confirmation.js"></script>
     <link rel="stylesheet" href="./style/preview.css">
@@ -18,12 +19,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Butterfly+Kids&family=Heebo:wght@300&family=Homemade+Apple&family=Inconsolata:wght@300&family=Lato:wght@300&family=Marcellus&family=Montserrat&family=Overpass:wght@200&family=Poppins:wght@200&family=Tenor+Sans&family=The+Girl+Next+Door&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/styleStanding.css">
     <link rel="stylesheet" href="normalize.css">
 </head>
 
 <body>
-
     <header class="sticky-header" id="tilayoutSelecttle">
         <nav class="navbar">
             <a href="#" id="logo">
@@ -32,8 +32,8 @@
             <a href="#"></a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="Standing.html">
-                        <button type="button" id="nav-btn" class="save-btn btnShadow input">Go to standing</button>
+                    <a href="index.html">
+                        <button type="button" id="nav-btn" class="save-btn btnShadow input">Go to laying</button>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -53,7 +53,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <button id="saveBtn" class="save-btn btnShadow input" type="button">Save
+                        <button id="saveBtn" class="save-btn btnShadow input" type="button" id="saveBtn">Save
                             File</button>
                     </a>
                 </li>
@@ -107,40 +107,9 @@
     </dialog>
 
     <div class="grid" id="container">
-        <div class="firstGrid">
-            <textarea id="editor" class="inOutSize" onkeyup="updatePreview()"></textarea>
-        </div>
-        <div class="secGrid">
-            <div class="layout-select">
-                <div class="fontSelect">
-                    <select id="fontSelect" class="input select-menu">
-                        <option value='poppins'>Poppins (Default)</option>
-                        <option value='butterflyKids'>Butterfly Kids</option>
-                        <option value='heebo'>Heebo</option>
-                        <option value='homemadeApple'>Homemade Apple</option>
-                        <option value='inconsolata'>Inconsolata</option>
-                        <option value='marcellus'>Marcellus</option>
-                        <option value='tenorSans'>Tenor Sans</option>
-                        <option value='theGirlNextDoor'>The Girl Next Door</option>
-                    </select>
-                </div>
-                <li class="nav-item"></li>
-                <a href="#" class="nav-link">
-                    <button class="input previewBtn select-menu select" type="button"
-                        onclick="document.getElementById('uploadButton').click();">Insert
-                        Image</button>
-                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
-                </a>
-                </li>
-                <div class="newPageBtn">
-                    <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New
-                        Page</button>
-                </div>
-
-            </div>
-        </div>
         <div class="output-arrows-dots">
-            <div class="thirdGrid">
+            <div class="firstGrid">
+                <textarea id="editor" class="inOutSize" onkeyup="updatePreview()"></textarea>
                 <div class="outputRelative">
                     <div id="contentBox" class="inOutSize">
                         <div class="content-grid">
@@ -181,6 +150,34 @@
                 </div>
             </div>
         </div>
+        <div class="secGrid">
+            <div class="editLayout">
+                <div class="fontSelect">
+                    <select id="fontSelect" class="input select-menu">
+                        <option value='poppins'>Poppins (Default)</option>
+                        <option value='butterflyKids'>Butterfly Kids</option>
+                        <option value='heebo'>Heebo</option>
+                        <option value='homemadeApple'>Homemade Apple</option>
+                        <option value='inconsolata'>Inconsolata</option>
+                        <option value='marcellus'>Marcellus</option>
+                        <option value='tenorSans'>Tenor Sans</option>
+                        <option value='theGirlNextDoor'>The Girl Next Door</option>
+                    </select>
+                </div>
+                <li class="nav-item"></li>
+                <a href="#" class="nav-link">
+                    <button class="input previewBtn select-menu select" type="button"
+                        onclick="document.getElementById('uploadButton').click();">Insert
+                        Image</button>
+                    <input class="img-input" type="file" id="uploadButton" hidden="hidden"></input>
+                </a>
+                </li>
+                <div class="newPageBtn">
+                    <button id="newPageBtn" class="openClose-btn btnShadow" onclick="creatNewPage()">New
+                        Page</button>
+                </div>
+            </div>
+        </div>
         <div class="forthGrid">
             <div class="prompt">
                 <textarea id="promptInput" class="promptInput" placeholder="Prompt:"></textarea>
@@ -211,7 +208,6 @@
     <script src="./js/carousel.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/hamburger.js"></script>
-    <script src="./js/script.js"></script>
 </body>
 
 </html>

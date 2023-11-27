@@ -9,13 +9,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #ffffff;
+    background: #e7f0e0;
     box-shadow: 5px 10px 18px #e7f0e0;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     padding: 5px 10px 0px 10px;
     text-align: center;
-    opacity: 95%;
+    opacity: 90%;
     z-index: 5;
 }
 
@@ -91,7 +91,7 @@
     position: relative;
 }
 
-/*.tips {
+.tips {
     margin-right: auto;
     margin-left: auto;
     border-radius: 4px;
@@ -107,7 +107,7 @@
     font-weight: 600;
     box-shadow: 1px 0.5px 0.5px #2196F3;
     z-index: 5;
-}*/
+}
 
 .firstGrid {
     display: flex;
@@ -132,32 +132,12 @@
     margin-top: 15px;
     justify-content: center;
     align-items: center;
-    padding-left: 35px;
-    padding-right: 35px;
 }
 
 .forthGrid {
-    margin-top: 25px;
+    margin-top: 10px;
     padding-left: 35px;
     padding-right: 35px;
-}
-
-.content-grid {
-    display: grid;
-    grid-template-columns: 35px 954px 35px;
-    position: absolute;
-}
-
-.outputRelative {
-    position: relative;
-    height: 512px;
-    width: 1024px;
-}
-
-.setFlex {
-    display: flex;
-    justify-content: center;
-    height: 512px;
 }
 
 label {
@@ -183,6 +163,7 @@ label {
     font-family: "sofia-pro", sans-serif;
     overflow-wrap: break-word;
     resize: none;
+    margin-right: 10px;
 }
 
 #container {
@@ -211,7 +192,7 @@ label {
     /*box-shadow: 0.5px 1px 0px #99bbff7b;*/
 }
 
-/*.save-btn {
+.save-btn {
     border-radius: 4px;
     border: none;
     background: #17313a;
@@ -223,10 +204,19 @@ label {
     cursor: pointer;
     font-weight: 600;
     box-shadow: 1px 0.5px 0.5px #99bbff7b;
-}*/
+}
 
 .layout-select {
-    width: 1024px;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.editLayout {
+    width: 100%;
+    max-width: 1420px;
     display: flex;
     margin-top: 10px;
     gap: 10px;
@@ -240,11 +230,10 @@ label {
 .generateBtn button,
 .previewBtn,
 .input,
-.tips,
-.save-btn {
+.tips {
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    background-color: rgb(56, 52, 244);
+    font-size: 15px;
+    background-color: #2196F3;
     color: white;
     border-radius: 8px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -257,7 +246,6 @@ label {
     height: 35px;
     width: 130px;
     position: relative;
-    opacity: 90%;
 }
 
 .layout-select option {
@@ -282,7 +270,7 @@ label {
     justify-content: center;
 }
 
-/*.btnShadow:hover {
+.btnShadow:hover {
     border-radius: 2px;
     border: none;
     color: hsla(0, 0%, 100%, .9);
@@ -290,12 +278,12 @@ label {
     cursor: pointer;
     font-weight: 600;
     box-shadow: 1px 0.5px 0.5px #99bbff;
-    /*box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.19), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}*/
+    /*box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.19), 0 17px 50px 0 rgba(0, 0, 0, 0.19);*/
+}
 
 .textOutput {
     position: relative;
-    height: 512px;
+    height: 100%;
     display: none;
     border-radius: 10px;
     list-style: none;
@@ -323,7 +311,6 @@ label {
 }
 
 .current-page {
-    display: block;
     z-index: 1;
 }
 
@@ -378,13 +365,36 @@ label {
     margin-right: auto;
 }
 
+.current-page {
+    display: block;
+}
+
 .is-hidden {
     display: none;
 }
 
+.content-grid {
+    display: grid;
+    grid-template-columns: 35px 630px 35px;
+    position: absolute;
+}
+
+.outputRelative {
+    margin-left: 10px;
+    position: relative;
+    height: 900px;
+    width: 700px;
+}
+
+.setFlex {
+    display: flex;
+    justify-content: center;
+    height: 900px;
+}
+
 #rightArrow,
 #leftArrow {
-    min-width: 35px;
+    width: 35px;
     z-index: 3;
     align-self: center;
 }
@@ -395,8 +405,8 @@ label {
 }
 
 .inOutSize {
-    height: 512px;
-    width: 1024px;
+    width: 700px;
+    height: 900px;
 }
 
 .inOutSize>ul {
@@ -411,7 +421,8 @@ label {
 }
 
 .promptInput {
-    width: 1024px;
+    width: 100%;
+    max-width: 1024px;
     height: 100%;
 }
 
@@ -467,10 +478,10 @@ a {
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: dodgerblue;
+    background-color: white;
 }
 
-@media(max-width: 960px) {
+@media(max-width:960px) {
     .hamburger {
         display: block;
     }
@@ -508,173 +519,115 @@ a {
     }
 }
 
-@media(max-width: 1115px) {
+@media(max-width: 1560px) {
     .inOutSize {
-        height: 412px;
-        width: 824px;
-    }
-
-    .outputRelative {
-        height: 412px;
-        width: 824px;
+        width: 500px;
+        height: 700px;
     }
 
     .setFlex {
-        height: 412px;
-    }
-
-    .textOutput {
-        height: 412px;
-    }
-
-    .layout-select {
-        width: 824px;
-    }
-
-    .promptInput {
-        width: 824px;
+        height: 700px;
     }
 
     .content-grid {
-        grid-template-columns: 35px 754px 35px;
+        grid-template-columns: 35px 430px 35px;
+    }
+
+    .outputRelative {
+        height: 700px;
+        width: 500px;
+    }
+    .editLayout{
+        width: 1020px;
     }
 }
 
-@media(max-width: 1000px) {
-    .inOutSize {
-        height: 312px;
-        width: 624px;
+@media(max-width: 1160px) {
+    .grid{
+        display: grid;
+        grid-template-rows: 100px 700px 45px 730px 200px;
+    }
+    .firstGrid {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+    }
+    .secGrid{
+        grid-row: 3;
+    }
+    .forthGrid{
+        grid-row: 5;
+    }
+
+    #editor {
+        margin-right: 0px;
     }
 
     .outputRelative {
-        height: 312px;
-        width: 624px;
+        margin-left: 0px;
     }
-
-    .setFlex {
-        height: 312px;
+    .editLayout{
+        width: 500px;
     }
-
-    .textOutput {
-        height: 312px;
+    .prompt{
+        width: 100%;
+        justify-content: center;
     }
-
-    .layout-select {
-        width: 624px;
+    .promptInput{
+        width: 500px;
     }
-
-    .promptInput {
-        width: 624px;
+    .layout-select{
+        width: 500px;
     }
-
-    .content-grid {
-        grid-template-columns: 35px 554px 35px;
-    }
-
     .layout-select select,
     .layout-select option,
     .newPageBtn button,
     .previewSelect button,
     .alignTextC button,
     .generateBtn button,
-    .previewBtn,
     .input {
         /* Adjust styles for smaller screens */
         height: 30px;
         width: 100%;
     }
-
-    #previewBtn {
-        width: 625px;
+    #previewBtn{
+        width: 500px;
     }
+    
 }
 
-@media(max-width:730px) {
-    .inOutSize {
-        height: 212px;
-        width: 424px;
+@media(max-width: 535px) {
+    .grid{
+        display: grid;
+        grid-template-rows: 100px 505px 45px 535px 200px;
     }
-
-    .outputRelative {
-        height: 212px;
-        width: 424px;
+    .inOutSize{
+        width: 305px;
+        height: 505px;
     }
-
     .setFlex {
-        height: 212px;
+        height: 505px;
     }
-
-    .textOutput {
-        height: 212px;
-    }
-
-    .layout-select {
-        width: 424px;
-    }
-
-    .promptInput {
-        width: 424px;
-    }
-
     .content-grid {
-        grid-template-columns: 35px 354px 35px;
+        grid-template-columns: 35px 235px 35px;
     }
-
-    #previewBtn {
-        width: 425px;
-    }
-}
-
-@media(max-width:550px) {
-    .inOutSize {
-        height: 162px;
-        width: 374px;
-        min-width: 374px;
-        min-height: 162px;
-    }
-
     .outputRelative {
-        height: 162px;
-        width: 374px;
+        height: 505px;
+        width: 305px;
     }
-
-    .setFlex {
-        height: 162px;
+    .promptInput{
+        width: 305px;
     }
-
-    .textOutput {
-        height: 162px;
+    .layout-select{
+        width: 305px;
     }
-
-    .layout-select {
-        width: 374px;
+    #previewBtn{
+        width: 305px;
     }
-
-    .promptInput {
-        width: 374px;
+    .editLayout{
+        width: 305px;
+        margin-top: 20px;
     }
-
-    .content-grid {
-        grid-template-columns: 35px 304px 35px;
-    }
-
-    #previewBtn {
-        width: 375px;
-    }
-
-    @media(max-width: 415px) {
-        .layout-select {
-            flex-direction: column;
-        }
-
-        .generateBtn {
-            display: flex;
-            justify-content: center;
-        }
-
-        .newPageBtn {
-            display: flex;
-            justify-content: center;
-        }
-    }
+    
 }
